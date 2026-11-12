@@ -23,3 +23,4 @@ Statische Website (HTML, CSS, JavaScript – ohne Build-Schritt) für Schornstei
 - Auf Vercel laufen Formulare und Online-Buchung im **Demo-Modus** (es wird nichts versendet).
 - Platzhalter sind im Code als `class="ph"` markiert (Jahreszahlen, Team, Handwerksrollen-Nr., Hoster …).
 - Online-Buchung: Anbindung an einen echten Kalender in `assets/booking.js` (`Calendar.fetchBusy` / `Calendar.book`).
+- **Caching:** CSS/JS werden 30 Tage gecacht. Nach Änderungen an `assets/*.css|js` den Parameter `?v=…` in allen HTML-Dateien erhöhen (z. B. Inhalts-Hash), sonst sehen Besucher die alte Version.
