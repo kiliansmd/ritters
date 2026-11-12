@@ -200,6 +200,9 @@
     const n = Calendar.nextFree(45);
     fab.querySelector('[data-next]').textContent = n ? `${fmtShort(n.date)} · ${fmtTime(n.start)}${UHR}` : T('auf Anfrage', 'on request');
     fab.setAttribute('aria-label', T('Termin online buchen', 'Book appointment online') + (n ? T(` – nächster freier Termin ${fmtShort(n.date)} um ${fmtTime(n.start)} Uhr`, ` – next available slot ${fmtShort(n.date)} at ${fmtTime(n.start)}`) : ''));
+    // Live-Hinweis „Nächster freier Termin“ in Hero und Abschluss-CTA
+    document.querySelectorAll('[data-next-slot]').forEach(el => { el.textContent = n ? `${fmtShort(n.date)}, ${fmtTime(n.start)}${UHR}` : ''; });
+    document.documentElement.classList.toggle('has-slots', !!n);
   };
   updatePeek();
 
