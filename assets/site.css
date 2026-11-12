@@ -930,3 +930,11 @@ h2[tabindex="-1"]:focus, h3[tabindex="-1"]:focus, .bk-done:focus, .form-status:f
   .trustbar li + li { border-top: 1px solid var(--line); }
 }
 @media (prefers-reduced-motion: reduce) { .btn-gold:hover, .btn-ghost:hover { transform: none; } }
+
+/* Neues Logo (Wortmarke + Bildmarke) */
+.brand { gap: 0; }
+.brand-logo { display: block; height: 40px; width: auto; }
+.foot-brand .brand-logo { height: 44px; }
+@media (max-width: 1180px) and (min-width: 961px) { .brand-logo { height: 34px; } }
+@media (max-width: 960px) { .brand-logo { height: 32px; } }
+@media (max-width: 380px) { .brand-logo { height: 26px; } }
