@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /anfrage.php
+
+Sitemap: https://www.schornsteinfeger.koeln/sitemap.xml

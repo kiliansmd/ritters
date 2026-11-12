@@ -1,0 +1,4 @@
+# Nur für Apache-Hosting (Live-Domain) – auf Vercel nicht ausliefern
+anfrage.php
+.htaccess
+README.md

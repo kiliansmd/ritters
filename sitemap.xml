@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Deutsche URLs wie bisher (/, /impressum, /datenschutz), englische Fassung unter /en/, Leistungsseiten unter /leistungen/ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schornsteinfeger.koeln/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schornsteinfeger.koeln/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schornsteinfeger.koeln/"/>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/en/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schornsteinfeger.koeln/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schornsteinfeger.koeln/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schornsteinfeger.koeln/"/>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/impressum</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schornsteinfeger.koeln/impressum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schornsteinfeger.koeln/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schornsteinfeger.koeln/impressum"/>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/en/legal-notice</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schornsteinfeger.koeln/impressum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schornsteinfeger.koeln/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schornsteinfeger.koeln/impressum"/>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/datenschutz</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schornsteinfeger.koeln/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schornsteinfeger.koeln/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schornsteinfeger.koeln/datenschutz"/>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/en/privacy</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.schornsteinfeger.koeln/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schornsteinfeger.koeln/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schornsteinfeger.koeln/datenschutz"/>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/leistungen/abgasmessung-koeln</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/leistungen/energieberatung-koeln</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/leistungen/feuerstaettenschau-koeln</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/leistungen/kaminofen-reinigung-koeln</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/leistungen/rauchmelder-wartung-koeln</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/leistungen/schornstein-kehren-koeln</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.schornsteinfeger.koeln/leistungen/schornsteinfeger-frei-waehlen-koeln</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+</urlset>

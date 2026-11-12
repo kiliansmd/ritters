@@ -1,0 +1,43 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/(ueber-uns|uber-uns|about)", "destination": "/#ueber-uns", "permanent": true },
+    { "source": "/leistungen", "destination": "/#leistungen", "permanent": true },
+    { "source": "/kontakt", "destination": "/#kontakt", "permanent": true },
+    { "source": "/galerie", "destination": "/#ueber-uns", "permanent": true },
+    { "source": "/(schornstein-kehren|kehren)", "destination": "/leistungen/schornstein-kehren-koeln", "permanent": true },
+    { "source": "/(rauchmelder|rauchwarnmelder)", "destination": "/leistungen/rauchmelder-wartung-koeln", "permanent": true },
+    { "source": "/(energieberatung|foerdermittel)", "destination": "/leistungen/energieberatung-koeln", "permanent": true },
+    { "source": "/en/(impressum|imprint)", "destination": "/en/legal-notice", "permanent": true },
+    { "source": "/en/(datenschutz|privacy-policy)", "destination": "/en/privacy", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "ritters.meindigitalerbetrieb.de" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "(?<sub>.*)\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}
