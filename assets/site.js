@@ -29,6 +29,7 @@
   const burger = $('.burger'), menu = $('#menu');
   const setMenu = open => {
     if (!burger || !menu) return;
+    if (open) document.querySelector('[data-phone-menu]')?.removeAttribute('open');
     menu.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? T('Menü schließen', 'Close menu') : T('Menü öffnen', 'Open menu'));
@@ -45,31 +46,33 @@
     matchMedia('(min-width: 961px)').addEventListener('change', e => e.matches && setMenu(false));
   }
 
-  /* Sprachauswahl (Disclosure-Muster) */
-  const SECTION_MAP = { leistungen: 'services', 'ueber-uns': 'about', partner: 'partners', kontakt: 'contact', anfrage: 'request', familie: 'family', team: 'team' };
-  $$('[data-lang]').forEach(box => {
-    const btn = $('.lang-btn', box), list = $('.lang-list', box);
-    const set = open => { list.hidden = !open; btn.setAttribute('aria-expanded', open); box.classList.toggle('open', open); };
-    btn.addEventListener('click', () => { const o = list.hidden; set(o); if (o) $('a', list).focus(); });
-    box.addEventListener('keydown', e => {
-      const items = $$('a', list), i = items.indexOf(document.activeElement);
-      if (e.key === 'Escape' && !list.hidden) { set(false); btn.focus(); }
-      if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && !list.hidden) {
-        e.preventDefault();
-        items[(i + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length].focus();
-      }
+  /* Native Telefonauswahl: zwei direkte tel-Links, auch ohne JavaScript. */
+  const phoneMenu = $('[data-phone-menu]');
+  if (phoneMenu) {
+    const closePhone = (restoreFocus = false) => {
+      phoneMenu.open = false;
+      if (restoreFocus) $('summary', phoneMenu).focus();
+    };
+    phoneMenu.addEventListener('toggle', () => { if (phoneMenu.open) setMenu(false); });
+    phoneMenu.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && phoneMenu.open) { e.preventDefault(); closePhone(true); }
     });
-    box.addEventListener('focusout', e => { if (!box.contains(e.relatedTarget)) set(false); });
-    document.addEventListener('click', e => { if (!box.contains(e.target)) set(false); });
-    // aktuellen Abschnitt beim Sprachwechsel mitnehmen
-    $$('a[hreflang]', list).forEach(a => a.addEventListener('click', () => {
-      const h = location.hash.slice(1);
-      if (!h) return;
-      const toEn = a.hreflang === 'en';
-      const mapped = toEn ? SECTION_MAP[h] : Object.keys(SECTION_MAP).find(k => SECTION_MAP[k] === h);
-      if (mapped) a.hash = mapped;
-    }));
+    phoneMenu.addEventListener('focusout', e => { if (!phoneMenu.contains(e.relatedTarget)) closePhone(); });
+    document.addEventListener('click', e => { if (!phoneMenu.contains(e.target)) closePhone(); });
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu?.classList.contains('open')) { setMenu(false); burger.focus(); }
   });
+
+  /* Sprachen direkt im mobilen Menü bzw. Desktop-Footer auswählen. */
+  const SECTION_MAP = { leistungen: 'services', 'ueber-uns': 'about', partner: 'partners', kontakt: 'contact', anfrage: 'request', familie: 'family', team: 'team', kundenstimmen: 'reviews' };
+  $$('[data-language-switch] a[hreflang]').forEach(a => a.addEventListener('click', () => {
+    const h = location.hash.slice(1);
+    if (!h || !['/', '/en/'].includes(new URL(a.href).pathname)) return;
+    const toEn = a.hreflang === 'en';
+    const mapped = toEn ? SECTION_MAP[h] : Object.keys(SECTION_MAP).find(k => SECTION_MAP[k] === h);
+    if (mapped) a.hash = mapped;
+  }));
 
   /* Leistungen: Detailbereiche */
   const toggles = $$('.service .link-arrow');
@@ -146,7 +149,15 @@
   const escapeHtml = s => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const PHONE = T('0221 – 7400 990', '+49 221 7400 990');
 
+  const isLocalPreview = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || /(^|\.)(vercel\.app|meindigitalerbetrieb\.de)$/.test(location.hostname);
   $$('form[data-kind]').forEach(form => {
+    if (isLocalPreview) {
+      const notice = document.createElement('p');
+      notice.className = 'bk-notice full';
+      notice.textContent = T('Vorschau: Hier werden keine Nachrichten versendet. Für eine echte Anfrage rufen Sie bitte 0221 – 7400 990 an.', 'Preview: no messages are sent here. For a real request, please call +49 221 7400 990.');
+      form.prepend(notice);
+      $('button[type=submit]', form).textContent = T('Formular testen (ohne Versand)', 'Test form (nothing sent)');
+    }
     const loaded = Date.now();
     $('input[name="ts"]', form).value = Math.floor(loaded / 1000);
     const fields = $$('input:not([type=hidden]):not([type=radio]):not([name=website]), select, textarea', form);
@@ -167,18 +178,18 @@
 
       const data = new FormData(form);
       // Spam-Schutz: Honeypot-Feld muss leer sein, Mindest-Ausfüllzeit 3 s
-      if (data.get('website') || Date.now() - loaded < 3000) { showStatus(true); return; }
+      if (data.get('website')) return;
+      if (!isLocalPreview && Date.now() - loaded < 3000) { status.className = 'form-status fail'; status.textContent = T('Bitte prüfen Sie Ihre Angaben kurz und senden Sie erneut.', 'Please review your details and send again.'); status.focus(); return; }
 
       const btn = $('button[type=submit]', form);
       btn.disabled = true;
       btn.setAttribute('aria-busy', 'true');
       // Vorschau/Demo (lokal, Vercel, Demo-Domain): Formulare werden nur simuliert, da dort kein PHP läuft
-      const isLocalPreview = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || /(\.vercel\.app|\.meindigitalerbetrieb\.de)$/.test(location.hostname);
       try {
         if (isLocalPreview) { await new Promise(r => setTimeout(r, 500)); }
         else {
           const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-          if (!res.ok) throw new Error(res.status);
+          if (!res.ok || (await res.json()).ok !== true) throw new Error('request failed');
         }
         showStatus(true);
         form.reset();
@@ -194,7 +205,9 @@
         const name = String(data.get('name') || '').trim().split(/\s+/)[0];
         const termin = form.dataset.kind === 'termin';
         status.className = 'form-status ' + (ok ? 'ok' : 'fail');
-        status.innerHTML = ok
+        status.innerHTML = ok && isLocalPreview
+          ? `<h3>${T('Vorschau abgeschlossen', 'Preview complete')}</h3><p>${T('Es wurden keine Daten versendet. Für eine echte Anfrage rufen Sie bitte an:', 'No data was sent. For a real request please call:')} <a href="tel:+492217400990">${PHONE}</a>.</p>`
+          : ok
           ? `<h3>${T('Vielen Dank', 'Thank you')}${name ? ', ' + escapeHtml(name) : ''}!</h3><p>${termin
               ? T('Ihre Terminanfrage ist bei uns eingegangen. Wir prüfen die Planung und melden uns zur Bestätigung bei Ihnen.', 'We have received your appointment request. We will check our schedule and get back to you to confirm.')
               : T('Ihre Nachricht ist bei uns eingegangen. Wir melden uns so schnell wie möglich.', 'We have received your message and will reply as soon as possible.')}</p>${isLocalPreview ? `<p><small>${T('(Vorschau: Es wurden keine Daten übertragen.)', '(Preview: no data was sent.)')}</small></p>` : ''}`

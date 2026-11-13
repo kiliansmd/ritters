@@ -2,13 +2,14 @@
  * Kategorien:
  *  - notwendig: Speicherung der Consent-Entscheidung (technisch erforderlich, § 25 Abs. 2 Nr. 2 TDDDG) – immer aktiv
  *  - medien:    externe Inhalte (Google Maps) – nur mit Einwilligung (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO)
+ *  - reviews:  Kundenbewertungen (Elfsight), getrennt von der Karte
  * Die Entscheidung wird 12 Monate gespeichert und kann jederzeit über „Cookie-Einstellungen“ geändert/widerrufen werden.
  */
 (() => {
   const EN = document.documentElement.lang.startsWith('en');
   const T = (de, en) => EN ? en : de;
   const KEY = 'sr-consent';
-  const VERSION = 1;
+  const VERSION = 2;
   const MAX_AGE = 365 * 864e5;
   const MAP_SRC = 'https://www.google.com/maps?q=Knechtstedener+Stra%C3%9Fe+20,+50733+K%C3%B6ln&z=15&output=embed';
 
@@ -19,8 +20,8 @@
       return c;
     } catch (_) { return null; }
   };
-  const write = medien => {
-    const c = { v: VERSION, ts: Date.now(), medien: !!medien };
+  const write = (medien, reviews = false) => {
+    const c = { v: VERSION, ts: Date.now(), medien: !!medien, reviews: !!reviews };
     try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (_) {}
     apply(c);
     return c;
@@ -38,7 +39,7 @@
     <div class="consent-inner">
       <div class="consent-main">
         <h2 id="consent-title" tabindex="-1">${T('Ihre Privatsphäre ist uns wichtig', 'We respect your privacy')}</h2>
-        <p id="consent-text">${T('Wir verwenden keine Tracking- oder Werbe-Cookies. Technisch notwendig ist nur das Speichern Ihrer Auswahl. Externe Inhalte wie die Google-Karte laden wir ausschließlich mit Ihrer Einwilligung – dabei werden Daten (u. a. Ihre IP-Adresse) an Google übertragen, ggf. auch in die USA. Sie können Ihre Entscheidung jederzeit unter „Cookie-Einstellungen“ ändern. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a> · <a href="/impressum">Impressum</a>.', 'We do not use tracking or advertising cookies. The only thing we need to store is your choice. External content such as the Google map is loaded only with your consent – this transfers data (including your IP address) to Google, possibly also to the USA. You can change your decision at any time via “Cookie settings”. More in our <a href="/en/privacy">privacy policy</a> · <a href="/en/legal-notice">legal notice</a>.')}</p>
+        <p id="consent-text">${T('Wir verwenden keine Tracking- oder Werbe-Cookies. Technisch notwendig ist nur das Speichern Ihrer Auswahl. Externe Inhalte wie Google Maps und Kundenbewertungen über Elfsight laden wir ausschließlich mit Ihrer Einwilligung – dabei werden Daten (u. a. Ihre IP-Adresse) an die jeweiligen Anbieter übertragen. Sie können Ihre Entscheidung jederzeit unter „Cookie-Einstellungen“ ändern. Mehr in der <a href="/datenschutz">Datenschutzerklärung</a> · <a href="/impressum">Impressum</a>.', 'We do not use tracking or advertising cookies. The only thing we need to store is your choice. External content such as Google Maps and customer reviews via Elfsight is loaded only with your consent – this transfers data (including your IP address) to the respective providers. You can change your decision at any time via “Cookie settings”. More in our <a href="/en/privacy">privacy policy</a> · <a href="/en/legal-notice">legal notice</a>.')}</p>
         <div class="consent-details" id="consent-details" hidden>
           <label class="consent-opt">
             <input type="checkbox" checked disabled>
@@ -48,6 +49,7 @@
             <input type="checkbox" data-consent-medien>
             <span><b>${T('Externe Medien', 'External media')}</b><small>${T('Google Maps (Google Ireland Ltd.) – interaktive Karte im Kontaktbereich. Übertragung u. a. der IP-Adresse an Google, Drittlandtransfer in die USA möglich (EU-US Data Privacy Framework).', 'Google Maps (Google Ireland Ltd.) – interactive map in the contact section. Transfers data such as your IP address to Google; transfer to the USA possible (EU-US Data Privacy Framework).')}</small></span>
           </label>
+          <label class="consent-opt"><input type="checkbox" data-consent-reviews><span><b>${T('Kundenbewertungen (Elfsight)', 'Customer reviews (Elfsight)')}</b><small>${T('Lädt das Google-Reviews-Widget von Elfsight. Dabei werden Verbindungsdaten an Elfsight und dessen Inhaltsanbieter übertragen.', 'Loads the Google Reviews widget by Elfsight. Connection data is transferred to Elfsight and its content providers.')}</small></span></label>
         </div>
       </div>
       <div class="consent-actions">
@@ -61,6 +63,7 @@
 
   const details = bar.querySelector('#consent-details');
   const medienBox = bar.querySelector('[data-consent-medien]');
+  const reviewsBox = bar.querySelector('[data-consent-reviews]');
   const toggleBtn = bar.querySelector('[data-consent="toggle"]');
   const saveBtn = bar.querySelector('[data-consent="save"]');
   let lastFocus = null;
@@ -69,6 +72,7 @@
     lastFocus = document.activeElement;
     const c = read();
     medienBox.checked = !!(c && c.medien);
+    reviewsBox.checked = !!(c && c.reviews);
     setExpanded(!!expand);
     bar.hidden = false;
     document.documentElement.classList.add('consent-open');
@@ -93,7 +97,7 @@
     const a = e.target.closest('[data-consent]'); if (!a) return;
     const act = a.dataset.consent;
     if (act === 'toggle') return setExpanded(details.hidden);
-    write(act === 'all' ? true : act === 'save' ? medienBox.checked : false);
+    write(act === 'all' ? true : act === 'save' ? medienBox.checked : false, act === 'all' ? true : act === 'save' ? reviewsBox.checked : false);
     hide();
   });
   bar.addEventListener('keydown', e => { if (e.key === 'Escape' && read()) hide(); });
@@ -124,17 +128,23 @@
   };
   if (mapBox) {
     mapBox.querySelector('[data-map-load]')?.addEventListener('click', () => {
-      if (mapBox.querySelector('[data-map-remember]')?.checked) write(true);
+      if (mapBox.querySelector('[data-map-remember]')?.checked) write(true, !!read()?.reviews);
       loadMap();
     });
   }
 
+  document.querySelector('[data-reviews-load]')?.addEventListener('click', () => {
+    write(!!read()?.medien, true);
+  });
+
   function apply(c) {
     if (c && c.medien) loadMap(); else unloadMap();
     document.documentElement.dataset.consentMedien = c && c.medien ? 'ja' : 'nein';
+    document.documentElement.dataset.consentReviews = c && c.reviews ? 'ja' : 'nein';
+    dispatchEvent(new CustomEvent('sr:consent'));
   }
 
   const current = read();
   apply(current);
-  if (!current) setTimeout(() => show(false), 400);
+  if (!current) setTimeout(() => { if (!read()) show(false); }, 400);
 })();

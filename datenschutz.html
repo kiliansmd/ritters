@@ -13,11 +13,11 @@
 <meta name="theme-color" content="#1e2325">
 <link rel="icon" href="/assets/favicon-logo.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=19e15638">
+<link rel="stylesheet" href="/assets/site.css?v=fea8db61">
 <script>document.documentElement.classList.add('js')</script>
-<script src="/assets/consent.js?v=2c68896d" defer></script>
-<script src="/assets/site.js?v=05ab04a1" defer></script>
-<script src="/assets/booking.js?v=a1a2a3e3" defer></script>
+<script src="/assets/consent.js?v=7b10ccbf" defer></script>
+<script src="/assets/site.js?v=07ca23f4" defer></script>
+<script src="/assets/booking.js?v=92f0d9aa" defer></script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -37,18 +37,22 @@
         <a class="btn btn-ghost" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Anrufen</a>
         <a class="btn btn-gold" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin</a>
       </div>
+      <div class="language-switch language-switch-mobile" data-language-switch role="group" aria-label="Sprache">
+          <span class="language-label"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg>Sprache</span>
+          <a href="/datenschutz" hreflang="de" lang="de" aria-current="page">Deutsch</a>
+          <a href="/en/privacy" hreflang="en" lang="en">English</a>
+        </div>
     </nav>
     <div class="nav-actions">
-      <div class="lang" data-lang>
-        <button type="button" class="lang-btn" aria-expanded="false" aria-controls="lang-list" aria-label="Sprache wählen, aktuell: Deutsch"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg><span aria-hidden="true">DE</span><svg class="ic chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></button>
-        <ul class="lang-list" id="lang-list" hidden>
-          <li><a href="/datenschutz" hreflang="de" lang="de" aria-current="page"><abbr title="Deutsch">DE</abbr>Deutsch</a></li>
-          <li><a href="/en/privacy" hreflang="en" lang="en"><abbr title="English">EN</abbr>English</a></li>
-        </ul>
-      </div>
-      <a class="nav-tel" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span>0221 7400 990</span><b class="sr-only">Anrufen</b></a>
-      <a class="btn btn-gold" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin buchen</a>
-      <a class="icon-btn" href="tel:+492217400990" aria-label="Anrufen: 0221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg></a>
+      <details class="phone-menu" data-phone-menu>
+        <summary class="nav-tel" aria-label="Telefonnummer auswählen"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span>Anrufen</span></summary>
+        <div class="phone-options">
+          <p>Wie möchten Sie uns erreichen?</p>
+          <a href="tel:+492217400990" aria-label="Festnetz anrufen: 0221 – 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span><b>Festnetz</b><span>0221 – 7400 990</span></span></a>
+          <a href="tel:+4915888360862" aria-label="Mobil anrufen: +49 15888 360862"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg><span><b>Mobil</b><span>+49 15888 360862</span></span></a>
+        </div>
+      </details>
+      <a class="btn btn-gold" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a>
       <button class="icon-btn burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg></button>
     </div>
   </div>
@@ -59,9 +63,9 @@
     <a class="back" href="/"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg>Zur Startseite</a>
     <h1>Datenschutzerklärung</h1>
 
-    <div class="notice"><strong>Entwurf:</strong> Diese Datenschutzerklärung beschreibt die Website so, wie sie technisch umgesetzt ist. Markierte Stellen (Hoster, E-Mail-Anbieter, Kalendersoftware, Stand) müssen ergänzt werden. Bitte vor Veröffentlichung rechtlich prüfen lassen – eine Garantie für vollständige Rechtssicherheit oder Schutz vor Abmahnungen ist damit nicht verbunden.</div>
+    <div class="notice"><strong>Entwurf:</strong> Diese Datenschutzerklärung beschreibt die Website so, wie sie technisch umgesetzt ist. Markierte Stellen (Hoster, E-Mail-Anbieter, Stand) müssen ergänzt werden. Bitte vor Veröffentlichung rechtlich prüfen lassen – eine Garantie für vollständige Rechtssicherheit oder Schutz vor Abmahnungen ist damit nicht verbunden.</div>
 
-    <p class="lead-legal">Der Schutz Ihrer Daten ist uns wichtig. Wir erheben so wenig Daten wie möglich: <strong>keine Tracking- oder Werbe-Cookies, keine Analysetools, keine Social-Media-Plugins</strong>. Externe Inhalte (Google Maps) werden nur mit Ihrer ausdrücklichen Einwilligung geladen.</p>
+    <p class="lead-legal">Der Schutz Ihrer Daten ist uns wichtig. Wir erheben so wenig Daten wie möglich: <strong>keine Tracking- oder Werbe-Cookies, keine Analysetools, keine Social-Media-Plugins</strong>. Externe Inhalte (Google Maps und Kundenbewertungen über Elfsight) werden nur mit Ihrer ausdrücklichen Einwilligung geladen.</p>
 
     <nav class="toc" aria-label="Inhaltsverzeichnis">
       <h2>Inhalt</h2>
@@ -72,8 +76,9 @@
         <li><a href="#einwilligung">Cookies, lokale Speicherung und Einwilligungen</a></li>
         <li><a href="#kontakt">Kontakt per Telefon, E-Mail und Fax</a></li>
         <li><a href="#formulare">Kontakt- und Terminanfrageformular</a></li>
-        <li><a href="#terminbuchung">Online-Terminbuchung</a></li>
+        <li><a href="#terminbuchung">Geführte Terminanfrage</a></li>
         <li><a href="#google-maps">Google Maps</a></li>
+        <li><a href="#elfsight">Elfsight Google Reviews</a></li>
         <li><a href="#links">Externe Links und Schriftarten</a></li>
         <li><a href="#empfaenger">Empfänger und Drittlandübermittlung</a></li>
         <li><a href="#speicherdauer">Speicherdauer</a></li>
@@ -104,16 +109,16 @@
     <p>Beim Aufruf der Website speichert der Server automatisch: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite/Datei, übertragene Datenmenge, Referrer-URL, Browsertyp und Betriebssystem. Diese Daten sind technisch erforderlich, um die Website auszuliefern und ihre Sicherheit zu gewährleisten (z. B. Abwehr von Angriffen). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Die Logfiles werden nach <span class="ph">[7]</span> Tagen gelöscht; eine Zusammenführung mit anderen Daten findet nicht statt.</p>
 
     <h2 id="einwilligung">4. Cookies, lokale Speicherung und Einwilligungen</h2>
-    <p>Diese Website setzt <strong>keine Cookies</strong>. Für folgende Zwecke wird im lokalen Speicher Ihres Browsers (localStorage) ein Eintrag abgelegt:</p>
+    <p>Die eigenen Seitenfunktionen setzen <strong>keine Tracking- oder Werbe-Cookies</strong>. Externe Inhalte werden erst nach Zustimmung geladen und unterliegen zusätzlich den Angaben der jeweiligen Anbieter. Für folgende Zwecke wird im lokalen Speicher Ihres Browsers (localStorage) ein Eintrag abgelegt:</p>
     <div class="table-wrap">
       <table>
         <thead><tr><th scope="col">Name</th><th scope="col">Zweck</th><th scope="col">Kategorie</th><th scope="col">Dauer</th></tr></thead>
         <tbody>
-          <tr><td><code>sr-consent</code></td><td>Speichert Ihre Auswahl im Datenschutz-Hinweis (notwendig / externe Medien), damit der Hinweis nicht bei jedem Besuch erscheint</td><td>Technisch notwendig (§ 25 Abs. 2 Nr. 2 TDDDG)</td><td>12 Monate</td></tr>
+          <tr><td><code>sr-consent</code></td><td>Speichert Ihre Auswahl im Datenschutz-Hinweis (notwendig / Google Maps / Elfsight), damit der Hinweis nicht bei jedem Besuch erscheint</td><td>Technisch notwendig (§ 25 Abs. 2 Nr. 2 TDDDG)</td><td>12 Monate</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Externe Medien (Google Maps) werden nur geladen, wenn Sie im Datenschutz-Hinweis „Alle akzeptieren“ wählen, die Kategorie „Externe Medien“ aktivieren oder im Kontaktbereich auf „Karte laden“ klicken. Ohne Einwilligung werden keine Daten an Google übertragen. Rechtsgrundlage ist Ihre Einwilligung nach § 25 Abs. 1 TDDDG und Art. 6 Abs. 1 lit. a DSGVO.</p>
+    <p>Google Maps und Elfsight werden getrennt freigegeben. Elfsight lädt nur nach Zustimmung zur Kategorie „Kundenbewertungen (Elfsight)“ oder per Klick auf „Google-Bewertungen anzeigen“. Google Maps wird nur geladen, wenn Sie im Datenschutz-Hinweis „Alle akzeptieren“ wählen, die Kategorie „Externe Medien“ aktivieren oder im Kontaktbereich auf „Karte laden“ klicken. Ohne Einwilligung werden keine Daten an Google übertragen. Rechtsgrundlage ist Ihre Einwilligung nach § 25 Abs. 1 TDDDG und Art. 6 Abs. 1 lit. a DSGVO.</p>
     <p><strong>Widerruf:</strong> Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen oder ändern:</p>
     <p><button type="button" class="btn btn-outline btn-sm" data-consent-open>Cookie-Einstellungen öffnen</button></p>
     <p>Alternativ können Sie den lokalen Speicher in den Einstellungen Ihres Browsers löschen.</p>
@@ -129,12 +134,9 @@
     <p><strong>Spam-Schutz:</strong> Wir verwenden ein für Menschen unsichtbares Prüffeld und eine Zeitprüfung. Es werden dabei keine zusätzlichen personenbezogenen Daten erhoben und keine externen Dienste wie reCAPTCHA eingesetzt.</p>
     <p><strong>Widerruf:</strong> Ihre Einwilligung können Sie jederzeit per E-Mail an <a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a> widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt unberührt. Gesetzliche Aufbewahrungspflichten (z. B. bei erteilten Aufträgen) bleiben ebenfalls unberührt.</p>
 
-    <h2 id="terminbuchung">7. Online-Terminbuchung</h2>
-    <p>Über die Online-Terminbuchung können Sie einen freien Termin direkt auswählen. Dazu werden die verfügbaren Zeitfenster aus unserem Terminkalender abgerufen. Dabei werden keine Daten über Sie übermittelt.</p>
-    <p><strong>Verarbeitete Daten bei der Buchung:</strong> gewählte Leistung, Datum und Uhrzeit, Name, Telefonnummer, E-Mail-Adresse, Adresse des Objekts sowie optionale Hinweise. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung des Termins) sowie Ihre Einwilligung über die Datenschutz-Checkbox (Art. 6 Abs. 1 lit. a DSGVO).</p>
-    <p><strong>Terminbestätigung und Erinnerung:</strong> Die Bestätigung senden wir an die angegebene E-Mail-Adresse. Eine Erinnerung am Vortag erhalten Sie nur, wenn Sie dies im Formular ausdrücklich auswählen (Einwilligung, jederzeit widerrufbar).</p>
-    <p><strong>Kalenderdatei:</strong> Die Datei „Zum Kalender hinzufügen“ (.ics) wird direkt in Ihrem Browser erzeugt; dabei werden keine Daten an uns oder Dritte übertragen.</p>
-    <p><strong>Eingesetzte Software:</strong> <span class="ph">[Kalender-/Branchensoftware ergänzen, z. B. Anbieter, Serverstandort, Auftragsverarbeitungsvertrag]</span>. Solange keine Kalenderanbindung besteht, wird diese Funktion nicht im Live-Betrieb angeboten.</p>
+    <h2 id="terminbuchung">7. Geführte Terminanfrage</h2>
+    <p>Die geführte Anfrage erfasst dieselben Angaben wie das Terminanfrageformular (siehe Abschnitt 6): Anliegen, Wunschdatum und Tageszeit, Name, Telefonnummer, optionale E-Mail-Adresse, Objektadresse und optionale Hinweise. Sie nutzt denselben Formular-Handler und E-Mail-Versand. Es ist kein Kalenderanbieter angebunden und es werden keine Verfügbarkeiten abgerufen. Die Anfrage reserviert keinen Termin und erteilt keinen kostenpflichtigen Auftrag.</p>
+    <p>Auf den Vorschaudomains und lokal werden keine Anfragedaten versendet oder dauerhaft gespeichert. Die Vorschau wird vor der Dateneingabe und nach einem Test gekennzeichnet. Der bisher simulierte Kalender, die lokale Buchungsspeicherung, Erinnerungen und der Kalenderdatei-Download wurden entfernt.</p>
 
     <h2 id="google-maps">8. Google Maps</h2>
     <p>Im Kontaktbereich können Sie eine interaktive Karte von Google Maps anzeigen lassen. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google“).</p>
@@ -142,12 +144,16 @@
     <p>Rechtsgrundlage ist Ihre Einwilligung (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit über die <a href="#einwilligung" data-consent-open>Cookie-Einstellungen</a> widerrufen können. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
     <p>Der Button „Anfahrt mit Google Maps“ ist ein einfacher Link. Erst wenn Sie ihn anklicken, öffnet sich Google Maps in einem neuen Fenster; ab dann gelten die Datenschutzbestimmungen von Google.</p>
 
+    <h2 id="elfsight">8a. Google-Bewertungen über Elfsight</h2>
+    <p>Auf unseren Startseiten binden wir Kundenbewertungen über das Elfsight Google Reviews Widget ein. Das Widget wird erst geladen, wenn Sie die eigene Kategorie „Kundenbewertungen (Elfsight)“ aktivieren oder auf „Google-Bewertungen anzeigen“ klicken. Dabei werden externe Skripte und Inhalte von Elfsight und dessen Inhaltsanbietern, etwa Bewertungsbilder, geladen. Diese Abrufe übertragen Verbindungsdaten wie Ihre IP-Adresse und Browserangaben an die jeweiligen Anbieter. Ohne Zustimmung werden keine Widget-Ressourcen abgerufen. Über „Cookie-Einstellungen“ können Sie die Zustimmung widerrufen; das Widget wird dann entfernt. Bereits erfolgte Verarbeitung beim Anbieter lässt sich durch das Entfernen nicht rückgängig machen.</p>
+    <p>Anbieterinformationen: <a href="https://elfsight.com/privacy-policy/" target="_blank" rel="noopener">Datenschutzerklärung von Elfsight</a>.</p>
+
     <h2 id="links">9. Externe Links und Schriftarten</h2>
     <p><strong>Links:</strong> Unsere Website enthält Links zu den Websites unserer Partner (Buderus, Viessmann, Vaillant, Brötje) und weiterer Anbieter. Beim bloßen Besuch unserer Website werden keine Daten an diese Anbieter übertragen. Erst wenn Sie einen Link anklicken, verlassen Sie unsere Website; für die verlinkten Seiten sind die jeweiligen Betreiber verantwortlich.</p>
     <p><strong>Schriftarten:</strong> Die Schriftarten „Source Serif 4“ und „Nunito Sans“ sind lokal auf unserem Server gespeichert. Es wird keine Verbindung zu Google Fonts oder anderen Schriftanbietern hergestellt.</p>
 
     <h2 id="empfaenger">10. Empfänger und Drittlandübermittlung</h2>
-    <p>Ihre Daten erhalten nur wir sowie unsere Auftragsverarbeiter, die vertraglich zur Vertraulichkeit und zur Einhaltung der DSGVO verpflichtet sind: Hosting-Anbieter, E-Mail-Anbieter und – nach Anbindung – der Anbieter der Kalendersoftware. Eine Übermittlung in Länder außerhalb der EU/des EWR findet nur im Rahmen von Google Maps und nur mit Ihrer Einwilligung statt (siehe Nr. 8). Ihre Daten werden nicht verkauft und nicht zu Werbezwecken genutzt.</p>
+    <p>Ihre Daten erhalten nur wir sowie unsere Auftragsverarbeiter, die vertraglich zur Vertraulichkeit und zur Einhaltung der DSGVO verpflichtet sind: Hosting-Anbieter und E-Mail-Anbieter. Bei den externen Inhalten sind Übermittlungen in Länder außerhalb der EU/des EWR möglich. Die Inhalte werden nur nach Ihrer Zustimmung geladen (siehe Nr. 8 und 8a). Ihre Daten werden nicht verkauft und nicht zu Werbezwecken genutzt.</p>
 
     <h2 id="speicherdauer">11. Speicherdauer</h2>
     <div class="table-wrap">
@@ -197,11 +203,10 @@
     <img src="/assets/schornsteinfegermeister-philipp-ritters-koeln.jpg" width="88" height="88" loading="lazy" alt="Philipp Ritters">
     <div class="cta-band-text">
       <h2 id="band-title">Steht ein Termin laut Feuerstättenbescheid an?</h2>
-      <p>Buchen Sie Ihren Wunschtermin online in 60 Sekunden – oder rufen Sie direkt an. Wir sind Mo–Fr von 7:30 bis 17:00 Uhr für Sie da.</p>
-      <a class="next-slot" href="/#anfrage" data-termin><span class="dot" aria-hidden="true"></span>Nächster freier Termin: <b data-next-slot>…</b></a>
+      <p>Fragen Sie Ihren Wunschtermin unverbindlich an. Wir klären die Kosten vorab und bestätigen den Termin persönlich. Wir sind Mo–Fr von 7:30 bis 17:00 Uhr für Sie da.</p>
     </div>
     <div class="cta-band-actions">
-      <a class="btn btn-gold btn-lg" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin online buchen</a>
+      <a class="btn btn-gold btn-lg" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a>
       <a class="btn btn-ghost" href="tel:+492217400990" aria-label="Jetzt anrufen: 0221 – 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>0221 – 7400 990</a>
     </div>
   </div>
@@ -233,7 +238,7 @@
         <h2>Kontakt</h2>
         <ul>
           <li><a href="tel:+492217400990">0221 – 7400 990</a></li>
-          <li><a href="tel:+491711050733">0171 – 10 50 733</a></li>
+          <li><a href="tel:+4915888360862">+49 15888 360862</a></li>
           <li><a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a></li>
           <li>Knechtstedener Straße 20<br>50733 Köln-Nippes</li>
         </ul>
@@ -243,14 +248,18 @@
         <ul><li><a href="/impressum">Impressum</a></li><li><a href="/datenschutz" aria-current="page">Datenschutz</a></li><li><a href="/datenschutz#einwilligung" data-consent-open>Cookie-Einstellungen</a></li></ul>
       </nav>
     </div>
+    <div class="language-switch language-switch-footer" data-language-switch role="group" aria-label="Sprache">
+          <span class="language-label"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg>Sprache</span>
+          <a href="/datenschutz" hreflang="de" lang="de" aria-current="page">Deutsch</a>
+          <a href="/en/privacy" hreflang="en" lang="en">English</a>
+        </div>
     <div class="foot-bottom"><span>© <span data-year>2026</span> Schornsteinfegermeister Philipp Ritters</span><span>Ihr Schornsteinfeger für Köln-Nippes, Köln und Umgebung</span></div>
   </div>
 </footer>
 
 <nav class="action-bar" aria-label="Schnellkontakt">
-  <a class="primary" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Anrufen</a>
-  <a href="tel:+491711050733"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg>Mobil</a>
-  <a href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin</a>
+  <a href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Anrufen</a>
+  <a class="primary" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a>
 </nav>
 </body>
 </html>

@@ -24,7 +24,7 @@
 <link rel="icon" href="/assets/favicon-logo.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/schornsteinfeger-koeln-philipp-ritters-dach-dom.jpg" as="image" fetchpriority="high">
-<link rel="stylesheet" href="/assets/site.css?v=19e15638">
+<link rel="stylesheet" href="/assets/site.css?v=fea8db61">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,9 +55,10 @@
 }
 </script>
 <script>document.documentElement.classList.add('js')</script>
-<script src="/assets/consent.js?v=2c68896d" defer></script>
-<script src="/assets/site.js?v=05ab04a1" defer></script>
-<script src="/assets/booking.js?v=a1a2a3e3" defer></script>
+<script src="/assets/consent.js?v=7b10ccbf" defer></script>
+<script src="/assets/testimonials.js?v=3ea9f63c" defer></script>
+<script src="/assets/site.js?v=07ca23f4" defer></script>
+<script src="/assets/booking.js?v=92f0d9aa" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -76,18 +77,22 @@
         <a class="btn btn-ghost" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Call</a>
         <a class="btn btn-gold" href="/en/#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book</a>
       </div>
+      <div class="language-switch language-switch-mobile" data-language-switch role="group" aria-label="Language">
+          <span class="language-label"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg>Language</span>
+          <a href="/" hreflang="de" lang="de">Deutsch</a>
+          <a href="/en/" hreflang="en" lang="en" aria-current="page">English</a>
+        </div>
     </nav>
     <div class="nav-actions">
-      <div class="lang" data-lang>
-        <button type="button" class="lang-btn" aria-expanded="false" aria-controls="lang-list" aria-label="Choose language, current: English"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg><span aria-hidden="true">EN</span><svg class="ic chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></button>
-        <ul class="lang-list" id="lang-list" hidden>
-          <li><a href="/" hreflang="de" lang="de"><abbr title="Deutsch">DE</abbr>Deutsch</a></li>
-          <li><a href="/en/" hreflang="en" lang="en" aria-current="page"><abbr title="English">EN</abbr>English</a></li>
-        </ul>
-      </div>
-      <a class="nav-tel" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span>+49 221 7400 990</span><b class="sr-only">Call</b></a>
-      <a class="btn btn-gold" href="/en/#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book now</a>
-      <a class="icon-btn" href="tel:+492217400990" aria-label="Call +49 221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg></a>
+      <details class="phone-menu" data-phone-menu>
+        <summary class="nav-tel" aria-label="Choose a phone number"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span>Call</span></summary>
+        <div class="phone-options">
+          <p>How would you like to reach us?</p>
+          <a href="tel:+492217400990" aria-label="Call landline: +49 221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span><b>Landline</b><span>+49 221 7400 990</span></span></a>
+          <a href="tel:+4915888360862" aria-label="Call mobile: +49 15888 360862"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg><span><b>Mobile</b><span>+49 15888 360862</span></span></a>
+        </div>
+      </details>
+      <a class="btn btn-gold" href="/en/#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a>
       <button class="icon-btn burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg></button>
     </div>
   </div>
@@ -95,26 +100,43 @@
 
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
-    <figure class="hero-media">
-      <img src="/assets/schornsteinfeger-koeln-philipp-ritters-dach-dom.jpg" width="487" height="396" fetchpriority="high" decoding="async"
-           alt="Master chimney sweep Philipp Ritters standing on a Cologne rooftop, raising his top hat, with Cologne Cathedral in the background">
-    </figure>
     <div class="wrap hero-inner">
       <h1 id="hero-title"><small>Master chimney sweep Philipp Ritters</small>Your<br>chimney sweep<br>in Cologne.</h1>
       <div class="rule" aria-hidden="true"></div>
       <p class="hero-lead">Personal. Reliable. Easy to reach.</p>
-      <p class="hero-intro">A second-generation master craftsman business from Cologne-Nippes – for safe heating appliances, clean emission values and efficient heating systems in and around Cologne.</p>
+      <p class="hero-intro">Sweeping, measurements and advice in and around Cologne. Based in Nippes – we clarify the cost and date with you first.</p>
       <div class="cta">
-        <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book online</a>
+        <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a>
         <a class="btn btn-ghost btn-lg" href="tel:+492217400990" aria-label="Call now: +49 221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>+49 221 7400 990</a>
       </div>
-      <a class="next-slot" href="#request" data-termin><span class="dot" aria-hidden="true"></span>Next available slot: <b data-next-slot>…</b></a>
     </div>
+    <figure class="hero-media">
+      <img src="/assets/schornsteinfeger-koeln-philipp-ritters-dach-dom.jpg" width="487" height="396" fetchpriority="high" decoding="async"
+           alt="Master chimney sweep Philipp Ritters standing on a Cologne rooftop, raising his top hat, with Cologne Cathedral in the background">
+    </figure>
   </section>
 
   <section class="trustbar" aria-label="Why customers trust us">
     <ul class="wrap"><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#badge"/></svg><span><b>Master craftsman</b>second-generation business</span></li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#clock"/></svg><span><b>~20 years</b>of experience</span></li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#check"/></svg><span><b>Certified specialist</b>audited to DIN EN ISO/IEC 17065</span></li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg><span><b>Reply in 1 working day</b>personally from Philipp</span></li></ul>
   </section>
+
+  <section class="section testimonials" id="reviews" aria-labelledby="reviews-title" data-testimonials>
+    <div class="wrap">
+      <p class="eyebrow">Customer experiences</p>
+      <h2 id="reviews-title">What customers say about us.</h2>
+      <div class="reviews-placeholder" data-reviews-placeholder>
+        <p>Read our Google reviews. Loading the widget transfers connection data, including your IP address, to Elfsight and its content providers.</p>
+        <button type="button" class="btn btn-gold" data-reviews-load>Show Google reviews</button>
+        <a href="/en/privacy#elfsight">Privacy details</a>
+      </div>
+      <p class="privacy" data-reviews-status role="status"></p>
+      <div data-reviews-host></div>
+      <p class="privacy"><a href="/en/privacy#consent" data-consent-open>Change privacy settings</a></p>
+      <noscript><p>Please enable JavaScript to view customer reviews.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section intent-section" aria-labelledby="intent-title"><div class="wrap"><p class="eyebrow">Your next step</p><h2 id="intent-title">What can we help you with?</h2><p>No technical knowledge needed. Choose your situation.</p><div class="intent-grid"><a class="intent-card" href="/en/#request" data-termin="bescheid"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-clip"/></svg><span><b>I received a notice</b><small>We help identify the work that is due.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="/en/#request" data-termin="ofen"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-flame"/></svg><span><b>I am planning a new stove</b><small>Clarify installation and inspection questions.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="/en/#request" data-termin="brandschutz"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-alarm"/></svg><span><b>I need smoke alarm maintenance</b><small>Request testing, fitting or maintenance.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="/en/#request" data-termin="energie"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-leaf"/></svg><span><b>I want to save energy</b><small>Ask about advice and possible next steps.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div><a class="link-arrow" href="/en/#request" data-termin="klaerung">I’m not sure – please advise me<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div></section>
 
   <section id="services" class="section" aria-labelledby="services-title">
     <div class="wrap reveal">
@@ -168,7 +190,7 @@
             <p>We sweep and inspect your heating and flue systems on schedule and document all work carefully. If you like, you will receive your documents conveniently by email.</p>
             <ul class="chips"><li>Sweeping</li><li>Chimney inspection</li><li>Flue pipes</li><li>Documents by email</li></ul>
           </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Chimney sweeping"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book online</a></div>
+          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Chimney sweeping"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
         </div>
         <div class="panel" id="p-schau" hidden>
           <div>
@@ -176,7 +198,7 @@
             <p>During the fireplace inspection (<span lang="de">Feuerstättenschau</span>) all heating appliances in a building are checked for operational and fire safety. We explain the results clearly and tell you what needs to be done.</p>
             <ul class="chips"><li>Operational safety</li><li>Fire safety</li><li>Clear explanation</li></ul>
           </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Fireplace inspection"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book online</a></div>
+          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Fireplace inspection"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
         </div>
         <div class="panel" id="p-messung" hidden>
           <div>
@@ -184,7 +206,7 @@
             <p>Flue inspections, carbon monoxide measurements and emission measurements all focus on the safe operation of your heating appliances. We also carry out gas installation checks according to the German technical rules (TRGI).</p>
             <ul class="chips"><li>Flue inspection</li><li>Carbon monoxide measurement</li><li>Emission measurement (1. BImSchV)</li><li>Gas installation check (TRGI)</li></ul>
           </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Inspections & measurements"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book online</a></div>
+          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Inspections & measurements"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
         </div>
         <div class="panel" id="p-reinigung" hidden>
           <div>
@@ -192,7 +214,7 @@
             <p>Regular cleaning keeps your system safe and efficient. We clean wood stoves, stoves and ventilation systems and, if required, fit chimney caps such as bird guards and ventilation hoods.</p>
             <ul class="chips"><li>Stove cleaning</li><li>Wood stoves</li><li>Ventilation systems</li><li>Bird guards &amp; ventilation hoods</li></ul>
           </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Cleaning"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book online</a></div>
+          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Cleaning"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
         </div>
         <div class="panel" id="p-brandschutz" hidden>
           <div>
@@ -200,7 +222,7 @@
             <p>As certified specialists for smoke alarms and carbon monoxide alarms, we advise you, install the devices professionally and take care of inspections – including remote inspection.</p>
             <ul class="chips"><li>Smoke alarms</li><li>CO alarms</li><li>Inspection &amp; remote inspection</li><li>For owners &amp; landlords</li></ul>
           </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Fire safety & smoke alarms"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book online</a></div>
+          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Fire safety & smoke alarms"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
         </div>
         <div class="panel" id="p-energie" hidden>
           <div>
@@ -208,7 +230,7 @@
             <p>We show you where you can save energy and help you apply for KfW and BAFA subsidies – independent and easy to understand.</p>
             <ul class="chips"><li>Energy consulting</li><li>KfW &amp; BAFA subsidies</li><li>Advice on new heating appliances</li></ul>
           </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Energy consulting"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book online</a></div>
+          <div class="panel-actions"><a class="btn btn-gold" href="#request" data-termin="Energy consulting"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
         </div>
       </div>
 
@@ -226,13 +248,13 @@
       <p class="eyebrow center">How it works</p>
       <h2 id="process-title" class="center">Three steps to a completed appointment.</h2>
       <ol class="proc">
-        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg></span><h3>Choose a slot</h3><p>Online in 60 seconds with live availability – or simply by phone.</p></li>
+        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg></span><h3>Request a date</h3><p>Tell us what you need and your preferred date. We clarify the cost and confirm the appointment personally.</p></li>
         <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg></span><h3>We come to you</h3><p>On time, clean and with dust covers. We briefly explain the results on site.</p></li>
         <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg></span><h3>Get your certificate</h3><p>You receive the certificate or form directly – by email if you like.</p></li>
       </ol>
       <div class="proc-cta">
-        <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>See available slots</a>
-        <p>No prepayment · Instant email confirmation</p>
+        <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request a preferred date</a>
+        <p>Non-binding request · Cost clarified before you commit</p>
       </div>
     </div>
   </section>
@@ -246,7 +268,7 @@
           <h2 id="about-title">Philipp Ritters</h2>
           <p>Master chimney sweep in the second generation.<br>With experience, passion and strong local roots, we stand for safety, efficiency and reliable service in Cologne and the surrounding area.</p>
           <p>I grew up in a family of chimney sweeps and have been working in this trade for around 20 years. My business is based in Cologne-Nippes, in the “<span lang="de">Sechzigveedel</span>” – this is where I live and work, and you can reach me personally.</p>
-          <a class="btn btn-ghost" href="#family">Meet the family &amp; team<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#family">Meet the family business<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a>
         </div>
       </div>
 
@@ -258,24 +280,8 @@
       </ul>
 
       <div class="about-more reveal">
-        <div id="family">
-          <h3>Our family story</h3>
-          <ol class="timeline">
-            <li><b><span class="ph">[Year]</span> · The first generation</b><p>The family business is founded – <span class="ph">[who, where, how: add short story]</span>.</p></li>
-            <li><b><span class="ph">[Year]</span> · Philipp learns the trade</b><p>Having grown up in a family of chimney sweeps, Philipp starts his apprenticeship <span class="ph">[add place/company]</span>.</p></li>
-            <li><b><span class="ph">[Year]</span> · Master craftsman</b><p>Philipp passes the master craftsman examination in the chimney sweep trade.</p></li>
-            <li><b>Today · Master craftsman business in Nippes</b><p>Philipp runs the business in Cologne-Nippes in the second generation – as a certified specialist business of the chimney sweep trade.</p></li>
-          </ol>
-        </div>
-        <div id="team">
-          <h3>Our team</h3>
-          <div class="team">
-            <div class="member"><img class="avatar" src="/assets/schornsteinfegermeister-philipp-ritters-koeln.jpg" width="72" height="72" loading="lazy" alt=""><b>Philipp Ritters</b><span>Owner, master chimney sweep</span></div>
-            <div class="member"><div class="avatar" aria-hidden="true">M</div><b><span class="ph">[Name]</span></b><span><span class="ph">[Role, e.g. journeyman]</span></span></div>
-            <div class="member"><div class="avatar" aria-hidden="true">M</div><b><span class="ph">[Name]</span></b><span><span class="ph">[Role, e.g. office]</span></span></div>
-          </div>
-          <p class="team-note">Personal, not anonymous: you always know who is coming to your home.</p>
-        </div>
+        <div id="family"><h3>A family trade</h3><p>Philipp grew up in a family of chimney sweeps. Today he runs the second-generation master craftsman business in Cologne-Nippes.</p></div>
+        <div id="team"><h3>Your personal contact</h3><div class="team"><div class="member"><img class="avatar" src="/assets/schornsteinfegermeister-philipp-ritters-koeln.jpg" width="72" height="72" loading="lazy" alt=""><b>Philipp Ritters</b><span>Owner, master chimney sweep</span></div></div><p class="team-note">You can reach Philipp directly with questions about your property and appointment.</p></div>
       </div>
     </div>
   </section>
@@ -298,10 +304,10 @@
       <div class="contact reveal">
         <div class="contact-info">
           <p class="eyebrow">Contact &amp; directions</p>
-          <h2 id="contact-title">Get in touch.</h2>
+          <h2 id="contact-title">Let’s clarify the cost and date.</h2>
           <ul class="clist">
             <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><a href="tel:+492217400990"><small>Landline</small>+49 221 7400 990</a></li>
-            <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg><a href="tel:+491711050733"><small>Mobile</small>+49 171 10 50 733</a></li>
+            <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg><a href="tel:+4915888360862"><small>Mobile</small>+49 15888 360862</a></li>
             <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg><a href="mailto:ritters@schornsteinfeger.koeln"><small>Email</small>ritters@schornsteinfeger.koeln</a></li>
             <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg><span><small>Address</small>Knechtstedener Straße 20, 50733 Cologne-Nippes, Germany</span></li>
           </ul>
@@ -341,13 +347,14 @@
       </div>
 
       <div class="request reveal" id="request">
+        <span id="book" aria-hidden="true"></span>
         <div class="tabs" role="tablist" aria-label="Type of request">
           <button class="tab" role="tab" id="tab-termin" aria-controls="panel-termin" aria-selected="true" type="button"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</button>
           <button class="tab" role="tab" id="tab-nachricht" aria-controls="panel-nachricht" aria-selected="false" tabindex="-1" type="button"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#msg"/></svg>Send message</button>
         </div>
 
         <div class="tabpanel" role="tabpanel" id="panel-termin" aria-labelledby="tab-termin" tabindex="0">
-          <p class="intro">The fastest way is online: <a href="/en/#book" data-termin>book a free slot directly in the calendar</a>. Or send us your preferred date here:</p>
+          <p class="intro"><a href="/en/#book" data-termin>Open the guided appointment request</a> or use this form. We clarify the cost and date before you commit.</p>
           <ol class="steps"><li>Tell us your request &amp; preferred date</li><li>We check the schedule</li><li>You receive a personal confirmation</li></ol>
           <form class="form" id="form-termin" action="/anfrage.php" method="post" novalidate data-kind="termin">
             <input type="hidden" name="art" value="Terminanfrage">
@@ -366,7 +373,7 @@
                 <option>Fire safety &amp; smoke alarms</option>
                 <option>Energy consulting</option>
                 <option>New heating appliance / acceptance</option>
-                <option>Other</option>
+                <option>Work listed in my notice</option><option>I’m not sure / advice</option><option>Other</option>
               </select>
               <p class="err" id="t-leistung-err"></p>
             </div>
@@ -466,11 +473,10 @@
     <img src="/assets/schornsteinfegermeister-philipp-ritters-koeln.jpg" width="88" height="88" loading="lazy" alt="Philipp Ritters">
     <div class="cta-band-text">
       <h2 id="band-title">Is an inspection or sweep due?</h2>
-      <p>Book your preferred slot online in 60 seconds – or give us a call. We are available Mon–Fri from 7:30 am to 5 pm.</p>
-      <a class="next-slot" href="#request" data-termin><span class="dot" aria-hidden="true"></span>Next available slot: <b data-next-slot>…</b></a>
+      <p>Request your preferred date online. We will clarify the cost and confirm the appointment personally. We are available Mon–Fri from 7:30 am to 5 pm.</p>
     </div>
     <div class="cta-band-actions">
-      <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book online</a>
+      <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a>
       <a class="btn btn-ghost" href="tel:+492217400990" aria-label="Call now: +49 221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>+49 221 7400 990</a>
     </div>
   </div>
@@ -489,7 +495,7 @@
         <h2>Contact</h2>
         <ul>
           <li><a href="tel:+492217400990">+49 221 7400 990</a></li>
-          <li><a href="tel:+491711050733">+49 171 10 50 733</a></li>
+          <li><a href="tel:+4915888360862">+49 15888 360862</a></li>
           <li><a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a></li>
           <li>Knechtstedener Straße 20<br>50733 Cologne, Germany</li>
         </ul>
@@ -503,14 +509,18 @@
         <ul><li><a href="/en/legal-notice">Legal notice</a></li><li><a href="/en/privacy">Privacy policy</a></li><li><a href="/en/privacy#consent" data-consent-open>Cookie settings</a></li></ul>
       </nav>
     </div>
+    <div class="language-switch language-switch-footer" data-language-switch role="group" aria-label="Language">
+          <span class="language-label"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg>Language</span>
+          <a href="/" hreflang="de" lang="de">Deutsch</a>
+          <a href="/en/" hreflang="en" lang="en" aria-current="page">English</a>
+        </div>
     <div class="foot-bottom"><span>© <span data-year>2026</span> <span lang="de">Schornsteinfegermeister Philipp Ritters</span></span><span>Cologne-Nippes · Cologne and surroundings</span></div>
   </div>
 </footer>
 
 <nav class="action-bar" aria-label="Quick contact">
-  <a class="primary" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Call</a>
-  <a href="tel:+491711050733"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg>Mobile</a>
-  <a href="/en/#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book</a>
+  <a href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Call</a>
+  <a class="primary" href="/en/#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a>
 </nav>
 </body>
 </html>
