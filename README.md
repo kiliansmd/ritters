@@ -27,6 +27,8 @@ Statische Website (HTML, CSS, JavaScript – ohne Build-Schritt) für Schornstei
 
 ## Conversion-Optimierung
 
+- Der Energieberatungs-Teaser zu Kessel & Ritters steht auf der deutschen und englischen Startseite direkt nach den Leistungen. Die Anliegenkarte zum Energiesparen und ein Link in der Leistungskarte führen zum Teaser; dessen Hauptbutton öffnet `https://www.kesselundritters.energy/` im selben Tab. Der Wechsel zur Website für Energieberatung ist am Button erläutert (EN: Hinweis auf deutsche Zielseite). Der Sprachwechsel erhält den neuen Abschnitt. Der Teaser verwendet lokale Icons und bestehende Schriften, ohne zusätzliche Skripte oder Tracking.
+
 - Der mobile Einstieg zeigt zuerst Überschrift, Nutzen und Anfragebutton, danach das Foto. Die feste Leiste bietet einen Anruf und die hervorgehobene Terminanfrage.
 - Familienbereich und Ansprechpartner enthalten nur vorhandene Angaben; zusätzliche Mitarbeitende und biografische Jahreszahlen erst nach Freigabe ergänzen.
 - Die Auswahl nach Anliegen (Bescheid, neuer Ofen, Rauchmelder, Energie, Unsicherheit) funktioniert auf DE und EN. Leistungsseiten übernehmen weiterhin die passende Leistung.

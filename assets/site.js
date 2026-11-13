@@ -65,7 +65,7 @@
   });
 
   /* Sprachen direkt im mobilen Menü bzw. Desktop-Footer auswählen. */
-  const SECTION_MAP = { leistungen: 'services', 'ueber-uns': 'about', partner: 'partners', kontakt: 'contact', anfrage: 'request', familie: 'family', team: 'team', kundenstimmen: 'reviews' };
+  const SECTION_MAP = { leistungen: 'services', 'ueber-uns': 'about', partner: 'partners', kontakt: 'contact', anfrage: 'request', familie: 'family', team: 'team', kundenstimmen: 'reviews', 'energieberatung-kessel-ritters': 'energy-kessel-ritters' };
   $$('[data-language-switch] a[hreflang]').forEach(a => a.addEventListener('click', () => {
     const h = location.hash.slice(1);
     if (!h || !['/', '/en/'].includes(new URL(a.href).pathname)) return;
