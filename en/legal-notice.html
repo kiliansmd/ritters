@@ -13,10 +13,10 @@
 <meta name="theme-color" content="#1e2325">
 <link rel="icon" href="/assets/favicon-logo.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=479985c7">
+<link rel="stylesheet" href="/assets/site.css?v=fea8db61">
 <script>document.documentElement.classList.add('js')</script>
 <script src="/assets/consent.js?v=7b10ccbf" defer></script>
-<script src="/assets/site.js?v=e61236bd" defer></script>
+<script src="/assets/site.js?v=07ca23f4" defer></script>
 <script src="/assets/booking.js?v=92f0d9aa" defer></script>
 </head>
 <body>
@@ -36,18 +36,22 @@
         <a class="btn btn-ghost" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Call</a>
         <a class="btn btn-gold" href="/en/#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Book</a>
       </div>
+      <div class="language-switch language-switch-mobile" data-language-switch role="group" aria-label="Language">
+          <span class="language-label"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg>Language</span>
+          <a href="/impressum" hreflang="de" lang="de">Deutsch</a>
+          <a href="/en/legal-notice" hreflang="en" lang="en" aria-current="page">English</a>
+        </div>
     </nav>
     <div class="nav-actions">
-      <div class="lang" data-lang>
-        <button type="button" class="lang-btn" aria-expanded="false" aria-controls="lang-list" aria-label="Choose language, current: English"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg><span aria-hidden="true">EN</span><svg class="ic chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></button>
-        <ul class="lang-list" id="lang-list" hidden>
-          <li><a href="/impressum" hreflang="de" lang="de"><abbr title="Deutsch">DE</abbr>Deutsch</a></li>
-          <li><a href="/en/legal-notice" hreflang="en" lang="en" aria-current="page"><abbr title="English">EN</abbr>English</a></li>
-        </ul>
-      </div>
-      <a class="nav-tel" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span>+49 221 7400 990</span><b class="sr-only">Call</b></a>
+      <details class="phone-menu" data-phone-menu>
+        <summary class="nav-tel" aria-label="Choose a phone number"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span>Call</span></summary>
+        <div class="phone-options">
+          <p>How would you like to reach us?</p>
+          <a href="tel:+492217400990" aria-label="Call landline: +49 221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span><b>Landline</b><span>+49 221 7400 990</span></span></a>
+          <a href="tel:+4915888360862" aria-label="Call mobile: +49 15888 360862"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg><span><b>Mobile</b><span>+49 15888 360862</span></span></a>
+        </div>
+      </details>
       <a class="btn btn-gold" href="/en/#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a>
-      <a class="icon-btn" href="tel:+492217400990" aria-label="Call +49 221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg></a>
       <button class="icon-btn burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg></button>
     </div>
   </div>
@@ -71,7 +75,7 @@
     <h2>Contact</h2>
     <dl>
       <dt>Phone</dt><dd><a href="tel:+492217400990">+49 221 7400 990</a></dd>
-      <dt>Mobile</dt><dd><a href="tel:+491711050733">+49 171 10 50 733</a></dd>
+      <dt>Mobile</dt><dd><a href="tel:+4915888360862">+49 15888 360862</a></dd>
       <dt>Fax</dt><dd>+49 221 1699 0615</dd>
       <dt>Email</dt><dd><a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a></dd>
     </dl>
@@ -114,6 +118,11 @@
 
 <footer class="site-footer">
   <div class="wrap">
+    <div class="language-switch language-switch-footer" data-language-switch role="group" aria-label="Language">
+          <span class="language-label"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg>Language</span>
+          <a href="/impressum" hreflang="de" lang="de">Deutsch</a>
+          <a href="/en/legal-notice" hreflang="en" lang="en" aria-current="page">English</a>
+        </div>
     <div class="foot-bottom"><span>© <span data-year>2026</span> <span lang="de">Schornsteinfegermeister Philipp Ritters</span></span><span><a href="/en/legal-notice" aria-current="page">Legal notice</a> · <a href="/en/privacy">Privacy policy</a> · <a href="/en/privacy#consent" data-consent-open>Cookie settings</a></span></div>
   </div>
 </footer>

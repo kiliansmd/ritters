@@ -9,10 +9,10 @@
 <meta name="theme-color" content="#1e2325">
 <link rel="icon" href="/assets/favicon-logo.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=479985c7">
+<link rel="stylesheet" href="/assets/site.css?v=fea8db61">
 <script>document.documentElement.classList.add('js')</script>
 <script src="/assets/consent.js?v=7b10ccbf" defer></script>
-<script src="/assets/site.js?v=e61236bd" defer></script>
+<script src="/assets/site.js?v=07ca23f4" defer></script>
 <script src="/assets/booking.js?v=92f0d9aa" defer></script>
 </head>
 <body>
@@ -33,18 +33,22 @@
         <a class="btn btn-ghost" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Anrufen</a>
         <a class="btn btn-gold" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin</a>
       </div>
+      <div class="language-switch language-switch-mobile" data-language-switch role="group" aria-label="Sprache">
+          <span class="language-label"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg>Sprache</span>
+          <a href="/" hreflang="de" lang="de" aria-current="page">Deutsch</a>
+          <a href="/en/" hreflang="en" lang="en">English</a>
+        </div>
     </nav>
     <div class="nav-actions">
-      <div class="lang" data-lang>
-        <button type="button" class="lang-btn" aria-expanded="false" aria-controls="lang-list" aria-label="Sprache wählen, aktuell: Deutsch"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg><span aria-hidden="true">DE</span><svg class="ic chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></button>
-        <ul class="lang-list" id="lang-list" hidden>
-          <li><a href="/" hreflang="de" lang="de" aria-current="page"><abbr title="Deutsch">DE</abbr>Deutsch</a></li>
-          <li><a href="/en/" hreflang="en" lang="en"><abbr title="English">EN</abbr>English</a></li>
-        </ul>
-      </div>
-      <a class="nav-tel" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span>0221 7400 990</span><b class="sr-only">Anrufen</b></a>
+      <details class="phone-menu" data-phone-menu>
+        <summary class="nav-tel" aria-label="Telefonnummer auswählen"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span>Anrufen</span></summary>
+        <div class="phone-options">
+          <p>Wie möchten Sie uns erreichen?</p>
+          <a href="tel:+492217400990" aria-label="Festnetz anrufen: 0221 – 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span><b>Festnetz</b><span>0221 – 7400 990</span></span></a>
+          <a href="tel:+4915888360862" aria-label="Mobil anrufen: +49 15888 360862"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg><span><b>Mobil</b><span>+49 15888 360862</span></span></a>
+        </div>
+      </details>
       <a class="btn btn-gold" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a>
-      <a class="icon-btn" href="tel:+492217400990" aria-label="Anrufen: 0221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg></a>
       <button class="icon-btn burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg></button>
     </div>
   </div>
@@ -90,7 +94,7 @@
         <h2>Kontakt</h2>
         <ul>
           <li><a href="tel:+492217400990">0221 – 7400 990</a></li>
-          <li><a href="tel:+491711050733">0171 – 10 50 733</a></li>
+          <li><a href="tel:+4915888360862">+49 15888 360862</a></li>
           <li><a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a></li>
           <li>Knechtstedener Straße 20<br>50733 Köln-Nippes</li>
         </ul>
@@ -100,6 +104,11 @@
         <ul><li><a href="/impressum">Impressum</a></li><li><a href="/datenschutz">Datenschutz</a></li><li><a href="/datenschutz#einwilligung" data-consent-open>Cookie-Einstellungen</a></li></ul>
       </nav>
     </div>
+    <div class="language-switch language-switch-footer" data-language-switch role="group" aria-label="Sprache">
+          <span class="language-label"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#globe"/></svg>Sprache</span>
+          <a href="/" hreflang="de" lang="de" aria-current="page">Deutsch</a>
+          <a href="/en/" hreflang="en" lang="en">English</a>
+        </div>
     <div class="foot-bottom"><span>© <span data-year>2026</span> Schornsteinfegermeister Philipp Ritters</span><span>Ihr Schornsteinfeger für Köln-Nippes, Köln und Umgebung</span></div>
   </div>
 </footer>

@@ -29,6 +29,7 @@
   const burger = $('.burger'), menu = $('#menu');
   const setMenu = open => {
     if (!burger || !menu) return;
+    if (open) document.querySelector('[data-phone-menu]')?.removeAttribute('open');
     menu.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? T('Menü schließen', 'Close menu') : T('Menü öffnen', 'Open menu'));
@@ -45,31 +46,33 @@
     matchMedia('(min-width: 961px)').addEventListener('change', e => e.matches && setMenu(false));
   }
 
-  /* Sprachauswahl (Disclosure-Muster) */
-  const SECTION_MAP = { leistungen: 'services', 'ueber-uns': 'about', partner: 'partners', kontakt: 'contact', anfrage: 'request', familie: 'family', team: 'team' };
-  $$('[data-lang]').forEach(box => {
-    const btn = $('.lang-btn', box), list = $('.lang-list', box);
-    const set = open => { list.hidden = !open; btn.setAttribute('aria-expanded', open); box.classList.toggle('open', open); };
-    btn.addEventListener('click', () => { const o = list.hidden; set(o); if (o) $('a', list).focus(); });
-    box.addEventListener('keydown', e => {
-      const items = $$('a', list), i = items.indexOf(document.activeElement);
-      if (e.key === 'Escape' && !list.hidden) { set(false); btn.focus(); }
-      if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && !list.hidden) {
-        e.preventDefault();
-        items[(i + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length].focus();
-      }
+  /* Native Telefonauswahl: zwei direkte tel-Links, auch ohne JavaScript. */
+  const phoneMenu = $('[data-phone-menu]');
+  if (phoneMenu) {
+    const closePhone = (restoreFocus = false) => {
+      phoneMenu.open = false;
+      if (restoreFocus) $('summary', phoneMenu).focus();
+    };
+    phoneMenu.addEventListener('toggle', () => { if (phoneMenu.open) setMenu(false); });
+    phoneMenu.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && phoneMenu.open) { e.preventDefault(); closePhone(true); }
     });
-    box.addEventListener('focusout', e => { if (!box.contains(e.relatedTarget)) set(false); });
-    document.addEventListener('click', e => { if (!box.contains(e.target)) set(false); });
-    // aktuellen Abschnitt beim Sprachwechsel mitnehmen
-    $$('a[hreflang]', list).forEach(a => a.addEventListener('click', () => {
-      const h = location.hash.slice(1);
-      if (!h) return;
-      const toEn = a.hreflang === 'en';
-      const mapped = toEn ? SECTION_MAP[h] : Object.keys(SECTION_MAP).find(k => SECTION_MAP[k] === h);
-      if (mapped) a.hash = mapped;
-    }));
+    phoneMenu.addEventListener('focusout', e => { if (!phoneMenu.contains(e.relatedTarget)) closePhone(); });
+    document.addEventListener('click', e => { if (!phoneMenu.contains(e.target)) closePhone(); });
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu?.classList.contains('open')) { setMenu(false); burger.focus(); }
   });
+
+  /* Sprachen direkt im mobilen Menü bzw. Desktop-Footer auswählen. */
+  const SECTION_MAP = { leistungen: 'services', 'ueber-uns': 'about', partner: 'partners', kontakt: 'contact', anfrage: 'request', familie: 'family', team: 'team', kundenstimmen: 'reviews' };
+  $$('[data-language-switch] a[hreflang]').forEach(a => a.addEventListener('click', () => {
+    const h = location.hash.slice(1);
+    if (!h || !['/', '/en/'].includes(new URL(a.href).pathname)) return;
+    const toEn = a.hreflang === 'en';
+    const mapped = toEn ? SECTION_MAP[h] : Object.keys(SECTION_MAP).find(k => SECTION_MAP[k] === h);
+    if (mapped) a.hash = mapped;
+  }));
 
   /* Leistungen: Detailbereiche */
   const toggles = $$('.service .link-arrow');

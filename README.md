@@ -41,3 +41,7 @@ Das vom Nutzer vorgegebene Google-Reviews-Widget `4a988130-d2b4-4575-be8b-6d2e2f
 Die originale Elfsight-Einbettung mit asynchronem `platform.js` und `data-elfsight-app-lazy` liegt in `widgets/reviews.html`. Ein Sandbox-Iframe isoliert Widget-Skripte und -Stile vom Rest der Seite; der lokale Wrapper meldet seine Höhe für eine Darstellung ohne inneren Scrollbalken. Nur dieser Wrapper erhält eine eigene CSP für die Elfsight-Ressourcen; die Hauptseite behält ihre strengen Skript- und Stilregeln. Quellenhinweise, Bewertungen und Sprachen werden im Elfsight-Konto verwaltet.
 
 Anbieterhinweise zur CSP: https://help.elfsight.com/article/1581-why-my-widget-doesnt-display-on-my-website
+
+### Sprachwahl und Telefonkontakt
+
+Die Sprachlinks stehen bis 960 px im aufklappbaren Hauptmenü, darüber im Footer. Bestehende Sprachziele (auch Impressum/Datenschutz) und die Abschnittszuordnung bleiben erhalten. Im Header öffnet das Telefonsymbol eine native HTML-Disclosure-Auswahl mit direkten Anruflinks für Festnetz `+49 221 7400 990` und Mobil `+49 15888 360862`. Die Auswahl funktioniert ohne JavaScript; Escape, Fokuswechsel und Außenklick schließen sie mit JavaScript. Hauptmenü und Telefonauswahl schließen sich gegenseitig. Die neue Mobilnummer ist auch in Kontaktbereich, Footer, Impressum und strukturierten Kontaktdaten übernommen.
