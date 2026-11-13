@@ -146,7 +146,15 @@
   const escapeHtml = s => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const PHONE = T('0221 – 7400 990', '+49 221 7400 990');
 
+  const isLocalPreview = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || /(^|\.)(vercel\.app|meindigitalerbetrieb\.de)$/.test(location.hostname);
   $$('form[data-kind]').forEach(form => {
+    if (isLocalPreview) {
+      const notice = document.createElement('p');
+      notice.className = 'bk-notice full';
+      notice.textContent = T('Vorschau: Hier werden keine Nachrichten versendet. Für eine echte Anfrage rufen Sie bitte 0221 – 7400 990 an.', 'Preview: no messages are sent here. For a real request, please call +49 221 7400 990.');
+      form.prepend(notice);
+      $('button[type=submit]', form).textContent = T('Formular testen (ohne Versand)', 'Test form (nothing sent)');
+    }
     const loaded = Date.now();
     $('input[name="ts"]', form).value = Math.floor(loaded / 1000);
     const fields = $$('input:not([type=hidden]):not([type=radio]):not([name=website]), select, textarea', form);
@@ -167,18 +175,18 @@
 
       const data = new FormData(form);
       // Spam-Schutz: Honeypot-Feld muss leer sein, Mindest-Ausfüllzeit 3 s
-      if (data.get('website') || Date.now() - loaded < 3000) { showStatus(true); return; }
+      if (data.get('website')) return;
+      if (!isLocalPreview && Date.now() - loaded < 3000) { status.className = 'form-status fail'; status.textContent = T('Bitte prüfen Sie Ihre Angaben kurz und senden Sie erneut.', 'Please review your details and send again.'); status.focus(); return; }
 
       const btn = $('button[type=submit]', form);
       btn.disabled = true;
       btn.setAttribute('aria-busy', 'true');
       // Vorschau/Demo (lokal, Vercel, Demo-Domain): Formulare werden nur simuliert, da dort kein PHP läuft
-      const isLocalPreview = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || /(\.vercel\.app|\.meindigitalerbetrieb\.de)$/.test(location.hostname);
       try {
         if (isLocalPreview) { await new Promise(r => setTimeout(r, 500)); }
         else {
           const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-          if (!res.ok) throw new Error(res.status);
+          if (!res.ok || (await res.json()).ok !== true) throw new Error('request failed');
         }
         showStatus(true);
         form.reset();
@@ -194,7 +202,9 @@
         const name = String(data.get('name') || '').trim().split(/\s+/)[0];
         const termin = form.dataset.kind === 'termin';
         status.className = 'form-status ' + (ok ? 'ok' : 'fail');
-        status.innerHTML = ok
+        status.innerHTML = ok && isLocalPreview
+          ? `<h3>${T('Vorschau abgeschlossen', 'Preview complete')}</h3><p>${T('Es wurden keine Daten versendet. Für eine echte Anfrage rufen Sie bitte an:', 'No data was sent. For a real request please call:')} <a href="tel:+492217400990">${PHONE}</a>.</p>`
+          : ok
           ? `<h3>${T('Vielen Dank', 'Thank you')}${name ? ', ' + escapeHtml(name) : ''}!</h3><p>${termin
               ? T('Ihre Terminanfrage ist bei uns eingegangen. Wir prüfen die Planung und melden uns zur Bestätigung bei Ihnen.', 'We have received your appointment request. We will check our schedule and get back to you to confirm.')
               : T('Ihre Nachricht ist bei uns eingegangen. Wir melden uns so schnell wie möglich.', 'We have received your message and will reply as soon as possible.')}</p>${isLocalPreview ? `<p><small>${T('(Vorschau: Es wurden keine Daten übertragen.)', '(Preview: no data was sent.)')}</small></p>` : ''}`

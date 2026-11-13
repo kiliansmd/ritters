@@ -938,3 +938,57 @@ h2[tabindex="-1"]:focus, h3[tabindex="-1"]:focus, .bk-done:focus, .form-status:f
 @media (max-width: 1180px) and (min-width: 961px) { .brand-logo { height: 34px; } }
 @media (max-width: 960px) { .brand-logo { height: 32px; } }
 @media (max-width: 380px) { .brand-logo { height: 26px; } }
+
+/* Anliegen statt Fachbegriffe; unverbindliche Anfrage mit Kostenklärung. */
+.intent-section { background: var(--white); }
+.intent-section h2 { margin: 6px 0 12px; }
+.intent-section > .wrap > p:not(.eyebrow) { color: var(--body); }
+.intent-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 28px 0 18px; }
+.intent-card { display: flex; align-items: center; gap: 16px; padding: 22px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); text-decoration: none; background: var(--cream); }
+.intent-card:hover { border-color: var(--gold-ink); background: var(--white); }
+.intent-card > .ic { color: var(--gold-ink); flex: none; }
+.intent-card > .ic:last-child { margin-left: auto; }
+.intent-card b { display: block; font-family: var(--serif); font-size: 21px; line-height: 1.25; }
+.intent-card small { display: block; color: var(--body); font-size: 15px; margin-top: 6px; }
+.bk-services .bk-service { grid-template-columns: 30px 1fr; }
+.bk-services .bk-service > .ic { width: 28px; height: 28px; color: var(--gold-ink); }
+.bk-expert { margin-top: 18px; }
+.bk-expert summary { padding: 12px 0; color: var(--gold-ink); font-weight: 700; cursor: pointer; }
+.bk-cost, .bk-notice { padding: 16px; border: 1px solid var(--line); border-left: 3px solid var(--gold-ink); background: var(--white); border-radius: 6px; margin: 18px 0; }
+.bk-cost h4 { margin: 0 0 6px; font-family: var(--sans); font-size: 16px; font-weight: 700; }
+.bk-cost p, .bk-notice { font-size: 14px; color: var(--body); }
+.bk-date-field { margin: 26px 0; }
+.bk-alt { display: block; }
+.bk-summary { overflow-wrap: anywhere; }
+@media (max-width: 960px) {
+  .hero-inner { order: -1; width: 100%; }
+  .hero-media { aspect-ratio: 16 / 7; max-height: 300px; }
+  .hero-media img { object-position: center top; }
+}
+@media (max-width: 640px) {
+  .hero-inner { padding-top: 28px; padding-bottom: 28px; }
+  .hero h1 { font-size: clamp(32px, 9vw, 38px); }
+  .hero h1 small { font-size: 11px; letter-spacing: .1em; line-height: 1.5; }
+  .hero .rule { margin: 18px 0; }
+  .hero-lead { font-size: 16px; margin-bottom: 8px; }
+  .hero-intro { font-size: 15px; margin-bottom: 20px; }
+  .hero .cta { gap: 10px; }
+  .hero .btn-lg { min-height: 48px; padding: 11px 16px; font-size: 15px; }
+  .hero-media { aspect-ratio: 16 / 8; max-height: 220px; }
+  .action-bar { grid-template-columns: 1fr 1.65fr; }
+  .action-bar a { flex-direction: row; gap: 8px; font-size: 14px; }
+  .intent-grid { grid-template-columns: 1fr; }
+  .intent-card { padding: 18px; gap: 12px; }
+  .intent-card b { font-size: 20px; }
+  .bk-person h2 { font-size: 18px; }
+  .bk-progress li { font-size: 11px; }
+  .bk-notice { font-size: 13px; margin-top: 0; }
+}
+.reviews-placeholder { padding: 24px; margin-top: 24px; border: 1px solid var(--line); border-radius: 10px; background: var(--white); }
+.reviews-placeholder p { max-width: 65ch; margin-bottom: 18px; color: var(--body); }
+.reviews-placeholder > a { display: inline-block; margin: 12px; color: var(--gold-ink); }
+.reviews-frame { display: block; width: 100%; height: 280px; border: 0; background: var(--white); margin-top: 24px; }
+.testimonials .privacy a { color: var(--gold-ink); }
+.bk-person, .bk-person > div { min-width: 0; }
+.bk-person img { flex: none; }
+.bk-progress li { min-width: 0; }
