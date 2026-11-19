@@ -96,7 +96,7 @@
 
     <h2 id="legal-basis">2. Legal basis</h2>
     <ul>
-      <li><strong>Art. 6(1)(a) GDPR</strong> – consent (e.g. privacy checkbox in forms, loading Google Maps, email appointment reminder)</li>
+      <li><strong>Art. 6(1)(a) GDPR</strong> – consent (e.g. privacy checkbox in forms, loading Google Maps and customer reviews)</li>
       <li><strong>Art. 6(1)(b) GDPR</strong> – contract or pre-contractual measures (e.g. appointment and contact requests)</li>
       <li><strong>Art. 6(1)(c) GDPR</strong> – legal obligation (e.g. commercial and tax retention obligations)</li>
       <li><strong>Art. 6(1)(f) GDPR</strong> – legitimate interest (e.g. secure operation of the website, answering general enquiries)</li>
@@ -129,8 +129,10 @@
     <h2 id="forms">6. Contact and appointment request forms</h2>
     <p><strong>Data processed:</strong> name, phone number, email address, message; for appointment requests also the service, property address, preferred date and preferred time of day. Required fields are marked with *.</p>
     <p><strong>Purpose and legal basis:</strong> handling your request and arranging appointments (Art. 6(1)(b) GDPR). In addition, we ask for your consent via a checkbox (Art. 6(1)(a) GDPR). Without this confirmation we cannot accept the form request – you can still reach us at any time by phone or email. For documentation purposes (Art. 7(1) GDPR), the date and time of consent are noted in the request email.</p>
-    <p><strong>Transmission:</strong> the data is sent to our server encrypted via TLS and forwarded to us by email (email provider: <span class="ph">[add provider, data processing agreement]</span>). It is not stored in a database on the web server and not passed on to third parties.</p>
-    <p><strong>Spam protection:</strong> we use a field that is invisible to humans and a time check. No additional personal data is collected and no external services such as reCAPTCHA are used.</p>
+    <p><strong>Transmission and storage:</strong> the data is sent to our web server encrypted via TLS and from there only as an email to our mailbox <a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a> (email provider: <span class="ph">[add provider, data processing agreement]</span>). The form content is not stored in a database or file on the web server. We keep the request email until your request has been fully handled; see <a href="#retention">retention periods</a>. It is not passed on to third parties.</p>
+    <p><strong>Reply and confirmation:</strong> if you provide an email address, it is set as the reply address in our request email so that we can answer you directly. No automatic confirmation email is currently sent; we will get in touch personally by phone or email.</p>
+    <p><strong>Server log files:</strong> like any page request, submitting a form is logged by the web server (including IP address, time and requested address; see <a href="#hosting">hosting and server log files</a>). The form content itself is not included in these logs. Our form script does not store your IP address.</p>
+    <p><strong>Spam protection:</strong> we use a field that is invisible to humans and check how much time passed between opening and submitting the form. Only the time the form was opened is sent for this. No additional personal data is collected and no external services such as reCAPTCHA are used.</p>
     <p><strong>Withdrawal:</strong> you can withdraw your consent at any time by emailing <a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a>. This does not affect the lawfulness of processing before withdrawal, nor statutory retention obligations (e.g. for placed orders).</p>
 
     <h2 id="booking">7. Guided appointment request</h2>
@@ -144,7 +146,7 @@
     <p>The “Directions with Google Maps” button is a simple link. Google Maps only opens in a new window when you click it; from then on, Google’s privacy terms apply.</p>
 
     <h2 id="elfsight">8a. Google reviews via Elfsight</h2>
-    <p>Our home pages embed customer reviews using the Elfsight Google Reviews widget. The widget only loads after you enable the separate “Customer reviews (Elfsight)” category or click “Show Google reviews”. This loads external scripts and content from Elfsight and its content providers, including review images. These requests transmit connection data such as your IP address and browser details to the respective providers. Without consent no widget resources are requested. You can withdraw consent via “Cookie settings”; the widget is then removed. Processing already carried out by the provider cannot be reversed by removing it.</p>
+    <p>Our home pages embed customer reviews using the Google Reviews widget by Elfsight (provider: <span class="ph">[add Elfsight company name, address and country]</span>). The widget only loads after you enable the separate “Customer reviews (Elfsight)” category or click “Show Google reviews”. This loads external scripts and content from Elfsight and its content providers, including review images. These requests transmit connection data such as your IP address and browser details to the respective providers. Without consent no widget resources are requested. You can withdraw consent via “Cookie settings”; the widget is then removed. Processing already carried out by the provider cannot be reversed by removing it. The legal basis is your consent (§ 25(1) TDDDG, Art. 6(1)(a) GDPR). Transfers to countries outside the EU/EEA are possible; <span class="ph">[add safeguards for third-country transfers according to provider information]</span>.</p>
     <p>Provider information: <a href="https://elfsight.com/privacy-policy/" target="_blank" rel="noopener">Elfsight privacy policy</a>.</p>
 
     <h2 id="links">9. External links and fonts</h2>
@@ -160,7 +162,7 @@
         <thead><tr><th scope="col">Data</th><th scope="col">Retention period</th></tr></thead>
         <tbody>
           <tr><td>Server log files</td><td><span class="ph">[7]</span> days</td></tr>
-          <tr><td>Requests without an order</td><td>Deleted once handled, at the latest after 6 months</td></tr>
+          <tr><td>Requests without an order (request emails)</td><td>Deleted once handled, at the latest after <span class="ph">[6]</span> months</td></tr>
           <tr><td>Appointments and orders</td><td>Until statutory retention periods expire (6 or 10 years under German commercial and tax law)</td></tr>
           <tr><td>Proof of consent</td><td>As long as the consent is effective, plus 3 years (limitation period)</td></tr>
           <tr><td>Privacy choice (<code>sr-consent</code>)</td><td>12 months in your browser, can be deleted at any time</td></tr>
