@@ -1134,5 +1134,9 @@ h2[tabindex="-1"]:focus, h3[tabindex="-1"]:focus, .bk-done:focus, .form-status:f
 .rv-card figcaption b { color: var(--ink); }
 .rv-all { display: inline-block; margin-top: 16px; font-weight: 700; color: var(--gold-ink); }
 .reviews-uwg { margin-top: 14px; font-size: 13.5px; color: var(--muted); max-width: 70ch; }
-.trustbar .seal-slot { display: inline-block; margin-top: 4px; padding: 1px 6px; font-style: normal; font-size: 11.5px; border: 1px dashed var(--field-border); border-radius: 4px; color: var(--muted); }
+.trustbar .seal-slot { display: table; margin-top: 6px; padding: 1px 6px; font-style: normal; font-size: 11.5px; border: 1px dashed var(--field-border); border-radius: 4px; color: var(--muted); }
 @media (max-width: 960px) { .rv-grid { grid-template-columns: 1fr; } }
+
+/* Hersteller als Text (ohne Logo-Freigabe): einheitlich grau, Farbe beim Hover */
+.partners-text a { height: 56px; font-family: var(--serif); font-size: 22px; letter-spacing: .02em; text-decoration: none; color: var(--muted); filter: none; opacity: 1; }
+.partners-text a:hover, .partners-text a:focus-visible { color: var(--gold-ink); transform: none; }
