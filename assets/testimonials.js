@@ -5,6 +5,32 @@
   const EN=document.documentElement.lang.startsWith('en');
   const placeholder=box.querySelector('[data-reviews-placeholder]');
   const status=box.querySelector('[data-reviews-status]');
+
+  /* Statischer Bewertungsblock aus /assets/data/bewertungen.json (selbst gehostet, ohne Drittanbieter).
+   * Live-Domain: nur mit vollständigen echten Daten. Staging: Platzhalter, solange Daten fehlen. */
+  const staticBox=box.querySelector('[data-reviews-static]');
+  const LIVE=/^(www\.)?schornsteinfeger\.koeln$/.test(location.hostname);
+  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const num=v=>Number(v).toLocaleString(EN?'en-GB':'de-DE',{minimumFractionDigits:1,maximumFractionDigits:1});
+  const date=v=>{const d=new Date(v);return isNaN(d)?'':d.toLocaleDateString(EN?'en-GB':'de-DE',{month:'long',year:'numeric'});};
+  const stars=n=>'<span class="rv-stars" aria-hidden="true">'+'★'.repeat(Math.round(n||0))+'☆'.repeat(5-Math.round(n||0))+'</span>';
+  const ph=t=>`<span class="ph">${t}</span>`;
+  if(staticBox) fetch('/assets/data/bewertungen.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(d=>{
+    if(!d)return;
+    const list=(d.rezensionen||[]).filter(r=>r&&r.text&&r.name).slice(0,3);
+    const complete=d.gesamtnote&&d.anzahl&&list.length>0;
+    if(!complete&&LIVE)return;
+    const link=d.profilUrl?`<a class="rv-all" href="${esc(d.profilUrl)}" target="_blank" rel="noopener">${EN?'All reviews on Google':'Alle Bewertungen auf Google'}<span class="sr-only"> ${EN?'(external website, new window)':'(externe Website, neues Fenster)'}</span></a>`:ph(EN?'[add link to Google profile]':'[Link zum Google-Profil ergänzen]');
+    const head=complete
+      ?`<p class="rv-score"><b>${num(d.gesamtnote)}</b>${stars(d.gesamtnote)}<span>${EN?`out of 5 · ${esc(d.anzahl)} reviews on ${esc(d.quelle||'Google')}`:`von 5 · ${esc(d.anzahl)} Bewertungen bei ${esc(d.quelle||'Google')}`}</span></p>`
+      :`<p class="rv-score">${ph(EN?'[rating]':'[Gesamtnote]')} ${ph(EN?'[number of reviews]':'[Anzahl Bewertungen]')}</p>`;
+    const cards=(complete?list:[0,1,2].map(()=>null)).map(r=>r
+      ?`<figure class="rv-card">${stars(r.sterne)}<blockquote><p>${esc(r.text)}</p></blockquote><figcaption><b>${esc(r.name)}</b>${date(r.datum)?` · ${date(r.datum)}`:''} · ${esc(d.quelle||'Google')}</figcaption></figure>`
+      :`<figure class="rv-card">${ph(EN?'[review text from Google, shortened if needed]':'[Rezension aus Google, ggf. gekürzt]')}<figcaption>${ph(EN?'[first name/initial · date · Google]':'[Vorname/Initial · Datum · Google]')}</figcaption></figure>`).join('');
+    staticBox.innerHTML=head+`<div class="rv-grid">${cards}</div>`+link;
+    staticBox.hidden=false;
+  }).catch(()=>{});
+
   let near=false,frame=null;
   const sync=()=>{
     const consent=document.documentElement.dataset.consentReviews==='ja';

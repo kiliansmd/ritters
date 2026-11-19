@@ -1120,3 +1120,19 @@ h2[tabindex="-1"]:focus, h3[tabindex="-1"]:focus, .bk-done:focus, .form-status:f
   .fam-timeline li::before { top: 6px; }
   .fam-photos { grid-template-columns: 1fr 1fr; }
 }
+
+/* Bewertungen: statischer Block (assets/data/bewertungen.json) */
+.reviews-static { margin-top: 24px; }
+.rv-score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-bottom: 18px; color: var(--body); }
+.rv-score b { font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--ink); line-height: 1; }
+.rv-stars { color: var(--gold-icon); letter-spacing: .08em; font-size: 18px; }
+.rv-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.rv-card { margin: 0; padding: 20px; background: var(--white); border: 1px solid var(--line); border-radius: 10px; display: grid; gap: 10px; align-content: start; }
+.rv-card blockquote { margin: 0; }
+.rv-card blockquote p { color: var(--body); display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.rv-card figcaption { font-size: 14px; color: var(--muted); }
+.rv-card figcaption b { color: var(--ink); }
+.rv-all { display: inline-block; margin-top: 16px; font-weight: 700; color: var(--gold-ink); }
+.reviews-uwg { margin-top: 14px; font-size: 13.5px; color: var(--muted); max-width: 70ch; }
+.trustbar .seal-slot { display: inline-block; margin-top: 4px; padding: 1px 6px; font-style: normal; font-size: 11.5px; border: 1px dashed var(--field-border); border-radius: 4px; color: var(--muted); }
+@media (max-width: 960px) { .rv-grid { grid-template-columns: 1fr; } }
