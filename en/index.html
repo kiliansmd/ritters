@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-480.avif 480w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-800.avif 800w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1600.avif 1600w" imagesizes="(max-width: 640px) 100vw, 57vw" fetchpriority="high">
-<link rel="stylesheet" href="/assets/site.css?v=a0ecee4b">
+<link rel="stylesheet" href="/assets/site.css?v=5f9be5a7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -73,7 +73,7 @@
 <script src="/assets/consent.js?v=7b10ccbf" defer></script>
 <script src="/assets/testimonials.js?v=6579f265" defer></script>
 <script src="/assets/site.js?v=508795d3" defer></script>
-<script src="/assets/booking.js?v=8115bde3" defer></script>
+<script src="/assets/booking.js?v=ff2f1036" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -278,7 +278,7 @@
         </div>
       </div>
       <!-- FAMILY: placeholders until Philipp provides years and photos. -->
-      <details id="family" class="family-block family-details reveal"><summary><span class="family-title" id="family-title">Our family story: generations in Cologne</span><svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
+      <details id="family" class="family-block family-details reveal"><summary><h3 class="family-title" id="family-title">Our family story: generations in Cologne</h3><svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <figure class="fam-crest"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.avif 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.avif 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.avif 1200w" sizes="(max-width: 640px) 160px, 220px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.webp 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.webp 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.webp 1200w" sizes="(max-width: 640px) 160px, 220px"><img src="/assets/img/schornsteinfeger-zunftwappen-ritters-1200.jpg" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.jpg 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.jpg 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.jpg 1200w" sizes="(max-width: 640px) 160px, 220px" width="1200" height="1500" loading="lazy" decoding="async" alt="Bronze guild coat of arms of the chimney sweeps reading “Einer für alle – alle für einen” (one for all, all for one)"></picture><figcaption>The guild coat of arms: “Einer für alle – alle für einen” (one for all, all for one)</figcaption></figure>
       <p class="family-lead">The chimney sweep trade runs in our family – now in its second generation.</p>
       <ol class="fam-timeline"><li><span class="fam-year"><span class="ph">[Year]</span></span><h4>The family business begins</h4><p>The first generation of the family works as chimney sweeps. <span class="ph">[add place and details]</span></p></li><li><span class="fam-year"><span class="ph">[Year]</span></span><h4>Growing up in the trade</h4><p>Philipp learns the trade in the family business and has been a chimney sweep for around 20&nbsp;years.</p></li><li><span class="fam-year"><span class="ph">[Year]</span></span><h4>Master craftsman</h4><p>Philipp passes the master craftsman examination in the chimney sweep trade.</p></li><li><span class="fam-year">Today</span><h4>Master business in Cologne-Nippes</h4><p>Philipp runs the business in the second generation – right in the “Sechzigveedel”.</p></li></ol>
@@ -406,7 +406,7 @@
               <textarea id="t-msg" name="nachricht" rows="3" placeholder="e.g. type of appliance, roof access, contact person on site"></textarea>
             </div>
             <div class="field full">
-              <label class="checkbox"><input type="checkbox" id="t-ds" name="datenschutz" value="ja" required><span>I have read the <a href="/en/privacy#forms" target="_blank" rel="noopener">privacy policy</a> and agree that my details are processed and stored to handle my request. I can withdraw my consent at any time by emailing ritters@schornsteinfeger.koeln. <span class="req" aria-hidden="true">*</span></span></label>
+              <label class="checkbox"><input type="checkbox" id="t-ds" name="datenschutz" value="ja" required><span>I have read the <a href="/en/privacy#forms" target="_blank" rel="noopener">privacy policy<span class="sr-only"> (opens in a new window)</span></a> and agree that my details are processed and stored to handle my request. I can withdraw my consent at any time by emailing ritters@schornsteinfeger.koeln. <span class="req" aria-hidden="true">*</span></span></label>
               <p class="err" id="t-ds-err"></p>
             </div>
             <div class="form-foot">
@@ -444,7 +444,7 @@
               <p class="err" id="n-msg-err"></p>
             </div>
             <div class="field full">
-              <label class="checkbox"><input type="checkbox" id="n-ds" name="datenschutz" value="ja" required><span>I have read the <a href="/en/privacy#forms" target="_blank" rel="noopener">privacy policy</a> and agree that my details are processed and stored to handle my request. I can withdraw my consent at any time by emailing ritters@schornsteinfeger.koeln. <span class="req" aria-hidden="true">*</span></span></label>
+              <label class="checkbox"><input type="checkbox" id="n-ds" name="datenschutz" value="ja" required><span>I have read the <a href="/en/privacy#forms" target="_blank" rel="noopener">privacy policy<span class="sr-only"> (opens in a new window)</span></a> and agree that my details are processed and stored to handle my request. I can withdraw my consent at any time by emailing ritters@schornsteinfeger.koeln. <span class="req" aria-hidden="true">*</span></span></label>
               <p class="err" id="n-ds-err"></p>
             </div>
             <div class="form-foot">
