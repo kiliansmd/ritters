@@ -15,7 +15,7 @@
     { "source": "/en/(datenschutz|privacy-policy)", "destination": "/en/privacy", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/robots.txt", "has": [{ "type": "host", "value": "ritters.meindigitalerbetrieb.de" }], "destination": "/robots-staging.txt" },
+    { "source": "/robots.txt", "has": [{ "type": "host", "value": "(?<sub>ritters[0-9]?)\\.meindigitalerbetrieb\\.de" }], "destination": "/robots-staging.txt" },
     { "source": "/robots.txt", "has": [{ "type": "host", "value": "(?<sub>.*)\\.vercel\\.app" }], "destination": "/robots-staging.txt" }
   ],
   "headers": [
@@ -36,7 +36,7 @@
     },
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "ritters.meindigitalerbetrieb.de" }],
+      "has": [{ "type": "host", "value": "(?<sub>ritters[0-9]?)\\.meindigitalerbetrieb\\.de" }],
       "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
     },
     {
