@@ -8,6 +8,14 @@
   const T = (de, en) => EN ? en : de;
   const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Staging/Vorschau nicht indexieren: Nur die Live-Domain behält das robots-Meta aus dem HTML.
+   * Verbindliches Signal auf Vercel ist der X-Robots-Tag-Header (vercel.json); dies ist die zweite Absicherung. */
+  if (!/^(www\.)?schornsteinfeger\.koeln$/.test(location.hostname)) {
+    let robots = $('meta[name="robots"]');
+    if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.append(robots); }
+    robots.content = 'noindex, nofollow';
+  }
+
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
   /* Header: Schatten + aktiver Menüpunkt */

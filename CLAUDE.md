@@ -1,0 +1,77 @@
+# CLAUDE.md – Website Schornsteinfeger Ritters
+
+Website für **Schornsteinfegermeister Philipp Ritters**, Meisterbetrieb in 2. Generation, Knechtstedener Straße 20, 50733 Köln-Nippes. Projekt von MeinDigitalerBetrieb (MDB).
+
+- **Staging/Vorschau:** https://ritters.meindigitalerbetrieb.de (Vercel, nicht indexiert)
+- **Produktion (später):** https://www.schornsteinfeger.koeln (Apache/PHP-Hosting, derzeit noch alte Website)
+- **Repo:** github.com/kiliansmd/ritters, Änderungen per Branch + PR auf `main`
+
+## Technik & Struktur
+
+Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kein Tracking. Schriften lokal.
+
+| Pfad | Inhalt |
+|---|---|
+| `index.html` | Startseite DE. Sektionen per ID: Hero, `#kundenstimmen` (Bewertungen), Anliegen-Einstiege (`data-termin="…"`), `#leistungen`, `#energieberatung-kessel-ritters`, `#ueber-uns` (inkl. `#familie`), `#partner`, `#einsatzgebiet`, `#faq`, `#kontakt` (Kontakt, Karte, Formulare `#form-termin` / `#form-nachricht`) |
+| `leistungen/*.html` | 7 SEO-Leistungsseiten DE (eigene FAQ, eigenes JSON-LD) |
+| `en/` | Englische Fassung: `index.html`, `legal-notice.html`, `privacy.html`, `404.html` (keine EN-Leistungsseiten) |
+| `impressum.html`, `datenschutz.html`, `404.html` | Rechtliches (Entwürfe; offene Angaben als `class="ph"` markiert) |
+| `assets/site.css` | Gesamtes Styling (Farben als CSS-Variablen) |
+| `assets/site.js` | Interaktion: Menü, Telefon-Auswahl, Formular-Handling, Sprachwechsel, Staging-noindex |
+| `assets/booking.js` | Geführter Dialog „Termin anfragen“ (3 Schritte). Unverbindliche Anfrage, **kein Kalender** |
+| `assets/consent.js` | Consent-Banner; Kategorien notwendig / medien (Google Maps) / reviews (Elfsight) |
+| `assets/testimonials.js`, `assets/reviews-frame.*`, `widgets/reviews.html` | Google-Bewertungen via Elfsight, erst nach Einwilligung, im Sandbox-Iframe mit eigener CSP |
+| `assets/icons.svg` | SVG-Sprite (`/assets/icons.svg#name`) |
+| `anfrage.php` | Formular-Versand per E-Mail (nur Apache/PHP; Vercel führt PHP nicht aus) |
+| JSON-LD | Inline im `<head>` jeder Seite (`LocalBusiness`, FAQ, Breadcrumbs) |
+| `sitemap.xml`, `robots.txt` | Für Produktion, alle URLs absolut auf `www.schornsteinfeger.koeln` |
+| `robots-staging.txt` | Wird auf Vercel-Hosts statt `robots.txt` ausgeliefert (`Disallow: /`) |
+| `.htaccess` | Produktion (Apache): HTTPS + www erzwingen, saubere URLs, 301s, Security-Header, CSP |
+| `vercel.json` | Vorschau (Vercel): gleiche Redirects/Header plus Staging-noindex |
+
+### Wichtige Konventionen
+
+- **Cache-Busting:** CSS/JS werden 30 Tage gecacht. Nach jeder Änderung an `assets/*.css|js` den Parameter `?v=` in **allen** HTML-Dateien auf die ersten 8 Zeichen von `shasum -a 256 <datei>` setzen.
+- **CSP ist strikt** (`script-src 'self'` + ein Hash, `style-src 'self'`): keine Inline-Skripte oder Inline-Styles einführen. Gilt in `vercel.json` **und** `.htaccess`, beide synchron halten.
+- **Redirects/Header** immer in `vercel.json` und `.htaccess` gleichzeitig pflegen.
+- Formulare und `booking.js` laufen auf localhost, `*.vercel.app` und `*.meindigitalerbetrieb.de` im **Vorschau-Modus ohne Versand**.
+- Änderungen immer **DE und EN gemeinsam**.
+
+## Deployment
+
+- **Vorschau:** Vercel-Projekt `ritters` (Team `sadjkfhdskafhjku`), Deploy per CLI aus dem Repo-Root, keine Git-Integration. `vercel deploy` erzeugt eine geschützte Preview-URL (Vercel Authentication; prüfen mit `vercel curl <pfad> --deployment <url>`). `vercel deploy --prod` aktualisiert ritters.meindigitalerbetrieb.de. `.vercelignore` schließt `anfrage.php`, `.htaccess`, `README.md`, `CLAUDE.md` und `robots.txt` aus.
+- **Produktion:** Dateien auf das Apache-Hosting von schornsteinfeger.koeln laden (ohne `.vercel*`, `CLAUDE.md`, `README.md`). `.htaccess` leitet alle anderen Hosts auf `https://www.schornsteinfeger.koeln` um. Mailversand (SMTP/SPF/DKIM) dort vor Go-live testen.
+
+### Indexierung
+
+- **Staging:** nicht indexierbar durch (1) Header `X-Robots-Tag: noindex, nofollow` für `ritters.meindigitalerbetrieb.de` und `*.vercel.app` (`vercel.json`, verbindliches Signal), (2) `robots.txt` → `robots-staging.txt` mit `Disallow: /` auf diesen Hosts, (3) `site.js` setzt das robots-Meta auf `noindex, nofollow`, wenn der Host **nicht** `(www.)schornsteinfeger.koeln` ist.
+- **Produktion:** HTML enthält `index, follow`; `robots.txt` erlaubt alles außer `/anfrage.php`. Diese Dateien nicht für Staging umbauen.
+
+## Kundenanforderungen (Meeting 13.11.2026)
+
+- **Farben:** Schwarz, Anthrazit, Grau/Aschetöne. Gold nur als Akzent aus dem Logo.
+- **Stil:** modern, hochwertig, übersichtlich, nicht textlastig; Startseite kompakt, aber informativ.
+- **Bilder:** echte Arbeits- und Teamfotos, Köln-Bezug (Kölner Dom). Logo/Wappen in hoher Qualität.
+- **Persönlichkeit:** Familienbetrieb in 2. Generation, Firmengeschichte, gern alte Familienfotos.
+- **Vertrauen:** Gütesiegel/Zertifizierungen und Google-Bewertungen. Herstellerlogos optional.
+- **Mobil:** direkte Einstiege zu Terminanfrage, Leistungen und Kontakt.
+- FAQ, Google Maps, lokale Sichtbarkeit, mobiloptimiert.
+- **Energieberatung nur als kleiner Teaser** mit Link zu https://www.kesselundritters.energy/ (eigene K&R-Website ist ein separates, nicht beauftragtes Projekt).
+- **Keine Karriereseite.**
+- **V1 = Terminanfrage mit persönlicher Bestätigung/Rückruf**, keine Online-Buchung. Felder: Anliegen, Wunschtermin (vormittags/nachmittags), Kontaktdaten, Infos. Terminverschiebung und allgemeine Anfragen müssen möglich sein. Anfragen gehen per E-Mail an Philipp.
+- Veröffentlichung von Mobilnummer und direkter E-Mail ist **noch nicht abgestimmt**.
+
+## Harte fachliche Regeln (immer prüfen)
+
+1. **Keine Werbung mit hoheitlichen Tätigkeiten:** Feuerstättenschau, Abnahme neuer Feuerstätten, Ausstellen des Feuerstättenbescheids nicht als Leistung, Formularoption oder CTA anbieten. Neutral erklären ist erlaubt.
+2. **Keine Bezeichnung als bevollmächtigter Bezirksschornsteinfeger**, kein „unser Kehrbezirk“, kein Hinweis auf eine eigene bBSF-Rolle.
+3. **Keine Buchungssprache:** nicht „online buchen“, „buchbar“, „Kalender“, „freie Termine“, „Termin wählen“. Stattdessen „Termin anfragen“, „wir bestätigen persönlich“.
+4. **Keine erfundenen Fakten:** keine Preise, Jahreszahlen, Mitarbeitenden, Siegel oder Zusagen ohne Freigabe von Philipp.
+5. **DE und EN immer gemeinsam ändern**, inklusive JSON-LD, Meta-Descriptions, Formular- und `booking.js`-Texte.
+6. Fachaussagen (KÜO, SchfHwG, 1. BImSchV, BauO NRW, DIN 14676) nur vorsichtig und mit Freigabe durch Philipp.
+
+Kontrollsuche nach Änderungen:
+
+```bash
+grep -rniE "feuerstättenschau|abnahme|bezirksschornsteinfeger|kehrbezirk|buchbar|online buchen|kalender|fireplace inspection|district chimney" --include='*.html' --include='*.js' .
+```
