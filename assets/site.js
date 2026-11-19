@@ -248,4 +248,9 @@
   } else {
     $$('.reveal').forEach(el => el.classList.add('in'));
   }
+
+  /* Fotoplätze („Foto folgt“) nur auf Staging/Vorschau zeigen; auf der Live-Domain bleiben sie verborgen. */
+  if (!/^(www\.)?schornsteinfeger\.koeln$/.test(location.hostname)) {
+    $$('[data-staging-only]').forEach(el => { el.hidden = false; });
+  }
 })();

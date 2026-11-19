@@ -1,0 +1,13 @@
+{
+  "_hinweis": "Pflege: Werte aus dem Google-Unternehmensprofil übernehmen (nur echte Bewertungen, Wortlaut nicht verändern, Kürzungen mit … kennzeichnen). Solange gesamtnote, anzahl oder rezensionen fehlen, zeigt die Live-Seite keinen statischen Block; Staging zeigt Platzhalter.",
+  "quelle": "Google",
+  "profilUrl": "",
+  "stand": "",
+  "gesamtnote": null,
+  "anzahl": null,
+  "rezensionen": [
+    { "name": "", "datum": "", "sterne": null, "text": "" },
+    { "name": "", "datum": "", "sterne": null, "text": "" },
+    { "name": "", "datum": "", "sterne": null, "text": "" }
+  ]
+}
