@@ -1,6 +1,6 @@
 # CLAUDE.md – Website Schornsteinfeger Ritters
 
-> **Branch `design/v3` (Design-Variante 3):** gleiche Inhalte wie `main`, aber dunkles Referenz-Design (gestapeltes Logo im Hero, S/W-Porträt, dunkle Bewertungen, 5 Anliegen-Karten, Energie-Band mit Foto) über `assets/theme-v3.css`, das nach `site.css` lädt. Eigenes Vercel-Projekt `ritters3` → https://ritters3.meindigitalerbetrieb.de. Inhaltliche Änderungen zuerst in `main`, dann hierher mergen.
+> **Branch `design/v3` (Design-Variante 3):** gleiche Inhalte wie `main`, aber dunkles Referenz-Design (gestapeltes Logo im Hero, Hero-Bühne mit freigestellter Person und Hut als Ebenen, dunkle Bewertungen, 5 Anliegen-Karten) über `assets/theme-v3.css`, das nach `site.css` lädt. Eigenes Vercel-Projekt `ritters3` → https://ritters3.meindigitalerbetrieb.de. Inhaltliche Änderungen zuerst in `main`, dann hierher mergen.
 
 Website für **Schornsteinfegermeister Philipp Ritters**, Meisterbetrieb in 2. Generation, Knechtstedener Straße 20, 50733 Köln-Nippes. Projekt von MeinDigitalerBetrieb (MDB).
 
@@ -22,6 +22,7 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 | `assets/site.css` | Gesamtes Styling (Farben als CSS-Variablen) |
 | `assets/site.js` | Interaktion: Menü, Telefon-Auswahl, Formular-Handling, Sprachwechsel, Staging-noindex |
 | `assets/data/anliegen.json` → `assets/anliegen.js` | **Zentrale Anliegen-Liste** (IDs, Labels DE/EN, Zusatzfelder, Aliase). Nach Änderung `python3 scripts/anliegen.py` ausführen: erzeugt `anliegen.js` und schreibt die Auswahllisten/Zusatzfelder in `index.html` und `en/index.html` (Marker `<!-- anliegen:felder -->`). `anliegen.js` muss **vor** `site.js` geladen werden. |
+| `assets/hero3d.js` | Nur V3, nur Startseiten: Hero-Bühne (`[data-hero-scene]`). Setzt CSS-Variablen `--px/--py` (Zeiger) und `--sy` (Scroll) am `.hero`, startet den Hutwurf (`.throw`), Klick auf den Hut wirft erneut. Bewegung liegt in `theme-v3.css`; bei `prefers-reduced-motion` statisch. Freisteller: `assets/img/philipp-ritters-freisteller-*.webp|png`, `zylinder-freisteller-*` |
 | `assets/booking.js` | Geführter Dialog „Termin anfragen“ (Anliegen → Details → Ihre Daten). Zeigt nur die Felder des gewählten Anliegens. Unverbindliche Anfrage, **kein Kalender** |
 | `assets/consent.js` | Consent-Banner; Kategorien notwendig / medien (Google Maps) / reviews (Elfsight) |
 | `assets/testimonials.js`, `assets/reviews-frame.*`, `widgets/reviews.html` | Google-Bewertungen via Elfsight, erst nach Einwilligung, im Sandbox-Iframe mit eigener CSP |

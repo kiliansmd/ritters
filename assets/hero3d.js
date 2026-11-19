@@ -1,0 +1,52 @@
+/* Hero-Bühne (V3): Ebenen-Parallax, Hutwurf, Scroll-Tiefe. Ohne Bibliotheken, ohne Tracking.
+ * Setzt nur CSS-Variablen (--px/--py Zeigerposition −1…1, --sy Scrollanteil 0…1) und Klassen;
+ * die Bewegung selbst liegt in theme-v3.css. Bei „Bewegung reduzieren“ bleibt alles statisch. */
+(() => {
+  const scene = document.querySelector('[data-hero-scene]');
+  if (!scene) return;
+  const hero = scene.closest('.hero') || scene;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const fine = matchMedia('(hover: hover) and (pointer: fine)');
+  const hat = scene.querySelector('.hero-hat img');
+  const person = scene.querySelector('.hero-person img');
+
+  /* Wurf starten, sobald die Person geladen ist (sonst würde der Hut ins Leere fliegen) */
+  const ready = () => { scene.classList.add('is-ready'); hat && hat.classList.add('throw'); };
+  if (person && !person.complete) { person.addEventListener('load', ready, { once: true }); person.addEventListener('error', ready, { once: true }); }
+  else ready();
+
+  /* Klick auf den Hut: noch einmal werfen */
+  if (hat && !reduced.matches) {
+    hat.addEventListener('click', () => { hat.classList.remove('throw'); void hat.offsetWidth; hat.classList.add('throw'); });
+  }
+
+  if (reduced.matches) return;
+
+  /* Zeiger-Parallax (nur Maus/Trackpad), weich nachgeführt */
+  let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+  const tick = () => {
+    cx += (tx - cx) * .09; cy += (ty - cy) * .09;
+    hero.style.setProperty('--px', cx.toFixed(4)); hero.style.setProperty('--py', cy.toFixed(4));
+    raf = (Math.abs(tx - cx) > .002 || Math.abs(ty - cy) > .002) ? requestAnimationFrame(tick) : 0;
+  };
+  const kick = () => { if (!raf) raf = requestAnimationFrame(tick); };
+  if (fine.matches) {
+    hero.addEventListener('pointermove', e => {
+      const r = hero.getBoundingClientRect();
+      tx = Math.max(-1, Math.min(1, ((e.clientX - r.left) / r.width - .5) * 2));
+      ty = Math.max(-1, Math.min(1, ((e.clientY - r.top) / r.height - .5) * 2));
+      kick();
+    }, { passive: true });
+    hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; kick(); });
+  }
+
+  /* Scroll-Tiefe: Hut steigt schneller als die Person */
+  let sraf = 0;
+  const onScroll = () => {
+    sraf = 0;
+    const h = hero.offsetHeight || 1;
+    hero.style.setProperty('--sy', Math.min(1, Math.max(0, scrollY / h)).toFixed(4));
+  };
+  addEventListener('scroll', () => { if (!sraf) sraf = requestAnimationFrame(onScroll); }, { passive: true });
+  onScroll();
+})();
