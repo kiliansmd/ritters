@@ -280,9 +280,9 @@ input, select, textarea { border-radius: var(--radius-btn); }
     radial-gradient(30% 40% at 92% 70%, rgba(255, 255, 255, .07) 0%, rgba(255, 255, 255, 0) 70%),
     linear-gradient(112deg, rgba(255, 255, 255, 0) 56%, rgba(255, 255, 255, .055) 62%, rgba(255, 255, 255, .055) 70%, rgba(255, 255, 255, 0) 76%);
   transform: translate3d(calc(var(--px) * -10px), calc(var(--py) * -8px + var(--sy) * 30px), 0); will-change: transform; }
-/* Person: rechts, Beine laufen unten aus der Bühne, leichte Raumkippung zum Zeiger */
+/* Person: rechts, Beine laufen unten aus der Bühne; fixiert zum Dach (kein Zeiger-Parallax, gleicher Scroll-Versatz wie Dach und First) */
 .hero-figure { position: absolute; right: clamp(16px, 7vw, 120px); bottom: -24%; height: 102%; aspect-ratio: 788 / 1354; transform-style: preserve-3d;
-  transform: translate3d(calc(var(--px) * 16px), calc(var(--py) * 10px + var(--sy) * 60px), 0) rotateY(calc(var(--px) * -3.5deg)) rotateX(calc(var(--py) * 2deg)); will-change: transform; }
+  transform: translate3d(0, calc(var(--sy) * 28px), 0); will-change: transform; }
 .hero-person { position: absolute; inset: 0; }
 .hero-person picture { display: block; height: 100%; }
 .hero-person img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(-18px 26px 28px rgba(0, 0, 0, .7)) contrast(1.06); }
@@ -339,7 +339,7 @@ input, select, textarea { border-radius: var(--radius-btn); }
    Köln und der Dom bleiben darüber sichtbar. --seat = Abstand First zur Unterkante der Bühne. */
 .hero { --seat: 32%; }
 .hero-roof { position: absolute; left: -14%; right: -14%; top: calc(100% - var(--seat)); aspect-ratio: 2000 / 1173;
-  transform: translate3d(calc(var(--px) * -6px), calc(var(--sy) * 28px), 0);
+  transform: translate3d(0, calc(var(--sy) * 28px), 0);
   -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 12%, #000 42%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 12%, #000 42%);
   will-change: transform; }
 .hero-roof picture, .hero-roof img { display: block; width: 100%; height: 100%; }
@@ -351,11 +351,11 @@ input, select, textarea { border-radius: var(--radius-btn); }
 /* Firstkante: feine helle Linie mit Schattensaum */
 .hero-ridge { position: absolute; left: 0; right: 0; top: calc(100% - var(--seat)); height: 3px; background: linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .06)); box-shadow: 0 2px 14px rgba(0, 0, 0, .7), 0 -1px 0 rgba(0, 0, 0, .6);
   -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 12%, #000 42%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 12%, #000 42%);
-  transform: translate3d(calc(var(--px) * -6px), calc(var(--sy) * 28px), 0); will-change: transform; }
+  transform: translate3d(0, calc(var(--sy) * 28px), 0); will-change: transform; }
 /* Sitzschatten der Person auf dem First */
 .hero-person::before { content: ""; position: absolute; left: 26%; right: 4%; top: 42%; height: 9%; border-radius: 50%; background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0) 70%); filter: blur(8px); }
 @media (max-width: 640px) {
   .hero { --seat: 37%; }
-  .hero-roof { left: -30%; right: -30%; transform: translate3d(calc(var(--px) * -6px), calc(var(--sy) * 28px), 0); -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); }
+  .hero-roof { left: -30%; right: -30%; transform: translate3d(0, calc(var(--sy) * 28px), 0); -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); }
   .hero-ridge { -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); }
 }
