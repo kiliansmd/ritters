@@ -271,7 +271,7 @@ input, select, textarea { border-radius: var(--radius-btn); }
 /* Hintergrund: Kölner Rheinpanorama, abgedunkelt, leicht gegenläufig zum Zeiger */
 .hero-bg { position: absolute; inset: -4%; transform: translate3d(calc(var(--px) * -6px), calc(var(--py) * -4px + var(--sy) * 40px), 0); will-change: transform; }
 .hero-bg picture, .hero-bg img { display: block; width: 100%; height: 100%; }
-.hero-bg img { object-fit: cover; object-position: 62% 42%; filter: grayscale(1) brightness(.5) contrast(1.08); }
+.hero-bg img { object-fit: cover; object-position: 62% 42%; filter: grayscale(1) brightness(.5) contrast(1.02) blur(1.3px); }
 .hero-bg::after { content: ""; position: absolute; inset: 0; background:
     linear-gradient(90deg, rgba(38, 38, 38, .92) 0%, rgba(38, 38, 38, .6) 34%, rgba(38, 38, 38, .15) 60%, rgba(38, 38, 38, .35) 100%),
     linear-gradient(180deg, rgba(38, 38, 38, .35) 0%, rgba(38, 38, 38, 0) 30%, rgba(38, 38, 38, .2) 70%, rgba(38, 38, 38, .85) 100%); }
@@ -285,14 +285,14 @@ input, select, textarea { border-radius: var(--radius-btn); }
   transform: translate3d(0, calc(var(--sy) * 28px), 0); will-change: transform; }
 .hero-person { position: absolute; inset: 0; }
 .hero-person picture { display: block; height: 100%; }
-.hero-person img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(-18px 26px 28px rgba(0, 0, 0, .7)) contrast(1.06); }
+.hero-person img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(1px -1px 0 rgba(255, 255, 255, .14)) drop-shadow(-16px 22px 22px rgba(0, 0, 0, .6)) contrast(1.06); }
 .js .hero-person img { opacity: 0; transform: translateY(24px) scale(.985); transition: opacity .9s ease, transform 1.1s cubic-bezier(.2, .8, .25, 1); }
 .js .is-ready .hero-person img { opacity: 1; transform: none; }
 /* Hut: eigene Ebene vor der Person, über der geöffneten Hand */
 .hero-hat { position: absolute; width: 36%; left: -36%; top: -15%; aspect-ratio: 672 / 674; pointer-events: auto;
   transform: translate3d(calc(var(--px) * 44px), calc(var(--py) * 30px + var(--sy) * -160px), 90px) rotateZ(calc(var(--px) * 5deg)); will-change: transform; transform-style: preserve-3d; }
 .hero-hat picture { display: block; height: 100%; }
-.hero-hat img { display: block; width: 100%; height: 100%; cursor: pointer; filter: drop-shadow(10px 26px 22px rgba(0, 0, 0, .55)); transform: rotate(-8deg); }
+.hero-hat img { display: block; width: 100%; height: 100%; cursor: pointer; filter: drop-shadow(1px -1px 0 rgba(255, 255, 255, .12)) drop-shadow(-12px 26px 20px rgba(0, 0, 0, .55)); transform: rotate(-8deg); }
 /* Wurf: aus der Hand nach oben, danach leichtes Schweben */
 .js .hero-hat img { opacity: 0; }
 .hero-hat { --hat-dx: 78%; --hat-dy: 62%; }
@@ -347,7 +347,8 @@ input, select, textarea { border-radius: var(--radius-btn); }
 /* Schatten am First (unter der Person) und Abdunklung nach vorn */
 .hero-roof::after { content: ""; position: absolute; inset: 0; background:
     linear-gradient(180deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .08) 16%, rgba(0, 0, 0, 0) 40%, rgba(38, 38, 38, .35) 100%),
-    linear-gradient(90deg, rgba(38, 38, 38, .5) 0%, rgba(38, 38, 38, 0) 45%, rgba(38, 38, 38, 0) 80%, rgba(38, 38, 38, .35) 100%); }
+    radial-gradient(60% 50% at 88% 0%, rgba(255, 255, 255, .10) 0%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(90deg, rgba(38, 38, 38, .5) 0%, rgba(38, 38, 38, 0) 45%, rgba(38, 38, 38, 0) 80%, rgba(38, 38, 38, .25) 100%); }
 /* Firstkante: feine helle Linie mit Schattensaum */
 .hero-ridge { position: absolute; left: 0; right: 0; top: calc(100% - var(--seat)); height: 3px; background: linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .06)); box-shadow: 0 2px 14px rgba(0, 0, 0, .7), 0 -1px 0 rgba(0, 0, 0, .6);
   -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 12%, #000 42%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 12%, #000 42%);
@@ -358,4 +359,17 @@ input, select, textarea { border-radius: var(--radius-btn); }
   .hero { --seat: 37%; }
   .hero-roof { left: -30%; right: -30%; transform: translate3d(0, calc(var(--sy) * 28px), 0); -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); }
   .hero-ridge { -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000 22%); }
+}
+/* Realismus: Schlagschatten der Beine auf dem Dach (Silhouette der Person, nur unterhalb des Firsts), Licht von rechts oben */
+.hero-cast { pointer-events: none; -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 43%, #000 52%); mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 43%, #000 52%); }
+.hero-cast img { display: block; width: 100%; height: 100%; object-fit: contain; opacity: .48; filter: brightness(0) blur(12px); transform-origin: 50% 45%; transform: translate(-11%, 5%) skewX(-12deg) scaleY(.95); }
+.js .hero-cast img { opacity: 0; transition: opacity 1.2s ease .3s; }
+.js .is-ready .hero-cast img { opacity: .48; }
+/* Feines Filmkorn über allen Ebenen der Bühne, verbindet Foto, Dach und Freisteller */
+.hero-scene::before { content: ""; position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: .09; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.hero-scene-hat::before { display: none; }
+.hero-scene::after { z-index: 6; }
+@media (max-width: 640px) {
+  .hero-cast img { filter: brightness(0) blur(8px); transform: translate(-9%, 4%) skewX(-10deg) scaleY(.95); }
 }
