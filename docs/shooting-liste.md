@@ -43,3 +43,19 @@ Jedes Foto wird pro Seite nur **einmal** verwendet. Fehlende Fotos sind auf der 
 - Originale als JPG oder RAW-Export, **mind. 2400 px** an der langen Kante, unbearbeitet und farbig (Schwarz-Weiß wird bei Bedarf auf der Website erzeugt).
 - Zu jedem Foto: Fotograf/Quelle und die Freigabe für die Nutzung auf der Website (Impressum „Bildnachweis“). Erkennbare Personen außer Philipp nur mit deren Einwilligung.
 - Verarbeitung: `scripts/bilder.sh <original.jpg> <dateiname>` erzeugt AVIF, WebP und JPG in 480/800/1200/1600 px nach `assets/img/` und gibt das `<picture>`-Markup aus (Alt-Text und `sizes` eintragen; `loading="lazy"` außer beim Hero).
+
+## Stand 19.11.2026: Fotos aus dem Album „Auswahl“ eingebaut
+
+| Datei | Verwendung |
+|---|---|
+| Domblick.jpg | Hero Startseite (DE/EN); Ausschnitt quer auf „Schornsteinfeger frei wählen“ |
+| _Z0A8054_sw.jpg | „Über uns“ (Schwarz-Weiß-Porträt) |
+| Rohr.jpg | Leistungsseite Schornstein kehren; Panel „Schornsteinfegerarbeiten“ |
+| GHS.JPG | Leistungsseite Abgasmessung; Panel „Prüfungen & Messungen“ |
+| RWM.JPG | Leistungsseite Rauchmelder; Panel „Brandschutz“ |
+| Ofen1.jpg | Leistungsseite Kaminofen-Reinigung; Panel „Reinigung“ |
+| Ofen2.jpg | Panel „Beratung zu Kaminöfen“ |
+| Logo.JPG | Zunftwappen in der Familiengeschichte |
+| IMG_0817.JPG | Ansprechpartner-Bild (Seitenleisten, Termin-Dialog) |
+
+Noch offen: historische Familienfotos, Foto für die Energieberatungs-Seite, Teamfoto.
