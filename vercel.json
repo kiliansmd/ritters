@@ -13,6 +13,10 @@
     { "source": "/en/(impressum|imprint)", "destination": "/en/legal-notice", "permanent": true },
     { "source": "/en/(datenschutz|privacy-policy)", "destination": "/en/privacy", "permanent": true }
   ],
+  "rewrites": [
+    { "source": "/robots.txt", "has": [{ "type": "host", "value": "ritters.meindigitalerbetrieb.de" }], "destination": "/robots-staging.txt" },
+    { "source": "/robots.txt", "has": [{ "type": "host", "value": "(?<sub>.*)\\.vercel\\.app" }], "destination": "/robots-staging.txt" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
