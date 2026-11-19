@@ -1240,3 +1240,31 @@ html:not(.show-placeholders) .ph { background: none; outline: 0; padding: 0; }
 .family-details .fam-timeline { clear: both; }
 @media (max-width: 760px) { .panel:has(.panel-photo) { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .fam-crest { float: none; width: 160px; margin: 0 0 20px; } }
+
+/* Typografie: ausgewogene Umbrüche, keine Einzelwörter in Überschriften, saubere Silbentrennung */
+h1, h2, h3, h4, .eyebrow, .lead, .hero-lead, .subhero-lead, .family-lead, .intent-card b, .intent-card small,
+.service p, .trustbar b, .trustbar span, .btn, .hero-tiles span, .rel-card b, .rel-card span, .proc p, .band p,
+.panel h4, figcaption, .reviews-uwg { text-wrap: balance; }
+p, li, dd, blockquote { text-wrap: pretty; }
+h1, h2 { letter-spacing: -.01em; }
+h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: manual; }
+@media (max-width: 600px) { html[lang="de"] main p, html[lang="de"] main li, html[lang="de"] main dd { hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 10 4 4; } }
+.service p, .intent-card small, .lead, .proc p, .rel-card span { hyphens: manual !important; }
+.btn, .hero-tiles a, .intent-card b, .lead, .hero-lead, .trustbar b { hyphens: manual; }
+.btn { text-align: center; }
+.cta, .contact-btns, .panel-actions { flex-wrap: wrap; }
+a[href^="tel:"] { white-space: nowrap; }
+.lead.center { max-width: 60ch; margin-left: auto; margin-right: auto; }
+@media (max-width: 480px) {
+  .btn { white-space: normal; }
+  h1, h2, h3 { hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 12 5 5; }
+}
+.faq-item summary { display: block; }
+.faq-item summary h3 { display: block; text-wrap: balance; }
+
+/* Leistungen: bei 5 Karten die zweite Reihe mittig setzen (Desktop) */
+@media (min-width: 961px) {
+  .services { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .services > .service { grid-column: span 2; }
+  .services > .service:nth-child(4):nth-last-child(2) { grid-column: 2 / span 2; }
+}
