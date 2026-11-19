@@ -265,7 +265,9 @@ input, select, textarea { border-radius: var(--radius-btn); }
 .hero { --px: 0; --py: 0; --sy: 0; background: radial-gradient(120% 90% at 70% 110%, #2f2f2f 0%, var(--dark) 55%), var(--dark); }
 .hero::after { background: linear-gradient(90deg, rgba(38, 38, 38, .55) 0%, rgba(38, 38, 38, .2) 34%, rgba(38, 38, 38, 0) 50%); }
 .hero-inner { min-height: clamp(480px, 44vw, 600px); }
-.hero-scene { position: absolute; inset: 0; overflow: hidden; perspective: 1400px; perspective-origin: 70% 40%; pointer-events: none; }
+/* clip-path zusätzlich zu overflow: WebKit schneidet 3D-transformierte Kinder sonst nicht ab */
+.hero { clip-path: inset(0); }
+.hero-scene { position: absolute; inset: 0; overflow: hidden; clip-path: inset(0); contain: paint; perspective: 1400px; perspective-origin: 70% 40%; pointer-events: none; }
 .hero-scene::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: linear-gradient(180deg, rgba(38, 38, 38, 0), var(--dark) 92%); }
 /* Lichtfläche: Fensterlicht von rechts oben wie im Originalfoto, bewegt sich gegenläufig */
 .hero-light { position: absolute; inset: -12%; background:
