@@ -1268,3 +1268,22 @@ a[href^="tel:"] { white-space: nowrap; }
   .services > .service { grid-column: span 2; }
   .services > .service:nth-child(4):nth-last-child(2) { grid-column: 2 / span 2; }
 }
+
+/* Barrierefreiheit & Lesbarkeit (WCAG 2.2 AA) */
+.subhero .eyebrow, .band-dark .eyebrow { color: var(--gold-light); }          /* 9,7:1 auf Anthrazit (vorher 2,6:1) */
+.family-details > summary h3.family-title { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); color: var(--white); }
+.bk-hint, .bk-sim { font-size: 14px; }
+@media (max-width: 960px) { .trustbar span { font-size: 13.5px; } }
+@media (max-width: 640px) {
+  .hero h1 small { font-size: 13px; letter-spacing: .06em; line-height: 1.5; }
+  .trustbar span { font-size: 13.5px; }
+  .bk-progress li { font-size: 13px; }
+  .action-bar a { font-size: 14px; }
+}
+/* Fokus deutlich sichtbar, auch auf der seitlichen Termin-Lasche und in Aufklapp-Zeilen */
+.book-fab:focus-visible { outline: 3px solid var(--focus, var(--ink)); outline-offset: 2px; }
+summary:focus-visible { outline: 3px solid var(--focus, var(--ink)); outline-offset: 2px; border-radius: 4px; }
+/* Text-Abstände (WCAG 1.4.12): keine festen Höhen für Textcontainer */
+.btn, .tab, .hero-tiles a { height: auto; }
+/* Unterstrichene Links im Fließtext klar erkennbar */
+main p a:not(.btn):not(.link-arrow), main li a:not(.btn):not(.link-arrow) { text-decoration-thickness: 1px; text-underline-offset: 3px; }
