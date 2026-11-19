@@ -6,7 +6,7 @@
 #
 # Ergebnis: assets/img/<zielname>-<breite>.{avif,webp,jpg} für die Breiten 480/800/1200/1600
 # (nur Breiten bis zur Originalbreite; kleinere Originale nur in Originalbreite) und ein
-# <picture>-Schnipsel zum Einfügen. Benötigt: sips (macOS, inkl. AVIF) und cwebp.
+# <picture>-Schnipsel zum Einfügen. Benötigt: sips (macOS), cwebp und ffmpeg mit libaom (AVIF).
 # Dateinamen: Kleinbuchstaben, Bindestriche, mit Köln-Bezug (z. B. „schornsteinfeger-koeln-…“).
 set -euo pipefail
 src=$1; name=$2
@@ -20,7 +20,12 @@ for w in 480 800 1200 1600; do (( w <= w0 )) && widths+=$w; done
 tmp=$(mktemp -d)
 for w in $widths; do
   sips -s format jpeg -s formatOptions 82 --resampleWidth $w "$src" --out $out/$name-$w.jpg >/dev/null
-  sips -s format avif -s formatOptions 55 $out/$name-$w.jpg --out $out/$name-$w.avif >/dev/null
+  # AVIF über ffmpeg/libaom: sips erzeugt bei hohen Bildern (> ca. 1800 px) AVIFs, die Chrome nicht darstellt
+  if command -v ffmpeg >/dev/null 2>&1; then
+    ffmpeg -loglevel error -y -i $out/$name-$w.jpg -c:v libaom-av1 -still-picture 1 -crf 30 -cpu-used 6 -pix_fmt yuv420p $out/$name-$w.avif
+  else
+    sips -s format avif -s formatOptions 55 $out/$name-$w.jpg --out $out/$name-$w.avif >/dev/null
+  fi
   cwebp -quiet -q 78 $out/$name-$w.jpg -o $out/$name-$w.webp
 done
 rm -rf $tmp

@@ -34,7 +34,7 @@
 <meta property="og:url" content="https://www.schornsteinfeger.koeln/en/">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-480.avif 480w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-800.avif 800w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1600.avif 1600w" imagesizes="(max-width: 640px) 100vw, 57vw" fetchpriority="high">
-<link rel="stylesheet" href="/assets/site.css?v=5f9be5a7">
+<link rel="stylesheet" href="/assets/site.css?v=90a74e3e">
 <link rel="stylesheet" href="/assets/theme-v2.css?v=61d07fe3">
 <script type="application/ld+json">
 {
@@ -79,8 +79,9 @@
 <script>document.documentElement.classList.add('js')</script>
 <script src="/assets/consent.js?v=7b10ccbf" defer></script>
 <script src="/assets/testimonials.js?v=6579f265" defer></script>
-<script src="/assets/site.js?v=508795d3" defer></script>
-<script src="/assets/booking.js?v=ff2f1036" defer></script>
+<script src="/assets/anliegen.js?v=31084ee7" defer></script>
+<script src="/assets/site.js?v=bd71ff71" defer></script>
+<script src="/assets/booking.js?v=c5787c9d" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -366,13 +367,16 @@
               <label for="t-leistung">Service <span class="req" aria-hidden="true">*</span></label>
               <select id="t-leistung" name="leistung" required>
                 <option value="">Please choose …</option>
-                <option>Chimney sweeping</option>
-                <option>Inspections&nbsp;&amp; measurements</option>
-                <option>Cleaning</option>
-                <option>Fire safety&nbsp;&amp; smoke alarms</option>
-                <option>Energy consulting (passed on to Kessel &amp; Ritters)</option>
-                <option>New wood stove – advice beforehand</option>
-                <option>Work listed in my notice</option><option>I’m not sure / advice</option><option>Other</option>
+                <option value="arbeiten_bescheid">Work listed in my notice</option>
+                <option value="rauchmelder">Smoke alarms: testing or fitting</option>
+                <option value="termin_verschieben">Reschedule an appointment</option>
+                <option value="rueckruf">Request a call back</option>
+                <option value="kaminofen_beratung">New wood stove – advice beforehand</option>
+                <option value="unsicher">I’m not sure – please advise me</option>
+                <option value="kehren">Chimney sweeping and inspection</option>
+                <option value="messung">Flue gas or emission measurement</option>
+                <option value="kaminofen_reinigung">Wood stove or stove cleaning</option>
+                <option value="energieberatung">Energy consulting</option>
               </select>
               <p class="err" id="t-leistung-err"></p>
             </div>
@@ -396,23 +400,22 @@
               <input id="t-adresse" name="adresse" required autocomplete="street-address" placeholder="Street, number, postcode, town">
               <p class="err" id="t-adresse-err"></p>
             </div>
-            <div class="field">
-              <label for="t-datum">Preferred date</label>
-              <input id="t-datum" name="wunschtermin" type="date" aria-describedby="t-datum-hint">
-              <p class="privacy" id="t-datum-hint">Mon–Fri. Feel free to list several days in the message field.</p>
-            </div>
-            <fieldset class="field">
-              <legend>Preferred time of day</legend>
-              <div class="radios">
-                <label><input type="radio" name="zeit" value="egal" checked> any time</label>
-                <label><input type="radio" name="zeit" value="vormittags"> morning</label>
-                <label><input type="radio" name="zeit" value="nachmittags"> afternoon</label>
-              </div>
-            </fieldset>
             <div class="field full">
               <label for="t-msg">Message <span class="muted">(optional)</span></label>
               <textarea id="t-msg" name="nachricht" rows="3" placeholder="e.g. type of appliance, roof access, contact person on site"></textarea>
             </div>
+            <!-- anliegen:felder (erzeugt) -->
+            <details class="field full form-details" data-form-details><summary>Further details – so we can assess your request before calling back<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary><div class="form form-details-grid">
+              <fieldset class="field" data-for="arbeiten_bescheid rauchmelder kaminofen_beratung unsicher kehren messung kaminofen_reinigung energieberatung"><legend>Are you already a customer?</legend><div class="radios"><label><input type="radio" name="kunde" value="neukunde"> New customer</label><label><input type="radio" name="kunde" value="bestandskunde"> Existing customer</label></div></fieldset>
+              <div class="field full" data-for="termin_verschieben"><label for="t-bisheriger_termin">Current appointment</label><input id="t-bisheriger_termin" name="bisheriger_termin" placeholder="e.g. 12 Dec 2026, morning"></div>
+              <fieldset class="field full" data-for="arbeiten_bescheid kehren messung"><legend>Type of system</legend><div class="radios checks"><label><input type="checkbox" name="anlage[]" value="gas"> Gas</label><label><input type="checkbox" name="anlage[]" value="oel"> Oil</label><label><input type="checkbox" name="anlage[]" value="holz"> Wood / stove</label><label><input type="checkbox" name="anlage[]" value="pellet"> Pellets</label><label><input type="checkbox" name="anlage[]" value="unbekannt"> Not sure</label></div></fieldset>
+              <div class="field" data-for="arbeiten_bescheid kehren messung kaminofen_reinigung"><label for="t-anzahl">Number of appliances</label><select id="t-anzahl" name="anzahl"><option value="">–</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4+">4 or more</option><option value="unbekannt">Not sure</option></select></div>
+              <div class="field" data-for="arbeiten_bescheid"><label for="t-frist">Deadline in your notice (optional)</label><input id="t-frist" name="frist" type="date"></div>
+              <div class="field full" data-for="arbeiten_bescheid rauchmelder termin_verschieben kaminofen_beratung kehren messung kaminofen_reinigung"><span class="label" id="t-wunschtage-label">Preferred days (up to 3, Mon–Fri)</span><div class="dates" role="group" aria-labelledby="t-wunschtage-label"><input id="t-wunschtage-1" name="wunschtage[]" type="date" aria-label="Preferred days (up to 3, Mon–Fri) 1"><input id="t-wunschtage-2" name="wunschtage[]" type="date" aria-label="Preferred days (up to 3, Mon–Fri) 2"><input id="t-wunschtage-3" name="wunschtage[]" type="date" aria-label="Preferred days (up to 3, Mon–Fri) 3"></div><p class="privacy">Leave blank to arrange a date with us.</p></div>
+              <fieldset class="field" data-for="arbeiten_bescheid rauchmelder termin_verschieben kaminofen_beratung kehren messung kaminofen_reinigung"><legend>Preferred time of day</legend><div class="radios"><label><input type="radio" name="zeit" value="egal" checked> Flexible</label><label><input type="radio" name="zeit" value="vormittags"> Morning</label><label><input type="radio" name="zeit" value="nachmittags"> Afternoon</label></div></fieldset>
+              <fieldset class="field" data-for="rueckruf unsicher energieberatung allgemeine_frage"><legend>When is the best time to call you?</legend><div class="radios"><label><input type="radio" name="rueckruf_zeit" value="egal" checked> Any time</label><label><input type="radio" name="rueckruf_zeit" value="vormittags"> Morning (7:30 am–12 pm)</label><label><input type="radio" name="rueckruf_zeit" value="nachmittags"> Afternoon (12–5 pm)</label></div></fieldset>
+            </div></details>
+            <!-- /anliegen:felder -->
             <div class="field full">
               <label class="checkbox"><input type="checkbox" id="t-ds" name="datenschutz" value="ja" required><span>I have read the <a href="/en/privacy#forms" target="_blank" rel="noopener">privacy policy<span class="sr-only"> (opens in a new window)</span></a> and agree that my details are processed and stored to handle my request. I can withdraw my consent at any time by emailing ritters@schornsteinfeger.koeln. <span class="req" aria-hidden="true">*</span></span></label>
               <p class="err" id="t-ds-err"></p>
@@ -432,6 +435,13 @@
             <input type="hidden" name="sprache" value="en">
             <input type="hidden" name="ts" value="">
             <div class="hp" aria-hidden="true"><label for="n-website">Website</label><input id="n-website" name="website" tabindex="-1" autocomplete="off"></div>
+            <div class="field full" data-nachricht-anliegen><label for="n-anliegen">Request</label><select id="n-anliegen" name="leistung">
+                <option value="allgemeine_frage">General question</option>
+                <option value="termin_verschieben">Reschedule an appointment</option>
+                <option value="rueckruf">Request a call back</option>
+                <option value="unsicher">I’m not sure – please advise me</option>
+                <option value="energieberatung">Energy consulting</option>
+              </select></div>
             <div class="field">
               <label for="n-name">Name <span class="req" aria-hidden="true">*</span></label>
               <input id="n-name" name="name" required autocomplete="name">
