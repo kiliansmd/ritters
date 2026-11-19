@@ -15,9 +15,13 @@
   if (person && !person.complete) { person.addEventListener('load', ready, { once: true }); person.addEventListener('error', ready, { once: true }); }
   else ready();
 
-  /* Klick auf den Hut: noch einmal werfen */
-  if (hat && !reduced.matches) {
-    hat.addEventListener('click', () => { hat.classList.remove('throw'); void hat.offsetWidth; hat.classList.add('throw'); });
+  /* Noch einmal werfen: Klick auf den Hut, Rückkehr aus dem Browser-Cache, Hero scrollt wieder ins Bild */
+  const rethrow = () => { if (!hat || reduced.matches) return; hat.classList.remove('throw'); void hat.offsetWidth; hat.classList.add('throw'); };
+  hat && hat.addEventListener('click', rethrow);
+  addEventListener('pageshow', e => { if (e.persisted) rethrow(); });
+  if ('IntersectionObserver' in window) {
+    let away = false;
+    new IntersectionObserver(([e]) => { if (e.isIntersecting && away) rethrow(); away = !e.isIntersecting; }, { threshold: .4 }).observe(hero);
   }
 
   if (reduced.matches) return;
