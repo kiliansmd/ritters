@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-480.avif 480w" imagesizes="(max-width: 960px) 100vw, 57vw" fetchpriority="high">
-<link rel="stylesheet" href="/assets/site.css?v=3bd73522">
+<link rel="stylesheet" href="/assets/site.css?v=17683bd4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,8 +71,8 @@
 </script>
 <script>document.documentElement.classList.add('js')</script>
 <script src="/assets/consent.js?v=7b10ccbf" defer></script>
-<script src="/assets/testimonials.js?v=66336146" defer></script>
-<script src="/assets/site.js?v=41e3790d" defer></script>
+<script src="/assets/testimonials.js?v=6579f265" defer></script>
+<script src="/assets/site.js?v=508795d3" defer></script>
 <script src="/assets/booking.js?v=a2821384" defer></script>
 </head>
 <body>
@@ -140,7 +140,7 @@
     <div class="wrap reveal">
       <p class="eyebrow center">Our services</p>
       <h2 id="services-title" class="center">Safety, efficiency and lasting value.</h2>
-      <p class="lead center">As chimney sweeps in Cologne we actively prevent fires: we inspect flues, measure carbon monoxide and emissions, and advise you on new heating appliances, smoke alarms and saving energy.</p>
+      <p class="lead center">Preventive fire safety for your home – from sweeping and measurements to smoke alarms.</p>
 
       <div class="services">
         <article class="service">
@@ -218,20 +218,27 @@
         </div>
       </div>
 
-      <div class="more-services">
-        <h3>We can also help with:</h3>
+      <details class="more-services"><summary><h3>Show more services</h3><svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
         <ul class="chips">
           <li>Advice on new heating appliances</li><li>Chimney caps</li><li>Gas installation checks (TRGI)</li><li>Remote smoke alarm inspection</li><li>Documents by email</li>
         </ul>
-      </div>
+      </details>
     </div>
   </section>
 
-  <!-- ENERGIEBERATUNG: nur Teaser (eigene K&R-Website ist ein separates Projekt) -->
-  <section id="energy-kessel-ritters" class="band band-dark" aria-labelledby="energy-title">
-    <div class="wrap band-inner">
-      <div><h2 id="energy-title">Energy consulting with Kessel &amp; Ritters</h2><p>New heating, renovation or subsidies? Philipp advises on these together with Markus Kessel at Kessel &amp; Ritters – Die Energieberater (website in German).</p></div>
-      <a class="btn btn-ghost" href="https://www.kesselundritters.energy/" target="_blank" rel="noopener">To Kessel &amp; Ritters – Die Energieberater<span class="sr-only"> (external website, new window)</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#ext"/></svg></a>
+  <section class="section process" aria-labelledby="process-title">
+    <div class="wrap reveal">
+      <p class="eyebrow center">How it works</p>
+      <h2 id="process-title" class="center">Three steps to a completed appointment.</h2>
+      <ol class="proc">
+        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg></span><h3>Request a date</h3><p>Tell us what you need and your preferred date. We clarify the cost and confirm the appointment personally.</p></li>
+        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg></span><h3>We come to you</h3><p>On time, clean and with dust covers. We briefly explain the results on site.</p></li>
+        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg></span><h3>Get your certificate</h3><p>You receive the certificate or form directly – by email if you like.</p></li>
+      </ol>
+      <div class="proc-cta">
+        <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request a preferred date</a>
+        <p>Non-binding request · Cost clarified before you commit</p>
+      </div>
     </div>
   </section>
 
@@ -241,11 +248,11 @@
       <h2 id="reviews-title">What customers say about us.</h2>
       <div class="reviews-static" data-reviews-static hidden></div>
       <p class="reviews-uwg">The reviews come from our Google Business Profile. We do not carry out our own check as to whether they were written by customers who actually used our services.</p>
-      <div class="reviews-placeholder" data-reviews-placeholder>
+      <details class="reviews-live"><summary>Load live reviews from Google<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary><div class="reviews-placeholder" data-reviews-placeholder>
         <p>Optional: load current reviews directly from Google. This transfers connection data, including your IP address, to Elfsight and its content providers.</p>
         <button type="button" class="btn btn-outline" data-reviews-load>Load live reviews</button>
         <a href="/en/privacy#elfsight">Privacy details</a>
-      </div>
+      </div></details>
       <p class="privacy" data-reviews-status role="status"></p>
       <div data-reviews-host></div>
       <p class="privacy"><a href="/en/privacy#consent" data-consent-open>Change privacy settings</a></p>
@@ -266,42 +273,16 @@
         </div>
       </div>
       <!-- FAMILY: placeholders until Philipp provides years and photos. -->
-      <div id="family" class="family-block reveal" aria-labelledby="family-title">
-      <p class="eyebrow">Family business</p>
-      <h3 id="family-title" class="family-title">Generations in Cologne</h3>
+      <details id="family" class="family-block family-details reveal"><summary><span class="family-title" id="family-title">Our family story: generations in Cologne</span><svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <p class="family-lead">The chimney sweep trade runs in our family – now in its second generation.</p>
       <ol class="fam-timeline"><li><span class="fam-year"><span class="ph">[Year]</span></span><h4>The family business begins</h4><p>The first generation of the family works as chimney sweeps. <span class="ph">[add place and details]</span></p></li><li><span class="fam-year"><span class="ph">[Year]</span></span><h4>Growing up in the trade</h4><p>Philipp learns the trade in the family business and has been a chimney sweep for around 20 years.</p></li><li><span class="fam-year"><span class="ph">[Year]</span></span><h4>Master craftsman</h4><p>Philipp passes the master craftsman examination in the chimney sweep trade.</p></li><li><span class="fam-year">Today</span><h4>Master business in Cologne-Nippes</h4><p>Philipp runs the business in the second generation – right in the “Sechzigveedel”.</p></li></ol>
       <div class="fam-photos" data-staging-only hidden aria-label="Historical family photos"><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Photo to follow: historical family photo</span></div><figcaption><span class="ph">[caption, year]</span></figcaption></figure><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Photo to follow: historical family photo</span></div><figcaption><span class="ph">[caption, year]</span></figcaption></figure><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Photo to follow: historical family photo</span></div><figcaption><span class="ph">[caption, year]</span></figcaption></figure><div class="photo-slot fam-wappen"><span>Coat of arms to follow (if available)</span></div></div>
-      </div>
+      </details>
     </div>
   </section>
 
   <!-- FAMILIE: Jahreszahlen und Fotos von Philipp (docs/input-philipp.md) – bis dahin Platzhalter.
        Echte Fotos als <picture class="pic"> in .fam-photo einsetzen; sie werden per CSS schwarz-weiß dargestellt. -->
-
-  <section class="section process" aria-labelledby="process-title">
-    <div class="wrap reveal">
-      <p class="eyebrow center">How it works</p>
-      <h2 id="process-title" class="center">Three steps to a completed appointment.</h2>
-      <ol class="proc">
-        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg></span><h3>Request a date</h3><p>Tell us what you need and your preferred date. We clarify the cost and confirm the appointment personally.</p></li>
-        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg></span><h3>We come to you</h3><p>On time, clean and with dust covers. We briefly explain the results on site.</p></li>
-        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg></span><h3>Get your certificate</h3><p>You receive the certificate or form directly – by email if you like.</p></li>
-      </ol>
-      <div class="proc-cta">
-        <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request a preferred date</a>
-        <p>Non-binding request · Cost clarified before you commit</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="partners" class="partners-section band" aria-labelledby="partner-title">
-    <div class="wrap reveal">
-      <h2 id="partner-title" class="eyebrow center">Manufacturers whose systems we work with every day</h2>
-      <ul class="partners partners-text"><li><a href="https://www.buderus.de/" target="_blank" rel="noopener">Buderus<span class="sr-only"> (external website, new window)</span></a></li><li><a href="https://www.viessmann.de/" target="_blank" rel="noopener">Viessmann<span class="sr-only"> (external website, new window)</span></a></li><li><a href="https://www.vaillant.de/" target="_blank" rel="noopener">Vaillant<span class="sr-only"> (external website, new window)</span></a></li><li><a href="https://www.broetje.de/" target="_blank" rel="noopener">Brötje<span class="sr-only"> (external website, new window)</span></a></li></ul>
-      <p class="partner-note center">The links lead to the manufacturers’ websites (external providers).</p>
-    </div>
-  </section>
 
   <section id="contact" class="section" aria-labelledby="contact-title">
     <div class="wrap">
@@ -350,6 +331,8 @@
         </div>
       </div>
 
+      <div class="request-quick"><p>The quickest way is the guided appointment request:</p><a class="btn btn-gold" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
+      <details class="request-details"><summary>Open the form: request an appointment or send a message<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <div class="request reveal" id="request">
         <span id="book" aria-hidden="true"></span>
         <div class="tabs" role="tablist" aria-label="Type of request">
@@ -359,7 +342,6 @@
 
         <div class="tabpanel" role="tabpanel" id="panel-termin" aria-labelledby="tab-termin" tabindex="0">
           <p class="intro"><a href="/en/#book" data-termin>Open the guided appointment request</a> or use this form. We clarify the cost and date before you commit.</p>
-          <ol class="steps"><li>Tell us your request &amp; preferred date</li><li>We check the schedule</li><li>You receive a personal confirmation</li></ol>
           <form class="form" id="form-termin" action="/anfrage.php" method="post" novalidate data-kind="termin">
             <input type="hidden" name="art" value="Terminanfrage">
             <input type="hidden" name="sprache" value="en">
@@ -467,6 +449,23 @@
           </form>
         </div>
       </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ENERGIEBERATUNG: nur Teaser (eigene K&R-Website ist ein separates Projekt) -->
+  <section id="energy-kessel-ritters" class="band band-dark" aria-labelledby="energy-title">
+    <div class="wrap band-inner">
+      <div><h2 id="energy-title">Energy consulting with Kessel &amp; Ritters</h2><p>New heating, renovation or subsidies? Philipp advises on these together with Markus Kessel at Kessel &amp; Ritters – Die Energieberater (website in German).</p></div>
+      <a class="btn btn-ghost" href="https://www.kesselundritters.energy/" target="_blank" rel="noopener">To Kessel &amp; Ritters – Die Energieberater<span class="sr-only"> (external website, new window)</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#ext"/></svg></a>
+    </div>
+  </section>
+
+  <section id="partners" class="partners-section band" aria-labelledby="partner-title">
+    <div class="wrap reveal">
+      <h2 id="partner-title" class="eyebrow center">Manufacturers whose systems we work with every day</h2>
+      <ul class="partners partners-text"><li><a href="https://www.buderus.de/" target="_blank" rel="noopener">Buderus<span class="sr-only"> (external website, new window)</span></a></li><li><a href="https://www.viessmann.de/" target="_blank" rel="noopener">Viessmann<span class="sr-only"> (external website, new window)</span></a></li><li><a href="https://www.vaillant.de/" target="_blank" rel="noopener">Vaillant<span class="sr-only"> (external website, new window)</span></a></li><li><a href="https://www.broetje.de/" target="_blank" rel="noopener">Brötje<span class="sr-only"> (external website, new window)</span></a></li></ul>
+      <p class="partner-note center">The links lead to the manufacturers’ websites (external providers).</p>
     </div>
   </section>
 </main>

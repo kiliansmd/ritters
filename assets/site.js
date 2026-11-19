@@ -249,8 +249,25 @@
     $$('.reveal').forEach(el => el.classList.add('in'));
   }
 
-  /* Fotoplätze („Foto folgt“) nur auf Staging/Vorschau zeigen; auf der Live-Domain bleiben sie verborgen. */
-  if (!/^(www\.)?schornsteinfeger\.koeln$/.test(location.hostname)) {
+  /* Platzhalter („Foto folgt“, „Siegel folgt“) nur auf Staging UND nur mit ?platzhalter in der Adresse zeigen,
+     damit die Vorschau für den Kunden ruhig bleibt. Auf der Live-Domain nie. */
+  if (!/^(www\.)?schornsteinfeger\.koeln$/.test(location.hostname) && new URLSearchParams(location.search).has('platzhalter')) {
+    document.documentElement.classList.add('show-placeholders');
     $$('[data-staging-only]').forEach(el => { el.hidden = false; });
   }
+
+  /* Aufklappbare Bereiche öffnen, wenn ein Link oder die Adresse auf sie oder ihren Inhalt zeigt */
+  const openTarget = hash => {
+    if (!hash || hash.length < 2) return;
+    const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+    const det = el && (el.tagName === 'DETAILS' ? el : el.closest('details'));
+    if (det) det.open = true;
+  };
+  openTarget(location.hash);
+  addEventListener('hashchange', () => openTarget(location.hash));
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href*="#"]');
+    if (a && !a.hasAttribute('data-termin') && a.pathname === location.pathname) openTarget(a.hash);
+  });
+  if (new URLSearchParams(location.search).has('anfrage')) document.querySelector('.request-details')?.setAttribute('open', '');
 })();

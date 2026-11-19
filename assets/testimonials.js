@@ -19,7 +19,7 @@
     if(!d)return;
     const list=(d.rezensionen||[]).filter(r=>r&&r.text&&r.name).slice(0,3);
     const complete=d.gesamtnote&&d.anzahl&&list.length>0;
-    if(!complete&&LIVE)return;
+    if(!complete&&(LIVE||!new URLSearchParams(location.search).has('platzhalter')))return;
     const link=d.profilUrl?`<a class="rv-all" href="${esc(d.profilUrl)}" target="_blank" rel="noopener">${EN?'All reviews on Google':'Alle Bewertungen auf Google'}<span class="sr-only"> ${EN?'(external website, new window)':'(externe Website, neues Fenster)'}</span></a>`:ph(EN?'[add link to Google profile]':'[Link zum Google-Profil ergänzen]');
     const head=complete
       ?`<p class="rv-score"><b>${num(d.gesamtnote)}</b>${stars(d.gesamtnote)}<span>${EN?`out of 5 · ${esc(d.anzahl)} reviews on ${esc(d.quelle||'Google')}`:`von 5 · ${esc(d.anzahl)} Bewertungen bei ${esc(d.quelle||'Google')}`}</span></p>`

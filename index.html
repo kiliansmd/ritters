@@ -28,7 +28,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-480.avif 480w" imagesizes="(max-width: 960px) 100vw, 57vw" fetchpriority="high">
-<link rel="stylesheet" href="/assets/site.css?v=3bd73522">
+<link rel="stylesheet" href="/assets/site.css?v=17683bd4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -284,8 +284,8 @@
 </script>
 <script>document.documentElement.classList.add('js')</script>
 <script src="/assets/consent.js?v=7b10ccbf" defer></script>
-<script src="/assets/testimonials.js?v=66336146" defer></script>
-<script src="/assets/site.js?v=41e3790d" defer></script>
+<script src="/assets/testimonials.js?v=6579f265" defer></script>
+<script src="/assets/site.js?v=508795d3" defer></script>
 <script src="/assets/booking.js?v=a2821384" defer></script>
 </head>
 <body>
@@ -355,7 +355,7 @@
     <div class="wrap reveal">
       <p class="eyebrow center">Unsere Leistungen</p>
       <h2 id="leistungen-title" class="center">Rund um Sicherheit, Effizienz und Werterhalt.</h2>
-      <p class="lead center">Als Schornsteinfeger leisten wir in Köln aktiv vorbeugenden Brandschutz: Wir <a href="/leistungen/schornstein-kehren-koeln">kehren und überprüfen Schornsteine</a>, übernehmen die <a href="/leistungen/abgasmessung-koeln">Abgas- und Emissionsmessung</a> und beraten Sie zu neuen Feuerstätten, <a href="/leistungen/rauchmelder-wartung-koeln">Rauchwarnmeldern</a> und <a href="/leistungen/energieberatung-koeln">Energieeinsparung</a>.</p>
+      <p class="lead center">Vorbeugender Brandschutz für Ihr Zuhause – vom Kehren über Messungen bis zum Rauchmelder.</p>
 
       <div class="services">
         <article class="service" id="schornsteinfegerarbeiten">
@@ -433,20 +433,27 @@
         </div>
       </div>
 
-      <div class="more-services">
-        <h3>Außerdem für Sie da:</h3>
+      <details class="more-services"><summary><h3>Weitere Leistungen anzeigen</h3><svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
         <ul class="chips chips-links">
           <li><a href="/leistungen/schornsteinfeger-frei-waehlen-koeln">Schornsteinfeger frei wählen</a></li><li><a href="/leistungen/kaminofen-reinigung-koeln">Beratung vor Anschluss neuer Kaminöfen</a></li><li><a href="/leistungen/kaminofen-reinigung-koeln">Schornsteinaufsätze &amp; Dohlengitter</a></li><li><a href="/leistungen/abgasmessung-koeln">Gashausschau nach TRGI</a></li><li><a href="/leistungen/rauchmelder-wartung-koeln">Ferninspektion von Rauchmeldern</a></li>
         </ul>
-      </div>
+      </details>
     </div>
   </section>
 
-  <!-- ENERGIEBERATUNG: nur Teaser (eigene K&R-Website ist ein separates Projekt) -->
-  <section id="energieberatung-kessel-ritters" class="band band-dark" aria-labelledby="energy-title">
-    <div class="wrap band-inner">
-      <div><h2 id="energy-title">Energieberatung mit Kessel &amp; Ritters</h2><p>Neue Heizung, Sanierung oder Fördermittel? Dafür berät Philipp gemeinsam mit Markus Kessel bei Kessel &amp; Ritters – Die Energieberater.</p></div>
-      <a class="btn btn-ghost" href="https://www.kesselundritters.energy/" target="_blank" rel="noopener">Zu Kessel &amp; Ritters – Die Energieberater<span class="sr-only"> (externe Website, neues Fenster)</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#ext"/></svg></a>
+  <section class="section process" aria-labelledby="process-title">
+    <div class="wrap reveal">
+      <p class="eyebrow center">So einfach geht’s</p>
+      <h2 id="process-title" class="center">In drei Schritten zum erledigten Termin.</h2>
+      <ol class="proc">
+        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg></span><h3>Termin anfragen</h3><p>Anliegen und Wunschtermin online angeben. Wir klären die Kosten und bestätigen den Termin persönlich.</p></li>
+        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg></span><h3>Wir kommen zu Ihnen</h3><p>Pünktlich, sauber und mit Abdeckung. Vor Ort erklären wir Ihnen kurz das Ergebnis.</p></li>
+        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg></span><h3>Nachweis erhalten</h3><p>Bescheinigung bzw. Formblatt bekommen Sie direkt – auf Wunsch per E-Mail.</p></li>
+      </ol>
+      <div class="proc-cta">
+        <a class="btn btn-gold btn-lg" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Wunschtermin anfragen</a>
+        <p>Unverbindliche Anfrage · Kostenklärung vor Beauftragung</p>
+      </div>
     </div>
   </section>
 
@@ -456,11 +463,11 @@
       <h2 id="reviews-title">Was Kunden über uns sagen.</h2>
       <div class="reviews-static" data-reviews-static hidden></div>
       <p class="reviews-uwg">Die Bewertungen stammen aus unserem Google-Unternehmensprofil. Eine eigene Prüfung, ob sie von Kundinnen und Kunden stammen, die unsere Leistungen tatsächlich in Anspruch genommen haben, findet nicht statt.</p>
-      <div class="reviews-placeholder" data-reviews-placeholder>
+      <details class="reviews-live"><summary>Live-Bewertungen von Google laden<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary><div class="reviews-placeholder" data-reviews-placeholder>
         <p>Optional: aktuelle Bewertungen direkt aus Google laden. Dabei werden Verbindungsdaten, unter anderem Ihre IP-Adresse, an Elfsight und dessen Inhaltsanbieter übertragen.</p>
         <button type="button" class="btn btn-outline" data-reviews-load>Live-Bewertungen laden</button>
         <a href="/datenschutz#elfsight">Datenschutzdetails</a>
-      </div>
+      </div></details>
       <p class="privacy" data-reviews-status role="status"></p>
       <div data-reviews-host></div>
       <p class="privacy"><a href="/datenschutz#einwilligung" data-consent-open>Datenschutz-Einstellungen ändern</a></p>
@@ -481,34 +488,16 @@
         </div>
       </div>
       <!-- FAMILIE: Jahreszahlen und Fotos von Philipp – bis dahin Platzhalter. -->
-      <div id="familie" class="family-block reveal" aria-labelledby="family-title">
-      <p class="eyebrow">Familienbetrieb</p>
-      <h3 id="family-title" class="family-title">Seit Generationen in Köln</h3>
+      <details id="familie" class="family-block family-details reveal"><summary><span class="family-title" id="family-title">Unsere Familiengeschichte: seit Generationen in Köln</span><svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <p class="family-lead">Das Schornsteinfegerhandwerk liegt bei uns in der Familie – heute in zweiter Generation.</p>
       <ol class="fam-timeline"><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Der Familienbetrieb entsteht</h4><p>Die erste Generation der Familie arbeitet als Schornsteinfeger. <span class="ph">[Ort und Details ergänzen]</span></p></li><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Aufgewachsen im Handwerk</h4><p>Philipp lernt den Beruf im Familienbetrieb und ist seit rund 20 Jahren Schornsteinfeger.</p></li><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Meisterprüfung</h4><p>Philipp legt die Meisterprüfung im Schornsteinfegerhandwerk ab.</p></li><li><span class="fam-year">Heute</span><h4>Meisterbetrieb in Köln-Nippes</h4><p>Philipp führt den Betrieb in zweiter Generation – mitten im Sechzigveedel.</p></li></ol>
       <div class="fam-photos" data-staging-only hidden aria-label="Historische Familienfotos"><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure><div class="photo-slot fam-wappen"><span>Wappen folgt (falls vorhanden)</span></div></div>
-      </div>
+      </details>
     </div>
   </section>
 
   <!-- FAMILIE: Jahreszahlen und Fotos von Philipp (docs/input-philipp.md) – bis dahin Platzhalter.
        Echte Fotos als <picture class="pic"> in .fam-photo einsetzen; sie werden per CSS schwarz-weiß dargestellt. -->
-
-  <section class="section process" aria-labelledby="process-title">
-    <div class="wrap reveal">
-      <p class="eyebrow center">So einfach geht’s</p>
-      <h2 id="process-title" class="center">In drei Schritten zum erledigten Termin.</h2>
-      <ol class="proc">
-        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg></span><h3>Termin anfragen</h3><p>Anliegen und Wunschtermin online angeben. Wir klären die Kosten und bestätigen den Termin persönlich.</p></li>
-        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg></span><h3>Wir kommen zu Ihnen</h3><p>Pünktlich, sauber und mit Abdeckung. Vor Ort erklären wir Ihnen kurz das Ergebnis.</p></li>
-        <li><span class="proc-icon"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg></span><h3>Nachweis erhalten</h3><p>Bescheinigung bzw. Formblatt bekommen Sie direkt – auf Wunsch per E-Mail.</p></li>
-      </ol>
-      <div class="proc-cta">
-        <a class="btn btn-gold btn-lg" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Wunschtermin anfragen</a>
-        <p>Unverbindliche Anfrage · Kostenklärung vor Beauftragung</p>
-      </div>
-    </div>
-  </section>
 
   <!-- EINSATZGEBIET (Band) -->
   <section id="einsatzgebiet" class="band band-light" aria-labelledby="area-title">
@@ -524,20 +513,12 @@
     </div>
   </section>
 
-  <section id="partner" class="partners-section band" aria-labelledby="partner-title">
-    <div class="wrap reveal">
-      <h2 id="partner-title" class="eyebrow center">Hersteller, mit deren Anlagen wir täglich arbeiten</h2>
-      <ul class="partners partners-text"><li><a href="https://www.buderus.de/" target="_blank" rel="noopener">Buderus<span class="sr-only"> (externe Website, neues Fenster)</span></a></li><li><a href="https://www.viessmann.de/" target="_blank" rel="noopener">Viessmann<span class="sr-only"> (externe Website, neues Fenster)</span></a></li><li><a href="https://www.vaillant.de/" target="_blank" rel="noopener">Vaillant<span class="sr-only"> (externe Website, neues Fenster)</span></a></li><li><a href="https://www.broetje.de/" target="_blank" rel="noopener">Brötje<span class="sr-only"> (externe Website, neues Fenster)</span></a></li></ul>
-      <p class="partner-note center">Die Links führen zu den Websites der Hersteller (externe Anbieter).</p>
-    </div>
-  </section>
-
   <section id="faq" class="section faq-section" aria-labelledby="faq-title">
     <div class="wrap reveal">
       <p class="eyebrow center">Häufige Fragen</p>
       <h2 id="faq-title" class="center">Gut zu wissen – rund um den Schornsteinfeger.</h2>
       <div class="faq faq-home">
-        <details class="faq-item" open>
+        <details class="faq-item">
           <summary><h3>Was kostet ein Schornsteinfeger in Köln?</h3></summary>
           <div class="faq-a"><p>Das hängt von Art und Zahl Ihrer Feuerstätten ab. Die Gebühren für Aufgaben des zuständigen Bezirksschornsteinfegers, etwa die Feuerstättenschau, legt die Kehr- und Überprüfungsordnung fest; für Kehr- und Messarbeiten nennen wir Ihnen den Preis vorab. Rufen Sie uns einfach an: <a href="tel:+492217400990">0221 – 7400 990</a>.</p></div>
         </details>
@@ -621,6 +602,8 @@
       </div>
 
       <!-- ANFRAGE: Termin & Nachricht -->
+      <div class="request-quick"><p>Am schnellsten geht es über die geführte Terminanfrage:</p><a class="btn btn-gold" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a></div>
+      <details class="request-details"><summary>Formular öffnen: Termin anfragen oder Nachricht senden<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <div class="request reveal" id="anfrage">
         <span id="termin-buchen" aria-hidden="true"></span>
         <div class="tabs" role="tablist" aria-label="Art der Anfrage">
@@ -630,7 +613,6 @@
 
         <div class="tabpanel" role="tabpanel" id="panel-termin" aria-labelledby="tab-termin" tabindex="0">
           <p class="intro"><a href="/#termin-buchen" data-termin>Geführte Terminanfrage öffnen</a> oder hier das Formular ausfüllen. Wir klären Kosten und Termin vor einer Beauftragung.</p>
-          <ol class="steps"><li>Anliegen &amp; Wunschtermin angeben</li><li>Wir prüfen die Planung</li><li>Sie erhalten eine persönliche Bestätigung</li></ol>
           <form class="form" id="form-termin" action="/anfrage.php" method="post" novalidate data-kind="termin">
             <input type="hidden" name="art" value="Terminanfrage">
             <input type="hidden" name="ts" value="">
@@ -736,6 +718,23 @@
           </form>
         </div>
       </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ENERGIEBERATUNG: nur Teaser (eigene K&R-Website ist ein separates Projekt) -->
+  <section id="energieberatung-kessel-ritters" class="band band-dark" aria-labelledby="energy-title">
+    <div class="wrap band-inner">
+      <div><h2 id="energy-title">Energieberatung mit Kessel &amp; Ritters</h2><p>Neue Heizung, Sanierung oder Fördermittel? Dafür berät Philipp gemeinsam mit Markus Kessel bei Kessel &amp; Ritters – Die Energieberater.</p></div>
+      <a class="btn btn-ghost" href="https://www.kesselundritters.energy/" target="_blank" rel="noopener">Zu Kessel &amp; Ritters – Die Energieberater<span class="sr-only"> (externe Website, neues Fenster)</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#ext"/></svg></a>
+    </div>
+  </section>
+
+  <section id="partner" class="partners-section band" aria-labelledby="partner-title">
+    <div class="wrap reveal">
+      <h2 id="partner-title" class="eyebrow center">Hersteller, mit deren Anlagen wir täglich arbeiten</h2>
+      <ul class="partners partners-text"><li><a href="https://www.buderus.de/" target="_blank" rel="noopener">Buderus<span class="sr-only"> (externe Website, neues Fenster)</span></a></li><li><a href="https://www.viessmann.de/" target="_blank" rel="noopener">Viessmann<span class="sr-only"> (externe Website, neues Fenster)</span></a></li><li><a href="https://www.vaillant.de/" target="_blank" rel="noopener">Vaillant<span class="sr-only"> (externe Website, neues Fenster)</span></a></li><li><a href="https://www.broetje.de/" target="_blank" rel="noopener">Brötje<span class="sr-only"> (externe Website, neues Fenster)</span></a></li></ul>
+      <p class="partner-note center">Die Links führen zu den Websites der Hersteller (externe Anbieter).</p>
     </div>
   </section>
 </main>
