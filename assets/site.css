@@ -979,11 +979,13 @@ h2[tabindex="-1"]:focus, h3[tabindex="-1"]:focus, .bk-done:focus, .form-status:f
 
 /* Neues Logo (Wortmarke + Bildmarke) */
 .brand { gap: 0; }
+.brand picture { display: block; }
 .brand-logo { display: block; height: 40px; width: auto; }
 .foot-brand .brand-logo { height: 44px; }
 @media (max-width: 1180px) and (min-width: 961px) { .brand-logo { height: 34px; } }
-@media (max-width: 960px) { .brand-logo { height: 32px; } }
-@media (max-width: 380px) { .brand-logo { height: 26px; } }
+/* ≤ 960 px: kompakte Logo-Variante ohne Berufsbezeichnung (<picture> im Header), Mindesthöhe 32 px */
+@media (max-width: 960px) { .brand-logo { height: 40px; } .foot-brand .brand-logo { height: 44px; } }
+@media (max-width: 380px) { .brand-logo { height: 34px; } }
 
 /* Anliegen statt Fachbegriffe; unverbindliche Anfrage mit Kostenklärung. */
 .intent-section { background: var(--white); }
