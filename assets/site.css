@@ -1193,3 +1193,33 @@ h2[tabindex="-1"]:focus, h3[tabindex="-1"]:focus, .bk-done:focus, .form-status:f
 .icon-btn { min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
 .map-consent .checkbox.small { min-height: 44px; align-items: center; }
 @media (max-width: 380px) { .request { margin-left: -14px; margin-right: -14px; } }
+
+/* Übersichtlichkeit: aufklappbare Bereiche mit einheitlicher Zusammenfassung */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+.sum-chev { width: 18px; height: 18px; flex: none; transition: transform .2s; }
+details[open] > summary .sum-chev { transform: rotate(180deg); }
+.more-services { display: block; }
+.more-services > summary, .reviews-live > summary, .request-details > summary, .family-details > summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; cursor: pointer; font-weight: 700; }
+.more-services > summary h3 { font-size: 17px; font-family: var(--sans); font-weight: 700; color: var(--gold-ink); margin: 0; }
+.more-services > summary .sum-chev, .reviews-live > summary, .request-details > summary { color: var(--gold-ink); }
+.more-services[open] .chips-links { margin-top: 12px; }
+.reviews-live { margin-top: 16px; }
+.reviews-live > summary { justify-content: flex-start; }
+.reviews-live .reviews-placeholder { margin-top: 8px; }
+.reviews-uwg { font-size: 13px; }
+.family-details { margin-top: 56px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.14); }
+.family-details > summary { padding: 18px 0; }
+.family-details > summary .family-title { font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.6vw, 30px); color: var(--white); }
+.family-details > summary .sum-chev { color: var(--gold); width: 22px; height: 22px; }
+.family-details[open] > summary { margin-bottom: 8px; }
+.request-quick { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 40px; padding: 22px 24px; background: var(--white); border: 1px solid var(--line); border-radius: 8px; }
+.request-quick p { color: var(--body); margin: 0; }
+.request-details { margin-top: 12px; }
+.request-details > summary { padding: 0 4px; }
+.request-details .request { margin-top: 8px; }
+@media (max-width: 640px) { .request-quick .btn { width: 100%; } }
+/* Platzhalter-Markierungen (class="ph") auf Staging nur mit ?platzhalter hervorheben */
+html:not(.show-placeholders) .ph { background: none; outline: 0; padding: 0; }
+.partners-section.band h2.eyebrow { font-size: 13px; letter-spacing: .16em; margin-bottom: 0; }
