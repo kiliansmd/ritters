@@ -35,7 +35,7 @@
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-480.avif 480w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-800.avif 800w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1200.avif 1200w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1600.avif 1600w" imagesizes="(max-width: 640px) 100vw, 56vw" fetchpriority="high">
 <link rel="stylesheet" href="/assets/site.css?v=90a74e3e">
-<link rel="stylesheet" href="/assets/theme-v3.css?v=787fa27b">
+<link rel="stylesheet" href="/assets/theme-v3.css?v=0705867f">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,7 +89,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a href="/en/" class="brand" aria-label="Schornsteinfeger Ritters – home">
-      <picture><source media="(max-width: 960px)" srcset="/assets/logo-kompakt-auf-dunkel.svg"><img class="brand-logo" src="/assets/logo-auf-dunkel.svg" width="342" height="68" alt="Philipp Ritters – Schornsteinfegermeister"></picture>
+      <img class="brand-logo brand-mono" src="/assets/logo-monogramm-auf-dunkel.svg" width="88" height="69" alt="Philipp Ritters – master chimney sweep">
     </a>
     <nav id="menu" class="menu" aria-label="Main navigation">
       <a href="/en/#services">Services</a>
@@ -251,7 +251,6 @@
       </ol>
       <div class="proc-cta">
         <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request a preferred date</a>
-        <p>Non-binding request · Cost clarified before you commit</p>
       </div>
     </div>
   </section>
@@ -346,7 +345,7 @@
         </div>
       </div>
 
-      <div class="request-quick"><p>The quickest way is the guided appointment request:</p><a class="btn btn-gold" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
+      <div class="request-quick"><a class="btn btn-gold" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
       <details class="request-details"><summary>Open the form: request an appointment or send a message<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <div class="request reveal" id="request">
         <span id="book" aria-hidden="true"></span>
@@ -356,7 +355,7 @@
         </div>
 
         <div class="tabpanel" role="tabpanel" id="panel-termin" aria-labelledby="tab-termin" tabindex="0">
-          <p class="intro"><a href="/en/#book" data-termin>Open the guided appointment request</a> or use this form. We clarify the cost and date before you commit.</p>
+          <p class="intro"><a href="/en/#book" data-termin>Open the guided appointment request</a> or use this form.</p>
           <form class="form" id="form-termin" action="/anfrage.php" method="post" novalidate data-kind="termin">
             <input type="hidden" name="art" value="Terminanfrage">
             <input type="hidden" name="sprache" value="en">

@@ -35,7 +35,7 @@
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-480.avif 480w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-800.avif 800w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1200.avif 1200w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1600.avif 1600w" imagesizes="(max-width: 640px) 100vw, 56vw" fetchpriority="high">
 <link rel="stylesheet" href="/assets/site.css?v=90a74e3e">
-<link rel="stylesheet" href="/assets/theme-v3.css?v=787fa27b">
+<link rel="stylesheet" href="/assets/theme-v3.css?v=0705867f">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -302,7 +302,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a href="/" class="brand" aria-label="Schornsteinfeger Ritters – zur Startseite">
-      <picture><source media="(max-width: 960px)" srcset="/assets/logo-kompakt-auf-dunkel.svg"><img class="brand-logo" src="/assets/logo-auf-dunkel.svg" width="342" height="68" alt="Philipp Ritters – Schornsteinfegermeister"></picture>
+      <img class="brand-logo brand-mono" src="/assets/logo-monogramm-auf-dunkel.svg" width="88" height="69" alt="Philipp Ritters – Schornsteinfegermeister">
     </a>
     <nav id="menu" class="menu" aria-label="Hauptnavigation">
       <a href="/#leistungen">Leistungen</a>
@@ -466,7 +466,6 @@
       </ol>
       <div class="proc-cta">
         <a class="btn btn-gold btn-lg" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Wunschtermin anfragen</a>
-        <p>Unverbindliche Anfrage · Kostenklärung vor Beauftragung</p>
       </div>
     </div>
   </section>
@@ -617,7 +616,7 @@
       </div>
 
       <!-- ANFRAGE: Termin & Nachricht -->
-      <div class="request-quick"><p>Am schnellsten geht es über die geführte Terminanfrage:</p><a class="btn btn-gold" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a></div>
+      <div class="request-quick"><a class="btn btn-gold" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a></div>
       <details class="request-details"><summary>Formular öffnen: Termin anfragen oder Nachricht senden<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <div class="request reveal" id="anfrage">
         <span id="termin-buchen" aria-hidden="true"></span>
@@ -627,7 +626,7 @@
         </div>
 
         <div class="tabpanel" role="tabpanel" id="panel-termin" aria-labelledby="tab-termin" tabindex="0">
-          <p class="intro"><a href="/#termin-buchen" data-termin>Geführte Terminanfrage öffnen</a> oder hier das Formular ausfüllen. Wir klären Kosten und Termin vor einer Beauftragung.</p>
+          <p class="intro"><a href="/#termin-buchen" data-termin>Geführte Terminanfrage öffnen</a> oder hier das Formular ausfüllen.</p>
           <form class="form" id="form-termin" action="/anfrage.php" method="post" novalidate data-kind="termin">
             <input type="hidden" name="art" value="Terminanfrage">
             <input type="hidden" name="ts" value="">
