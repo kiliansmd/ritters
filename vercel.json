@@ -9,6 +9,7 @@
     { "source": "/galerie", "destination": "/#ueber-uns", "permanent": true },
     { "source": "/(schornstein-kehren|kehren)", "destination": "/leistungen/schornstein-kehren-koeln", "permanent": true },
     { "source": "/(rauchmelder|rauchwarnmelder)", "destination": "/leistungen/rauchmelder-wartung-koeln", "permanent": true },
+    { "source": "/leistungen/feuerstaettenschau-koeln", "destination": "/ratgeber/feuerstaettenbescheid-koeln", "statusCode": 301 },
     { "source": "/(energieberatung|foerdermittel)", "destination": "/leistungen/energieberatung-koeln", "permanent": true },
     { "source": "/en/(impressum|imprint)", "destination": "/en/legal-notice", "permanent": true },
     { "source": "/en/(datenschutz|privacy-policy)", "destination": "/en/privacy", "permanent": true }

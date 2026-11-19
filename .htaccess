@@ -36,6 +36,8 @@ ErrorDocument 404 /404.html
   # Häufige Schreibweisen/Alt-Adressen auf die Leistungsseiten (Linkpflege)
   RewriteRule ^(schornstein-kehren|kehren)/?$ /leistungen/schornstein-kehren-koeln [R=301,L,NC]
   RewriteRule ^(rauchmelder|rauchwarnmelder)/?$ /leistungen/rauchmelder-wartung-koeln [R=301,L,NC]
+  # Feuerstättenschau-Seite wurde zum neutralen Ratgeber (keine Werbung mit hoheitlichen Tätigkeiten)
+  RewriteRule ^leistungen/feuerstaettenschau-koeln(\.html)?/?$ /ratgeber/feuerstaettenbescheid-koeln [R=301,L,NC]
   RewriteRule ^(energieberatung|foerdermittel)/?$ /leistungen/energieberatung-koeln [R=301,L,NC]
   RewriteRule ^kontakt/?$ /#kontakt [R=301,L,NC,NE]
   RewriteRule ^galerie/?$ /#ueber-uns [R=301,L,NC,NE]

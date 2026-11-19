@@ -8,12 +8,11 @@
   const PREVIEW = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || /(^|\.)(vercel\.app|meindigitalerbetrieb\.de)$/.test(location.hostname);
   const SERVICES = [
     {id:'bescheid', name:T('Arbeiten laut Feuerstättenbescheid','Work listed in my notice'), note:T('Wir klären, welche Arbeiten anstehen.','We help identify which work is due.'), icon:'s-clip'},
-    {id:'ofen', name:T('Neuer Kaminofen / Abnahme','New stove / acceptance inspection'), note:T('Anschluss und nächste Schritte besprechen.','Discuss installation and next steps.'), icon:'s-flame'},
+    {id:'ofen', name:T('Neuer Kaminofen – Beratung vorab','New wood stove – advice beforehand'), note:T('Aufstellung, Anschluss und Schornstein vorab besprechen.','Discuss placement, connection and chimney beforehand.'), icon:'s-flame'},
     {id:'brandschutz', name:T('Brandschutz & Rauchwarnmelder','Fire safety & smoke alarms'), note:T('Montage, Prüfung oder Wartung.','Fitting, inspection or maintenance.'), icon:'s-alarm'},
     {id:'energie', name:T('Energieberatung','Energy consulting'), note:T('Einsparpotenziale und Förderung besprechen.','Discuss potential savings and subsidies.'), icon:'s-leaf'},
     {id:'klaerung', name:T('Ich bin unsicher / Beratung','I’m not sure / advice'), note:T('Philipp hilft bei der passenden Auswahl.','Philipp helps you choose the right service.'), icon:'msg'},
     {id:'arbeiten', name:T('Schornsteinfegerarbeiten','Chimney sweeping'), note:T('Kehren & Überprüfen','Sweeping & inspection'), icon:'s-flame'},
-    {id:'schau', name:T('Feuerstättenschau','Fireplace inspection'), note:T('Alle Feuerstätten im Gebäude','All heating appliances in the building'), icon:'s-clip'},
     {id:'messung', name:T('Prüfungen & Messungen','Inspections & measurements'), note:T('Abgasweg, CO, Emissionen','Flue, CO, emissions'), icon:'s-gauge'},
     {id:'reinigung', name:T('Reinigung','Cleaning'), note:T('Kaminofen, Ofen, Lüftung','Wood stove, stove, ventilation'), icon:'s-brush'}
   ];
