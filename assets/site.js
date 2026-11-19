@@ -225,6 +225,43 @@
     });
   });
 
+  /* Terminformular: nur die Zusatzfelder des gewählten Anliegens zeigen (Konfiguration aus assets/anliegen.js) */
+  const CFG = window.RITTERS_ANLIEGEN;
+  const terminSelect = $('#t-leistung');
+  if (CFG && terminSelect) {
+    const details = $('[data-form-details]');
+    const boxes = $$('[data-for]');
+    const byId = Object.fromEntries(CFG.anliegen.map(a => [a.id, a]));
+    const today = new Date().toISOString().slice(0, 10);
+    if (details) $$('input[type=date]', details).forEach(i => { if (!i.min) i.min = today; });
+    const apply = () => {
+      const a = byId[terminSelect.value];
+      boxes.forEach(b => {
+        const on = !a || b.dataset.for.split(' ').includes(a.id);
+        b.hidden = !on;
+        $$('input, select, textarea', b).forEach(f => { f.disabled = !on; });
+      });
+      if (details) $$('input, textarea', details).forEach(f => {
+        const key = f.name.replace('[]', ''), def = CFG.felder[key];
+        f.required = !!(a && def && def.pflicht && def.typ !== 'radio' && a.felder.includes(key));
+      });
+      if (a && details && !details.open) details.open = true;
+    };
+    terminSelect.addEventListener('change', apply); apply();
+  }
+  const msgSelect = $('#n-anliegen');
+  const msgTel = $('#n-tel');
+  if (CFG && msgSelect && msgTel) {
+    const applyMsg = () => {
+      const a = CFG.anliegen.find(x => x.id === msgSelect.value);
+      const needTel = !!(a && a.felder.includes('rueckruf_zeit') && a.id !== 'allgemeine_frage');
+      msgTel.required = needTel;
+      const lab = $('label[for="n-tel"] .muted');
+      if (lab) lab.textContent = needTel ? T('(für den Rückruf)', '(for the call back)') : T('(optional, für Rückruf)', '(optional, for a call back)');
+    };
+    msgSelect.addEventListener('change', applyMsg); applyMsg();
+  }
+
   /* Rückmeldung nach Versand ohne JavaScript (Weiterleitung von anfrage.php) */
   const qs = new URLSearchParams(location.search).get('anfrage');
   const st = $('#form-termin .form-status');

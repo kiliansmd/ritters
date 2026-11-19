@@ -19,7 +19,8 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 | `impressum.html`, `datenschutz.html`, `404.html` | Rechtliches (Entwürfe; offene Angaben als `class="ph"` markiert) |
 | `assets/site.css` | Gesamtes Styling (Farben als CSS-Variablen) |
 | `assets/site.js` | Interaktion: Menü, Telefon-Auswahl, Formular-Handling, Sprachwechsel, Staging-noindex |
-| `assets/booking.js` | Geführter Dialog „Termin anfragen“ (3 Schritte). Unverbindliche Anfrage, **kein Kalender** |
+| `assets/data/anliegen.json` → `assets/anliegen.js` | **Zentrale Anliegen-Liste** (IDs, Labels DE/EN, Zusatzfelder, Aliase). Nach Änderung `python3 scripts/anliegen.py` ausführen: erzeugt `anliegen.js` und schreibt die Auswahllisten/Zusatzfelder in `index.html` und `en/index.html` (Marker `<!-- anliegen:felder -->`). `anliegen.js` muss **vor** `site.js` geladen werden. |
+| `assets/booking.js` | Geführter Dialog „Termin anfragen“ (Anliegen → Details → Ihre Daten). Zeigt nur die Felder des gewählten Anliegens. Unverbindliche Anfrage, **kein Kalender** |
 | `assets/consent.js` | Consent-Banner; Kategorien notwendig / medien (Google Maps) / reviews (Elfsight) |
 | `assets/testimonials.js`, `assets/reviews-frame.*`, `widgets/reviews.html` | Google-Bewertungen via Elfsight, erst nach Einwilligung, im Sandbox-Iframe mit eigener CSP |
 | `assets/icons.svg` | SVG-Sprite (`/assets/icons.svg#name`) |
@@ -38,6 +39,7 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 - Formulare und `booking.js` laufen auf localhost, `*.vercel.app` und `*.meindigitalerbetrieb.de` im **Vorschau-Modus ohne Versand**.
 - Änderungen immer **DE und EN gemeinsam**.
 - **Kontakt-Schalter:** Mobilnummer und direkte E-Mail nur über `scripts/kontakt/kontakt.json` + `python3 scripts/kontakt.py` ein-/ausblenden (entfernt die markierten Bausteine `<!--kontakt:…-->` aus HTML und JSON-LD). Impressum/Datenschutz zeigen die E-Mail immer. Neue Fundstellen mit `<!--kontakt:mobil-->…<!--/kontakt:mobil-->` markieren.
+- **Anliegen:** `data-termin="<id>"` öffnet den Dialog vorbelegt; alte Werte (`bescheid`, `ofen`, Label-Texte) funktionieren über `aliase`. Formulare senden `anliegen` (ID) und `leistung` (Label) plus Zusatzfelder (`kunde`, `anlage`, `anzahl`, `frist`, `wunschtage`, `zeit`, `bisheriger_termin`, `rueckruf_zeit`, `frage`). **Offen (AP 4.2):** `anfrage.php` wertet diese Felder noch nicht aus und zeigt bei `leistung` aus dem statischen Formular die ID statt des Labels.
 - **Startseite:** höchstens 9 Hauptsektionen (Hero, Trust, Anliegen, Leistungen, Bewertungen, Über uns + Familie, Ablauf, FAQ, Kontakt); Energieberatung, Einsatzgebiet und Hersteller nur als schmale Bänder (`.band`). Start-FAQ höchstens 8 Fragen, weitere auf `ratgeber/`.
 
 ## Deployment
