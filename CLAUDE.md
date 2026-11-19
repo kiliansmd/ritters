@@ -1,6 +1,6 @@
 # CLAUDE.md – Website Schornsteinfeger Ritters
 
-> **Branch `design/v3` (Design-Variante 3):** gleiche Inhalte wie `main`, aber dunkles Referenz-Design (Hero-Bühne: Köln-Panorama als Hintergrund, freigestellte Person und Hut als Ebenen, sichtbare Headline statt Logo, dunkle Bewertungen, 5 Anliegen-Karten) über `assets/theme-v3.css`, das nach `site.css` lädt. Eigenes Vercel-Projekt `ritters3` → https://ritters3.meindigitalerbetrieb.de. Inhaltliche Änderungen zuerst in `main`, dann hierher mergen.
+> **Branch `design/v3` (Design-Variante 3):** gleiche Inhalte wie `main`, aber dunkles Referenz-Design (Hero-Bühne: Köln-Panorama als Hintergrund, freigestellte Person und Hut als Ebenen, sichtbare Headline statt Logo, Wortmarke im Header, dunkle Bewertungen, 5 Anliegen-Karten) über `assets/theme-v3.css`, das nach `site.css` lädt. Eigenes Vercel-Projekt `ritters3` → https://ritters3.meindigitalerbetrieb.de. Inhaltliche Änderungen zuerst in `main`, dann hierher mergen.
 
 Website für **Schornsteinfegermeister Philipp Ritters**, Meisterbetrieb in 2. Generation, Knechtstedener Straße 20, 50733 Köln-Nippes. Projekt von MeinDigitalerBetrieb (MDB).
 

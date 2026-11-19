@@ -250,10 +250,9 @@ input, select, textarea { border-radius: var(--radius-btn); }
 .hero-inner { max-width: 1180px; }
 .hero .cta, .hero-lead, .hero h1 { max-width: 46%; }
 .hero::after { background: linear-gradient(90deg, rgba(38, 38, 38, .75) 0%, rgba(38, 38, 38, .35) 36%, rgba(38, 38, 38, 0) 52%); }
-.brand-mono { height: 44px; width: auto; }
 .request-quick { justify-content: center; }
 @media (max-width: 960px) { .hero .cta, .hero-lead, .hero h1 { max-width: 56%; } }
-@media (max-width: 640px) { .hero .cta, .hero-lead, .hero h1 { max-width: none; } .brand-mono { height: 40px; } }
+@media (max-width: 640px) { .hero .cta, .hero-lead, .hero h1 { max-width: none; } }
 
 /* =========================================================
    Hero-Bühne: Ebenen mit Tiefe (Licht → Person → Hut)
