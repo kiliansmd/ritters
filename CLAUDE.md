@@ -13,7 +13,8 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 | Pfad | Inhalt |
 |---|---|
 | `index.html` | Startseite DE. Sektionen per ID: Hero, `#kundenstimmen` (Bewertungen), Anliegen-Einstiege (`data-termin="…"`), `#leistungen`, `#energieberatung-kessel-ritters`, `#ueber-uns` (inkl. `#familie`), `#partner`, `#einsatzgebiet`, `#faq`, `#kontakt` (Kontakt, Karte, Formulare `#form-termin` / `#form-nachricht`) |
-| `leistungen/*.html` | 7 SEO-Leistungsseiten DE (eigene FAQ, eigenes JSON-LD) |
+| `leistungen/*.html` | SEO-Leistungsseiten DE (eigene FAQ, eigenes JSON-LD). `energieberatung-koeln.html` ist nur ein Verweis auf Kessel & Ritters – **später 301 auf die neue K&R-Seite** |
+| `ratgeber/*.html` | Neutrale Info-Seiten (z. B. Feuerstättenbescheid & Fristen) |
 | `en/` | Englische Fassung: `index.html`, `legal-notice.html`, `privacy.html`, `404.html` (keine EN-Leistungsseiten) |
 | `impressum.html`, `datenschutz.html`, `404.html` | Rechtliches (Entwürfe; offene Angaben als `class="ph"` markiert) |
 | `assets/site.css` | Gesamtes Styling (Farben als CSS-Variablen) |
@@ -36,11 +37,13 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 - **Redirects/Header** immer in `vercel.json` und `.htaccess` gleichzeitig pflegen.
 - Formulare und `booking.js` laufen auf localhost, `*.vercel.app` und `*.meindigitalerbetrieb.de` im **Vorschau-Modus ohne Versand**.
 - Änderungen immer **DE und EN gemeinsam**.
+- **Kontakt-Schalter:** Mobilnummer und direkte E-Mail nur über `scripts/kontakt/kontakt.json` + `python3 scripts/kontakt.py` ein-/ausblenden (entfernt die markierten Bausteine `<!--kontakt:…-->` aus HTML und JSON-LD). Impressum/Datenschutz zeigen die E-Mail immer. Neue Fundstellen mit `<!--kontakt:mobil-->…<!--/kontakt:mobil-->` markieren.
+- **Startseite:** höchstens 9 Hauptsektionen (Hero, Trust, Anliegen, Leistungen, Bewertungen, Über uns + Familie, Ablauf, FAQ, Kontakt); Energieberatung, Einsatzgebiet und Hersteller nur als schmale Bänder (`.band`). Start-FAQ höchstens 8 Fragen, weitere auf `ratgeber/`.
 
 ## Deployment
 
 - **Vorschau:** Vercel-Projekt `ritters` (Team `sadjkfhdskafhjku`), Deploy per CLI aus dem Repo-Root, keine Git-Integration. `vercel deploy` erzeugt eine geschützte Preview-URL (Vercel Authentication; prüfen mit `vercel curl <pfad> --deployment <url>`). `vercel deploy --prod` aktualisiert ritters.meindigitalerbetrieb.de. `.vercelignore` schließt `anfrage.php`, `.htaccess`, `README.md`, `CLAUDE.md` und `robots.txt` aus.
-- **Produktion:** Dateien auf das Apache-Hosting von schornsteinfeger.koeln laden (ohne `.vercel*`, `CLAUDE.md`, `README.md`). `.htaccess` leitet alle anderen Hosts auf `https://www.schornsteinfeger.koeln` um. Mailversand (SMTP/SPF/DKIM) dort vor Go-live testen.
+- **Produktion:** Dateien auf das Apache-Hosting von schornsteinfeger.koeln laden (ohne `.vercel*`, `CLAUDE.md`, `README.md`, `docs/`, `scripts/`). `.htaccess` leitet alle anderen Hosts auf `https://www.schornsteinfeger.koeln` um. Mailversand (SMTP/SPF/DKIM) dort vor Go-live testen.
 
 ### Indexierung
 

@@ -1,0 +1,5 @@
+{
+  "_hinweis": "Mit Philipp abstimmen (Meeting 13.11.2026: Veröffentlichung von Mobilnummer und direkter E-Mail offen). Nach Änderung: python3 scripts/kontakt.py",
+  "mobil_anzeigen": true,
+  "email_anzeigen": true
+}

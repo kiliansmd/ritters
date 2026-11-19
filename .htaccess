@@ -84,6 +84,8 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # Interne Dateien schützen
+# Arbeitsordner (Skripte, Kontakt-Schalter-Speicher, Review-Dokumente) nie ausliefern
+RedirectMatch 404 ^/(scripts|docs)(/|$)
 <FilesMatch "^(\.|README|.*\.md$)">
   Require all denied
 </FilesMatch>
