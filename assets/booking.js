@@ -10,7 +10,7 @@
     {id:'bescheid', name:T('Arbeiten laut Feuerstättenbescheid','Work listed in my notice'), note:T('Wir klären, welche Arbeiten anstehen.','We help identify which work is due.'), icon:'s-clip'},
     {id:'ofen', name:T('Neuer Kaminofen – Beratung vorab','New wood stove – advice beforehand'), note:T('Aufstellung, Anschluss und Schornstein vorab besprechen.','Discuss placement, connection and chimney beforehand.'), icon:'s-flame'},
     {id:'brandschutz', name:T('Brandschutz & Rauchwarnmelder','Fire safety & smoke alarms'), note:T('Montage, Prüfung oder Wartung.','Fitting, inspection or maintenance.'), icon:'s-alarm'},
-    {id:'energie', name:T('Energieberatung','Energy consulting'), note:T('Einsparpotenziale und Förderung besprechen.','Discuss potential savings and subsidies.'), icon:'s-leaf'},
+    {id:'energie', name:T('Energieberatung','Energy consulting'), note:T('Wird an Kessel & Ritters – Die Energieberater weitergegeben.','Passed on to Kessel & Ritters – Die Energieberater.'), icon:'s-leaf'},
     {id:'klaerung', name:T('Ich bin unsicher / Beratung','I’m not sure / advice'), note:T('Philipp hilft bei der passenden Auswahl.','Philipp helps you choose the right service.'), icon:'msg'},
     {id:'arbeiten', name:T('Schornsteinfegerarbeiten','Chimney sweeping'), note:T('Kehren & Überprüfen','Sweeping & inspection'), icon:'s-flame'},
     {id:'messung', name:T('Prüfungen & Messungen','Inspections & measurements'), note:T('Abgasweg, CO, Emissionen','Flue, CO, emissions'), icon:'s-gauge'},

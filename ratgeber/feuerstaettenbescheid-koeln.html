@@ -23,7 +23,7 @@
 <link rel="icon" href="/assets/favicon-logo-optimiert.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=4ac1d29e">
+<link rel="stylesheet" href="/assets/site.css?v=3bd73522">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,6 +83,22 @@
             "@type": "Answer",
             "text": "Die Preise für frei vergebene Arbeiten werden frei vereinbart. Sie richten sich nach Art und Zahl Ihrer Anlagen."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich meinen Schornsteinfeger frei wählen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Kehr-, Mess- und Überprüfungsarbeiten aus dem Feuerstättenbescheid dürfen Sie seit 2013 von einem Schornsteinfeger Ihrer Wahl erledigen lassen. So funktioniert der Wechsel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie oft muss der Schornstein gekehrt werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das richtet sich nach Brennstoff und Nutzung Ihrer Anlage und steht in Ihrem Feuerstättenbescheid. Mehr dazu unter Schornstein kehren in Köln."
+          }
         }
       ]
     }
@@ -92,7 +108,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <script src="/assets/consent.js?v=7b10ccbf" defer></script>
 <script src="/assets/site.js?v=41e3790d" defer></script>
-<script src="/assets/booking.js?v=bd6393c4" defer></script>
+<script src="/assets/booking.js?v=a2821384" defer></script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -123,7 +139,7 @@
         <div class="phone-options">
           <p>Wie möchten Sie uns erreichen?</p>
           <a href="tel:+492217400990" aria-label="Festnetz anrufen: 0221 – 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg><span><b>Festnetz</b><span>0221 – 7400 990</span></span></a>
-          <a href="tel:+4915888360862" aria-label="Mobil anrufen: +49 15888 360862"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg><span><b>Mobil</b><span>+49 15888 360862</span></span></a>
+          <!--kontakt:mobil--><a href="tel:+4915888360862" aria-label="Mobil anrufen: +49 15888 360862"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mobile"/></svg><span><b>Mobil</b><span>+49 15888 360862</span></span></a><!--/kontakt:mobil-->
         </div>
       </details>
       <a class="btn btn-gold" href="/#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a>
@@ -186,6 +202,14 @@
         <summary><h3>Was kosten die Arbeiten aus dem Bescheid?</h3></summary>
         <div class="faq-a"><p>Die Preise für frei vergebene Arbeiten werden frei vereinbart. Sie richten sich nach Art und Zahl Ihrer Anlagen.</p></div>
       </details>
+      <details class="faq-item">
+        <summary><h3>Kann ich meinen Schornsteinfeger frei wählen?</h3></summary>
+        <div class="faq-a"><p>Ja. Kehr-, Mess- und Überprüfungsarbeiten aus dem Feuerstättenbescheid dürfen Sie seit 2013 von einem Schornsteinfeger Ihrer Wahl erledigen lassen. <a href="/leistungen/schornsteinfeger-frei-waehlen-koeln">So funktioniert der Wechsel</a>.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary><h3>Wie oft muss der Schornstein gekehrt werden?</h3></summary>
+        <div class="faq-a"><p>Das richtet sich nach Brennstoff und Nutzung Ihrer Anlage und steht in Ihrem Feuerstättenbescheid. Mehr dazu unter <a href="/leistungen/schornstein-kehren-koeln">Schornstein kehren in Köln</a>.</p></div>
+      </details>
       </section>
     </article>
 
@@ -196,7 +220,7 @@
         <p class="aside-role">Schornsteinfegermeister, Köln-Nippes</p>
         <a class="btn btn-gold" href="/#anfrage" data-termin="bescheid"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Arbeiten aus Ihrem Bescheid anfragen</a>
         <a class="btn btn-outline" href="tel:+492217400990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>0221 – 7400 990</a>
-        <a class="aside-link" href="mailto:ritters@schornsteinfeger.koeln"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg>ritters@schornsteinfeger.koeln</a>
+        <!--kontakt:email--><a class="aside-link" href="mailto:ritters@schornsteinfeger.koeln"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg>ritters@schornsteinfeger.koeln</a><!--/kontakt:email-->
         <p class="aside-hours">Mo–Fr 7:30–17:00 Uhr</p>
       </div>
     </aside>
@@ -262,8 +286,8 @@
         <h2>Kontakt</h2>
         <ul>
           <li><a href="tel:+492217400990">0221 – 7400 990</a></li>
-          <li><a href="tel:+4915888360862">+49 15888 360862</a></li>
-          <li><a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a></li>
+          <!--kontakt:mobil--><li><a href="tel:+4915888360862">+49 15888 360862</a></li><!--/kontakt:mobil-->
+          <!--kontakt:email--><li><a href="mailto:ritters@schornsteinfeger.koeln">ritters@schornsteinfeger.koeln</a></li><!--/kontakt:email-->
           <li>Knechtstedener Straße 20<br>50733 Köln-Nippes</li>
         </ul>
       </div>
