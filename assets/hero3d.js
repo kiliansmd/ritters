@@ -6,7 +6,7 @@
   if (!scene) return;
   const hero = scene.closest('.hero') || scene;
   const fine = matchMedia('(hover: hover) and (pointer: fine)');
-  const hat = scene.querySelector('.hero-hat img');
+  const hat = hero.querySelector('.hero-hat img');
   const person = scene.querySelector('.hero-person img');
 
   /* Wurf starten, sobald die Person geladen ist (sonst würde der Hut ins Leere fliegen) */
