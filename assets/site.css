@@ -1097,3 +1097,26 @@ h2[tabindex="-1"]:focus, h3[tabindex="-1"]:focus, .bk-done:focus, .form-status:f
 .photo-slot.avatar span { display: none; }
 .photo-slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
 @media (max-width: 600px) { .photo-slots { grid-template-columns: 1fr 1fr; } }
+
+/* Familie: „Seit Generationen in Köln“ */
+.family { background: var(--surface); }
+.family-lead { max-width: 40em; color: var(--body); margin-top: 10px; }
+.fam-timeline { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; position: relative; }
+.fam-timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 9px; height: 1px; background: var(--line); }
+.fam-timeline li { position: relative; padding-top: 32px; }
+.fam-timeline li::before { content: ""; position: absolute; left: 0; top: 2px; width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--gold); background: var(--surface); }
+.fam-year { display: block; font-family: var(--serif); font-size: 22px; color: var(--gold-ink); margin-bottom: 4px; }
+.fam-timeline h3 { font-size: 19px; margin-bottom: 6px; }
+.fam-timeline p { color: var(--body); font-size: 15.5px; }
+.fam-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 140px; gap: 16px; margin-top: 40px; align-items: start; }
+.fam-photo { margin: 0; }
+.fam-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; filter: grayscale(1) contrast(1.05); border-radius: var(--radius); }
+.fam-photo figcaption { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+.fam-wappen { aspect-ratio: 1 / 1; font-size: 13px; }
+@media (max-width: 960px) {
+  .fam-timeline { grid-template-columns: 1fr; gap: 0; }
+  .fam-timeline::before { left: 7px; right: auto; top: 8px; bottom: 8px; width: 1px; height: auto; }
+  .fam-timeline li { padding: 0 0 22px 34px; }
+  .fam-timeline li::before { top: 6px; }
+  .fam-photos { grid-template-columns: 1fr 1fr; }
+}
