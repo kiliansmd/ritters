@@ -317,8 +317,8 @@ input, select, textarea { border-radius: var(--radius-btn); }
   .hero-person img { filter: drop-shadow(-10px 16px 18px rgba(0, 0, 0, .5)); }
   .hero-logo { position: relative; z-index: 1; }
 }
+/* Kundenwunsch: Die Hero-Bühne animiert immer, auch bei „Bewegung reduzieren“ (site.css sperrt sonst global mit !important). */
 @media (prefers-reduced-motion: reduce) {
-  .hero-light, .hero-figure, .hero-hat { transform: none; }
-  .js .hero-hat img, .js .hero-person img { opacity: 1; transform: rotate(-8deg); }
-  .js .hero-person img { transform: none; }
+  .js .hero-hat img.throw { animation: hat-throw 1.5s cubic-bezier(.2, .7, .2, 1) .45s both, hat-float 5.5s ease-in-out 1.95s infinite !important; }
+  .js .hero-person img { transition: opacity .9s ease, transform 1.1s cubic-bezier(.2, .8, .25, 1) !important; }
 }

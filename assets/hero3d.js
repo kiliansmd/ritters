@@ -1,11 +1,10 @@
 /* Hero-Bühne (V3): Ebenen-Parallax, Hutwurf, Scroll-Tiefe. Ohne Bibliotheken, ohne Tracking.
  * Setzt nur CSS-Variablen (--px/--py Zeigerposition −1…1, --sy Scrollanteil 0…1) und Klassen;
- * die Bewegung selbst liegt in theme-v3.css. Bei „Bewegung reduzieren“ bleibt alles statisch. */
+ * die Bewegung selbst liegt in theme-v3.css. Läuft bewusst auch bei „Bewegung reduzieren“ (Kundenwunsch). */
 (() => {
   const scene = document.querySelector('[data-hero-scene]');
   if (!scene) return;
   const hero = scene.closest('.hero') || scene;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const fine = matchMedia('(hover: hover) and (pointer: fine)');
   const hat = scene.querySelector('.hero-hat img');
   const person = scene.querySelector('.hero-person img');
@@ -16,15 +15,13 @@
   else ready();
 
   /* Noch einmal werfen: Klick auf den Hut, Rückkehr aus dem Browser-Cache, Hero scrollt wieder ins Bild */
-  const rethrow = () => { if (!hat || reduced.matches) return; hat.classList.remove('throw'); void hat.offsetWidth; hat.classList.add('throw'); };
+  const rethrow = () => { if (!hat) return; hat.classList.remove('throw'); void hat.offsetWidth; hat.classList.add('throw'); };
   hat && hat.addEventListener('click', rethrow);
   addEventListener('pageshow', e => { if (e.persisted) rethrow(); });
   if ('IntersectionObserver' in window) {
     let away = false;
     new IntersectionObserver(([e]) => { if (e.isIntersecting && away) rethrow(); away = !e.isIntersecting; }, { threshold: .4 }).observe(hero);
   }
-
-  if (reduced.matches) return;
 
   /* Zeiger-Parallax (nur Maus/Trackpad), weich nachgeführt */
   let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
