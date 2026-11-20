@@ -32,10 +32,9 @@
 <meta property="og:title" content="Chimney Sweep Cologne – Master Craftsman Philipp Ritters">
 <meta property="og:description" content="Personal. Reliable. Easy to reach. Your master chimney sweep for Cologne and the surrounding area.">
 <meta property="og:url" content="https://www.schornsteinfeger.koeln/en/">
-<link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-480.avif 480w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-800.avif 800w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1200.avif 1200w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1600.avif 1600w" imagesizes="(max-width: 640px) 100vw, 56vw" fetchpriority="high">
 <link rel="stylesheet" href="/assets/site.css?v=90a74e3e">
-<link rel="stylesheet" href="/assets/theme-v3.css?v=2a185888">
+<link rel="stylesheet" href="/assets/theme-v3.css?v=ff4e1a2c">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,7 +89,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a href="/en/" class="brand" aria-label="Schornsteinfeger Ritters – home">
-      <picture><source media="(max-width: 960px)" srcset="/assets/logo-kompakt-auf-dunkel.svg"><img class="brand-logo" src="/assets/logo-auf-dunkel.svg" width="342" height="68" alt="Philipp Ritters – master chimney sweep"></picture>
+      <picture><img class="brand-logo" src="/assets/logo-auf-dunkel.svg" width="342" height="68" alt="Philipp Ritters – master chimney sweep"></picture>
     </a>
     <nav id="menu" class="menu" aria-label="Main navigation">
       <a href="/en/#services">Services</a>
@@ -124,15 +123,14 @@
 <main id="main">
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-inner">
-      <h1 id="hero-title"><small>Master chimney sweep Philipp Ritters</small>Your<br>chimney sweep<br>in Cologne.</h1>
-      <div class="rule" aria-hidden="true"></div>
+      <h1 id="hero-title"><small>Master chimney sweep Philipp Ritters<span class="hero-kicker-place"> · Cologne-Nippes</span></small>Your chimney sweep<br><em>in Cologne.</em></h1>
       <nav class="hero-tiles" aria-label="Quick access"><a class="tile-primary" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg><span>Request appointment</span></a><a href="#services"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-flame"/></svg><span>Services</span></a><a href="#contact"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg><span>Contact</span></a></nav>
-      <p class="hero-lead">Personal. Reliable. Easy to reach.</p>
-      <p class="hero-intro">Sweeping, measurements and advice in and around Cologne. Based in Nippes – we clarify the cost and date with you first.</p>
+      <p class="hero-lead">Sweeping, measurements, smoke alarms and advice – personally from Nippes. We clarify cost and date with you first.</p>
       <div class="cta">
         <a class="btn btn-gold btn-lg" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a>
         <a class="btn btn-ghost btn-lg" href="tel:+492217400990" aria-label="Call now: +49 221 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Call us</a>
       </div>
+      <ul class="hero-meta" aria-label="At a glance"><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#clock"/></svg>Mon–Fri 7:30–17:00</li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg>All Cologne districts</li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#check"/></svg>Appointments confirmed personally</li></ul>
     </div>
     <div class="hero-scene" data-hero-scene>
       <div class="hero-bg"><picture><source type="image/webp" srcset="/assets/img/koeln-rheinpanorama-dom-sw-900.webp 900w, /assets/img/koeln-rheinpanorama-dom-sw-1400.webp 1400w, /assets/img/koeln-rheinpanorama-dom-sw-1790.webp 1790w" sizes="100vw"><img src="/assets/img/koeln-rheinpanorama-dom-sw-1400.jpg" width="1790" height="1068" alt="Cologne skyline with the cathedral and Great St. Martin on the Rhine, black and white" fetchpriority="high" decoding="async"></picture></div>
@@ -357,8 +355,8 @@
         </div>
       </div>
 
-      <div class="request-quick"><a class="btn btn-gold" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
-      <details class="request-details"><summary>Open the form: request an appointment or send a message<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
+      <div class="request-entry"><div class="request-entry-text"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg><div><b>Request an appointment or send a message</b><span>Guided in three steps or via the form – we confirm personally.</span></div></div><a class="btn btn-gold" href="#request" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Request appointment</a></div>
+      <details class="request-details"><summary>Open the classic form<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <div class="request reveal" id="request">
         <span id="book" aria-hidden="true"></span>
         <div class="tabs" role="tablist" aria-label="Type of request">
@@ -374,7 +372,8 @@
             <input type="hidden" name="ts" value="">
             <div class="hp" aria-hidden="true"><label for="t-website">Website</label><input id="t-website" name="website" tabindex="-1" autocomplete="off"></div>
 
-            <div class="field">
+            <p class="form-section">Your request</p>
+            <div class="field full">
               <label for="t-leistung">Service <span class="req" aria-hidden="true">*</span></label>
               <select id="t-leistung" name="leistung" required>
                 <option value="">Please choose …</option>
@@ -391,6 +390,7 @@
               </select>
               <p class="err" id="t-leistung-err"></p>
             </div>
+            <p class="form-section">Your contact details and the property</p>
             <div class="field">
               <label for="t-name">Name <span class="req" aria-hidden="true">*</span></label>
               <input id="t-name" name="name" required autocomplete="name">
@@ -406,7 +406,7 @@
               <input id="t-mail" name="email" type="email" autocomplete="email">
               <p class="err" id="t-mail-err"></p>
             </div>
-            <div class="field full">
+            <div class="field">
               <label for="t-adresse">Property address <span class="req" aria-hidden="true">*</span></label>
               <input id="t-adresse" name="adresse" required autocomplete="street-address" placeholder="Street, number, postcode, town">
               <p class="err" id="t-adresse-err"></p>
@@ -416,7 +416,7 @@
               <textarea id="t-msg" name="nachricht" rows="3" placeholder="e.g. type of appliance, roof access, contact person on site"></textarea>
             </div>
             <!-- anliegen:felder (erzeugt) -->
-            <details class="field full form-details" data-form-details><summary>Further details – so we can assess your request before calling back<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary><div class="form form-details-grid">
+            <details class="field full form-details" data-form-details><summary>Further details (optional) – helps us assess your request<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary><div class="form form-details-grid">
               <fieldset class="field" data-for="arbeiten_bescheid rauchmelder kaminofen_beratung unsicher kehren messung kaminofen_reinigung energieberatung"><legend>Are you already a customer?</legend><div class="radios"><label><input type="radio" name="kunde" value="neukunde"> New customer</label><label><input type="radio" name="kunde" value="bestandskunde"> Existing customer</label></div></fieldset>
               <div class="field full" data-for="termin_verschieben"><label for="t-bisheriger_termin">Current appointment</label><input id="t-bisheriger_termin" name="bisheriger_termin" placeholder="e.g. 12 Dec 2026, morning"></div>
               <fieldset class="field full" data-for="arbeiten_bescheid kehren messung"><legend>Type of system</legend><div class="radios checks"><label><input type="checkbox" name="anlage[]" value="gas"> Gas</label><label><input type="checkbox" name="anlage[]" value="oel"> Oil</label><label><input type="checkbox" name="anlage[]" value="holz"> Wood / stove</label><label><input type="checkbox" name="anlage[]" value="pellet"> Pellets</label><label><input type="checkbox" name="anlage[]" value="unbekannt"> Not sure</label></div></fieldset>

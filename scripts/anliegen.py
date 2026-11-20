@@ -60,7 +60,7 @@ def field_html(key, lang, prefix='t'):
 
 def details_block(lang):
     keys = ['kunde', 'bisheriger_termin', 'anlage', 'anzahl', 'frist', 'wunschtage', 'zeit', 'rueckruf_zeit']
-    summ = 'Weitere Angaben – damit wir Ihr Anliegen schon vor dem Rückruf einschätzen können' if lang == 'de' else 'Further details – so we can assess your request before calling back'
+    summ = 'Weitere Angaben (optional) – hilft uns bei der Einschätzung' if lang == 'de' else 'Further details (optional) – helps us assess your request'
     return ('<!-- anliegen:felder (erzeugt) -->\n            <details class="field full form-details" data-form-details><summary>' + summ +
             '<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary><div class="form form-details-grid">\n              ' +
             '\n              '.join(field_html(k, lang) for k in keys) + '\n            </div></details>\n            <!-- /anliegen:felder -->')
