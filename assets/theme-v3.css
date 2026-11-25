@@ -745,6 +745,9 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 .family-head .fam-crest img { aspect-ratio: 4 / 5; }
 .family-v2 .family-title { font-size: clamp(26px, 2.8vw, 34px); font-weight: 900; color: var(--white); margin: 0 0 10px; }
 .family-v2 .family-lead { margin: 0; }
+
+.family-head .fam-generations { grid-column: 1 / -1; width: 100%; margin: 24px 0 0; overflow: hidden; aspect-ratio: 4 / 3; border: 1px solid rgba(255, 255, 255, .14); border-radius: var(--radius-lg); background: var(--darker); box-shadow: 0 12px 28px rgba(0, 0, 0, .22); }
+.family-head .fam-generations img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; filter: grayscale(.72) contrast(1.04); }
 .fam-timeline.fam-chronik { display: block; margin: 0; padding: 0; }
 .fam-timeline.fam-chronik::before { left: 117px; right: auto; top: 10px; bottom: 10px; width: 1px; height: auto; background: rgba(255, 255, 255, .18); }
 .fam-chronik li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 0 44px; padding: 0 0 30px; }
