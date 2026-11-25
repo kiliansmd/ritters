@@ -30,9 +30,9 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/site.css?v=12ca6a23">
-<link rel="stylesheet" href="/assets/theme-v3.css?v=1ecb83f1">
+<link rel="stylesheet" href="/assets/theme-v3.css?v=52a247c5">
 <script>document.documentElement.classList.add('js')</script>
-<script src="/assets/consent.js?v=7b10ccbf" defer></script>
+<script src="/assets/consent.js?v=8ee36952" defer></script>
 <script src="/assets/anliegen.js?v=51b66274" defer></script>
 <script src="/assets/site.js?v=58adbfb4" defer></script>
 <script src="/assets/booking.js?v=5ffee2c6" defer></script>
@@ -81,7 +81,7 @@
 
     <div class="notice"><strong>Translation:</strong> This English version is provided for convenience. Only the <a href="/datenschutz" hreflang="de" lang="de">German privacy policy (Datenschutzerklärung)</a> is legally binding. It is a draft and should be legally reviewed before publication; it does not guarantee complete legal certainty.</div>
 
-    <p class="lead-legal">Protecting your data matters to us. We collect as little data as possible: <strong>no tracking or advertising cookies, no analytics tools, no social media plugins</strong>. External content (Google Maps and customer reviews via Elfsight) is only loaded with your explicit consent.</p>
+    <p class="lead-legal">Protecting your data matters to us. We collect as little data as possible: <strong>no tracking or advertising cookies, no analytics tools, no social media plugins</strong>. Google Maps is only loaded with your explicit consent. Customer reviews are embedded via Elfsight (see section 8a).</p>
 
     <nav class="toc" aria-label="Contents">
       <h2>Contents</h2>
@@ -113,10 +113,10 @@
 
     <h2 id="legal-basis">2. Legal basis</h2>
     <ul>
-      <li><strong>Art. 6(1)(a) GDPR</strong> – consent (e.g. privacy checkbox in forms, loading Google Maps and customer reviews)</li>
+      <li><strong>Art. 6(1)(a) GDPR</strong> – consent (e.g. privacy checkbox in forms, loading Google Maps)</li>
       <li><strong>Art. 6(1)(b) GDPR</strong> – contract or pre-contractual measures (e.g. appointment and contact requests)</li>
       <li><strong>Art. 6(1)(c) GDPR</strong> – legal obligation (e.g. commercial and tax retention obligations)</li>
-      <li><strong>Art. 6(1)(f) GDPR</strong> – legitimate interest (e.g. secure operation of the website, answering general enquiries)</li>
+      <li><strong>Art. 6(1)(f) GDPR</strong> – legitimate interest (e.g. secure operation of the website, answering general enquiries, displaying customer reviews)</li>
       <li><strong>§&nbsp;25(1) and (2) TDDDG</strong> – storing and accessing information on your device (consent or technical necessity)</li>
     </ul>
 
@@ -130,11 +130,11 @@
       <table>
         <thead><tr><th scope="col">Name</th><th scope="col">Purpose</th><th scope="col">Category</th><th scope="col">Duration</th></tr></thead>
         <tbody>
-          <tr><td><code>sr-consent</code></td><td>Stores your choice in the privacy notice (necessary / Google Maps / Elfsight) so that the notice does not appear on every visit</td><td>Technically necessary (§&nbsp;25(2) no. 2 TDDDG)</td><td>12&nbsp;months</td></tr>
+          <tr><td><code>sr-consent</code></td><td>Stores your choice in the privacy notice (necessary / Google Maps) so that the notice does not appear on every visit</td><td>Technically necessary (§&nbsp;25(2) no. 2 TDDDG)</td><td>12&nbsp;months</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Google Maps and Elfsight have separate consent categories. Elfsight loads only after consent to “Customer reviews (Elfsight)” or a click on “Show Google reviews”. Google Maps loads only if you choose “Accept all”, enable the “External media” category or click “Load map” in the contact section. Without your consent no data is transferred to Google. The legal basis is your consent under §&nbsp;25(1) TDDDG and Art. 6(1)(a) GDPR.</p>
+    <p>Google Maps loads only if you choose “Accept all”, enable the “External media” category or click “Load map” in the contact section. Without your consent no data is transferred to Google. The legal basis is your consent under §&nbsp;25(1) TDDDG and Art. 6(1)(a) GDPR.</p>
     <p><strong>Withdrawal:</strong> You can withdraw or change your consent at any time with effect for the future:</p>
     <p><button type="button" class="btn btn-outline btn-sm" data-consent-open>Open cookie settings</button></p>
     <p>Alternatively, you can clear local storage in your browser settings.</p>
@@ -163,7 +163,7 @@
     <p>The “Directions with Google Maps” button is a simple link. Google Maps only opens in a new window when you click it; from then on, Google’s privacy terms apply.</p>
 
     <h2 id="elfsight">8a. Google reviews via Elfsight</h2>
-    <p>Our home pages embed customer reviews using the Google Reviews widget by Elfsight (provider: <span class="ph">[add Elfsight company name, address and country]</span>). The widget only loads after you enable the separate “Customer reviews (Elfsight)” category or click “Show Google reviews”. This loads external scripts and content from Elfsight and its content providers, including review images. These requests transmit connection data such as your IP address and browser details to the respective providers. Without consent no widget resources are requested. You can withdraw consent via “Cookie settings”; the widget is then removed. Processing already carried out by the provider cannot be reversed by removing it. The legal basis is your consent (§&nbsp;25(1) TDDDG, Art. 6(1)(a) GDPR). Transfers to countries outside the EU/EEA are possible; <span class="ph">[add safeguards for third-country transfers according to provider information]</span>.</p>
+    <p>Our home pages embed customer reviews from our Google Business Profile using the Google Reviews widget by Elfsight (provider: <span class="ph">[add Elfsight company name, address and country]</span>). The widget loads automatically when you reach the “What customers say about us” section; we do not ask for separate consent for this. This loads external scripts and content from Elfsight and its content providers, including review images. These requests transmit connection data such as your IP address and browser details to the respective providers. The widget runs in a separate area of the page (iframe). The legal basis is our legitimate interest in displaying current customer reviews (Art. 6(1)(f) GDPR). You may object to this processing under Art. 21 GDPR. Transfers to countries outside the EU/EEA are possible; <span class="ph">[add safeguards for third-country transfers according to provider information]</span>.</p>
     <p>Provider information: <a href="https://elfsight.com/privacy-policy/" target="_blank" rel="noopener">Elfsight privacy policy<span class="sr-only"> (external website, opens in a new window)</span></a>.</p>
 
     <h2 id="links">9. External links and fonts</h2>
