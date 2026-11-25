@@ -15,7 +15,7 @@
     { "source": "/en/(datenschutz|privacy-policy)", "destination": "/en/privacy", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/robots.txt", "has": [{ "type": "host", "value": "ritters.meindigitalerbetrieb.de" }], "destination": "/robots-staging.txt" },
+    { "source": "/robots.txt", "has": [{ "type": "host", "value": "(?<sub>ritters[0-9]?)\\.meindigitalerbetrieb\\.de" }], "destination": "/robots-staging.txt" },
     { "source": "/robots.txt", "has": [{ "type": "host", "value": "(?<sub>.*)\\.vercel\\.app" }], "destination": "/robots-staging.txt" }
   ],
   "headers": [
@@ -36,7 +36,7 @@
     },
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "ritters.meindigitalerbetrieb.de" }],
+      "has": [{ "type": "host", "value": "(?<sub>ritters[0-9]?)\\.meindigitalerbetrieb\\.de" }],
       "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
     },
     {
@@ -49,7 +49,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'none'; script-src 'self' https://elfsightcdn.com https://*.elfsightcdn.com https://*.elfsight.com; style-src 'self' 'unsafe-inline' https://*.elfsightcdn.com https://*.elfsight.com; img-src 'self' data: https://*.elfsightcdn.com https://*.elfsight.com https://*.googleusercontent.com https://*.gstatic.com; connect-src https://elfsightcdn.com https://*.elfsightcdn.com https://*.elfsight.com; font-src https://*.elfsightcdn.com https://fonts.gstatic.com; frame-src https://*.elfsight.com; frame-ancestors 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+          "value": "default-src 'none'; script-src 'self' https://elfsightcdn.com https://*.elfsightcdn.com https://*.elfsight.com; style-src 'self' 'unsafe-inline' https://*.elfsightcdn.com https://*.elfsight.com; img-src 'self' data: https://*.elfsightcdn.com https://*.elfsight.com https://*.googleusercontent.com https://*.gstatic.com; connect-src https://elfsightcdn.com https://*.elfsightcdn.com https://*.elfsight.com; font-src 'self' https://*.elfsightcdn.com https://fonts.gstatic.com; frame-src https://*.elfsight.com; frame-ancestors 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
         },
         {
           "key": "X-Frame-Options",

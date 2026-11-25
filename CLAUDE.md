@@ -1,5 +1,7 @@
 # CLAUDE.md – Website Schornsteinfeger Ritters
 
+> **Branch `design/v3` (Design-Variante 3):** gleiche Inhalte wie `main`, aber dunkles Referenz-Design (Hero-Bühne: Köln-Panorama als Hintergrund, Dach mit First auf Sitzhöhe, freigestellte Person und Hut als Ebenen, sichtbare Headline statt Logo, Wortmarke im Header auf allen Breiten (keine Kompaktvariante `logo-kompakt-auf-dunkel.svg` mehr), dunkle Bewertungen, 5 Anliegen-Karten) über `assets/theme-v3.css`, das nach `site.css` lädt. **Typografie nur Nunito Sans** – keine Serifen/Editorial-Optik (Kundenwunsch, Serifen-Variante wurde verworfen); das Serifen-Preload fehlt in V3 bewusst. Hero-Textblock (V3.1): Kicker-Pille (`h1 small`, Ortsteil in `.hero-kicker-place` nur ab 641 px), zweizeilige Headline mit Gold-`em`, ein Lead-Satz, Gold-Button + „Anrufen“, Meta-Zeile `.hero-meta` (Zeiten, Einsatzgebiet, persönliche Bestätigung; mobil ausgeblendet, dort Kacheln `.hero-tiles`). Eigenes Vercel-Projekt `ritters3` → https://ritters3.meindigitalerbetrieb.de. Inhaltliche Änderungen zuerst in `main`, dann hierher mergen.
+
 Website für **Schornsteinfegermeister Philipp Ritters**, Meisterbetrieb in 2. Generation, Knechtstedener Straße 20, 50733 Köln-Nippes. Projekt von MeinDigitalerBetrieb (MDB).
 
 - **Staging/Vorschau:** https://ritters.meindigitalerbetrieb.de (Vercel, nicht indexiert)
@@ -20,6 +22,7 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 | `assets/site.css` | Gesamtes Styling (Farben als CSS-Variablen) |
 | `assets/site.js` | Interaktion: Menü, Telefon-Auswahl, Formular-Handling, Sprachwechsel, Staging-noindex |
 | `assets/data/anliegen.json` → `assets/anliegen.js` | **Zentrale Anliegen-Liste** (IDs, Labels DE/EN, Zusatzfelder, Aliase). Nach Änderung `python3 scripts/anliegen.py` ausführen: erzeugt `anliegen.js` und schreibt die Auswahllisten/Zusatzfelder in `index.html` und `en/index.html` (Marker `<!-- anliegen:felder -->`). `anliegen.js` muss **vor** `site.js` geladen werden. |
+| `assets/hero3d.js` | Nur V3, nur Startseiten: Hero-Bühne (`[data-hero-scene]`). Setzt CSS-Variablen `--px/--py` (Zeiger) und `--sy` (Scroll) am `.hero`, startet den Hutwurf (`.throw`), Klick auf den Hut wirft erneut. Bewegung liegt in `theme-v3.css`; bei `prefers-reduced-motion` statisch. Freisteller: `assets/img/philipp-ritters-freisteller-*.webp|png`, `zylinder-freisteller-*`. **Testvariante (Feedback 24.11.):** `/?hut=klein` setzt `.hut-klein` am `.hero` → kleinerer Zylinder (Regeln am Ende von `theme-v3.css`); nach Philipps Entscheidung zum Standard machen oder entfernen |
 | `assets/booking.js` | Geführter Dialog „Termin anfragen“ (Anliegen → Details → Ihre Daten). Zeigt nur die Felder des gewählten Anliegens. Unverbindliche Anfrage, **kein Kalender** |
 | `assets/consent.js` | Consent-Banner; Kategorien notwendig / medien (Google Maps) / reviews (Elfsight) |
 | `assets/testimonials.js`, `assets/reviews-frame.*`, `widgets/reviews.html` | Google-Bewertungen via Elfsight, erst nach Einwilligung, im Sandbox-Iframe mit eigener CSP |
@@ -40,6 +43,7 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 - Änderungen immer **DE und EN gemeinsam**.
 - **Kontakt-Schalter:** Mobilnummer und direkte E-Mail nur über `scripts/kontakt/kontakt.json` + `python3 scripts/kontakt.py` ein-/ausblenden (entfernt die markierten Bausteine `<!--kontakt:…-->` aus HTML und JSON-LD). Impressum/Datenschutz zeigen die E-Mail immer. Neue Fundstellen mit `<!--kontakt:mobil-->…<!--/kontakt:mobil-->` markieren.
 - **Anliegen:** `data-termin="<id>"` öffnet den Dialog vorbelegt; alte Werte (`bescheid`, `ofen`, Label-Texte) funktionieren über `aliase`. Formulare senden `anliegen` (ID) und `leistung` (Label) plus Zusatzfelder (`kunde`, `anlage`, `anzahl`, `frist`, `wunschtage`, `zeit`, `bisheriger_termin`, `rueckruf_zeit`, `frage`). **Offen (AP 4.2):** `anfrage.php` wertet diese Felder noch nicht aus und zeigt bei `leistung` aus dem statischen Formular die ID statt des Labels.
+- **Leistungen (V3, Feedback 24.11.):** 4 Bildkarten (`.svc-grid`) ohne Aufklapp-Panels; Kaminofen-Beratung und Reinigung sind zu einer Karte zusammengefasst (`#kaminofen`, Button ohne Vorbelegung → Anliegen-Auswahl). **Über uns:** Familiengeschichte offen als vertikale Chronik (`.family-v2`, `.fam-chronik`), nicht mehr in `<details>`.
 - **Startseite:** höchstens 9 Hauptsektionen (Hero, Trust, Anliegen, Leistungen, Bewertungen, Über uns + Familie, Ablauf, FAQ, Kontakt); Energieberatung, Einsatzgebiet und Hersteller nur als schmale Bänder (`.band`). Start-FAQ höchstens 8 Fragen, weitere auf `ratgeber/`.
 
 ## Deployment

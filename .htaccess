@@ -95,7 +95,7 @@ RedirectMatch 404 ^/(scripts|docs)(/|$)
 <IfModule mod_headers.c>
   <Files "reviews.html">
     Header always set X-Frame-Options "SAMEORIGIN"
-    Header always set Content-Security-Policy "default-src 'none'; script-src 'self' https://elfsightcdn.com https://*.elfsightcdn.com https://*.elfsight.com; style-src 'self' 'unsafe-inline' https://*.elfsightcdn.com https://*.elfsight.com; img-src 'self' data: https://*.elfsightcdn.com https://*.elfsight.com https://*.googleusercontent.com https://*.gstatic.com; connect-src https://elfsightcdn.com https://*.elfsightcdn.com https://*.elfsight.com; font-src https://*.elfsightcdn.com https://fonts.gstatic.com; frame-src https://*.elfsight.com; frame-ancestors 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
+    Header always set Content-Security-Policy "default-src 'none'; script-src 'self' https://elfsightcdn.com https://*.elfsightcdn.com https://*.elfsight.com; style-src 'self' 'unsafe-inline' https://*.elfsightcdn.com https://*.elfsight.com; img-src 'self' data: https://*.elfsightcdn.com https://*.elfsight.com https://*.googleusercontent.com https://*.gstatic.com; connect-src https://elfsightcdn.com https://*.elfsightcdn.com https://*.elfsight.com; font-src 'self' https://*.elfsightcdn.com https://fonts.gstatic.com; frame-src https://*.elfsight.com; frame-ancestors 'self'; base-uri 'none'; form-action 'none'; object-src 'none'"
     Header always set X-Robots-Tag "noindex, nofollow"
   </Files>
 </IfModule>

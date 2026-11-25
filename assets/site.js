@@ -18,6 +18,14 @@
 
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
+  /* Header-Logo erst nach der Hero-Sektion einblenden (CSS: html.has-hero / html.past-hero) */
+  const heroEl = $('.hero');
+  if (heroEl && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('has-hero');
+    const hh = getComputedStyle(document.documentElement).getPropertyValue('--header-h').trim() || '84px';
+    new IntersectionObserver(([e]) => document.documentElement.classList.toggle('past-hero', !e.isIntersecting), { rootMargin: `-${hh} 0px 0px 0px`, threshold: 0 }).observe(heroEl);
+  }
+
   /* Header: Schatten + aktiver Menüpunkt */
   const header = $('.site-header');
   const navLinks = $$('#menu > a').filter(a => a.hash && a.pathname === location.pathname);
@@ -83,7 +91,7 @@
   }));
 
   /* Leistungen: Detailbereiche */
-  const toggles = $$('.service .link-arrow');
+  const toggles = $$('.service button.link-arrow[aria-controls]');
   toggles.forEach(btn => btn.addEventListener('click', () => {
     const panel = document.getElementById(btn.getAttribute('aria-controls'));
     const willOpen = btn.getAttribute('aria-expanded') !== 'true';

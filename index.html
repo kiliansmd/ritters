@@ -32,9 +32,9 @@
 <meta property="og:title" content="Schornsteinfeger Köln-Nippes | Meisterbetrieb Philipp Ritters">
 <meta property="og:description" content="Persönlich. Zuverlässig. Direkt erreichbar. Ihr Schornsteinfeger-Meisterbetrieb für Köln und Umgebung.">
 <meta property="og:url" content="https://www.schornsteinfeger.koeln/">
-<link rel="preload" href="/assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-480.avif 480w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-800.avif 800w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1600.avif 1600w" imagesizes="(max-width: 640px) 100vw, 57vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-480.avif 480w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-800.avif 800w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1200.avif 1200w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1600.avif 1600w" imagesizes="(max-width: 640px) 100vw, 56vw" fetchpriority="high">
 <link rel="stylesheet" href="/assets/site.css?v=90a74e3e">
+<link rel="stylesheet" href="/assets/theme-v3.css?v=213e01aa">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -292,7 +292,8 @@
 <script src="/assets/consent.js?v=7b10ccbf" defer></script>
 <script src="/assets/testimonials.js?v=6579f265" defer></script>
 <script src="/assets/anliegen.js?v=31084ee7" defer></script>
-<script src="/assets/site.js?v=bd71ff71" defer></script>
+<script src="/assets/site.js?v=cb98ab9a" defer></script>
+<script src="/assets/hero3d.js?v=6656db5a" defer></script>
 <script src="/assets/booking.js?v=c5787c9d" defer></script>
 </head>
 <body>
@@ -301,7 +302,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a href="/" class="brand" aria-label="Schornsteinfeger Ritters – zur Startseite">
-      <picture><source media="(max-width: 960px)" srcset="/assets/logo-kompakt-auf-dunkel.svg"><img class="brand-logo" src="/assets/logo-auf-dunkel.svg" width="342" height="68" alt="Philipp Ritters – Schornsteinfegermeister"></picture>
+      <picture><img class="brand-logo" src="/assets/logo-auf-dunkel.svg" width="342" height="68" alt="Philipp Ritters – Schornsteinfegermeister"></picture>
     </a>
     <nav id="menu" class="menu" aria-label="Hauptnavigation">
       <a href="/#leistungen">Leistungen</a>
@@ -335,28 +336,38 @@
 
 <main id="inhalt">
   <section class="hero" aria-labelledby="hero-title">
-    <!-- TODO: Originalfoto in voller Auflösung einsetzen (z. B. 2400 px breit, als AVIF/WebP + JPG). Gesicht nicht beschneiden/retuschieren. -->
     <div class="wrap hero-inner">
-      <h1 id="hero-title"><small>Schornsteinfegermeister Philipp Ritters</small>Ihr<br>Schornsteinfeger<br>für Köln.</h1>
-      <div class="rule" aria-hidden="true"></div>
+      <h1 id="hero-title"><small>Meisterbetrieb Philipp Ritters<span class="hero-kicker-place"> · Köln-Nippes</span></small>Ihr Schornsteinfeger<br><em>für Köln.</em></h1>
       <nav class="hero-tiles" aria-label="Schnellzugriff"><a class="tile-primary" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg><span>Termin anfragen</span></a><a href="#leistungen"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-flame"/></svg><span>Leistungen</span></a><a href="#kontakt"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg><span>Kontakt</span></a></nav>
-      <p class="hero-lead">Persönlich. Zuverlässig. Direkt erreichbar.</p>
-      <p class="hero-intro">Kehren, Messungen und Beratung in Köln und Umgebung. Persönlich aus Nippes – Kosten und Termin klären wir vorab.</p>
+      <p class="hero-lead">Kehren, Messungen, Rauchmelder und Beratung – persönlich aus Nippes. Kosten und Termin klären wir vorab mit Ihnen.</p>
       <div class="cta">
         <a class="btn btn-gold btn-lg" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a>
-        <a class="btn btn-ghost btn-lg" href="tel:+492217400990" aria-label="Jetzt anrufen: 0221 – 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>0221&nbsp;–&nbsp;7400&nbsp;990</a>
+        <a class="btn btn-ghost btn-lg" href="tel:+492217400990" aria-label="Jetzt anrufen: 0221 – 7400 990"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#phone"/></svg>Anrufen</a>
+      </div>
+      <ul class="hero-meta" aria-label="Auf einen Blick"><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#clock"/></svg>Mo–Fr 7:30–17:00&nbsp;Uhr</li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#pin"/></svg>Alle Kölner Stadtbezirke</li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#check"/></svg>Termin wird persönlich bestätigt</li></ul>
+    </div>
+    <div class="hero-scene" data-hero-scene>
+      <div class="hero-bg"><picture><source type="image/webp" srcset="/assets/img/koeln-rheinpanorama-dom-sw-900.webp 900w, /assets/img/koeln-rheinpanorama-dom-sw-1400.webp 1400w, /assets/img/koeln-rheinpanorama-dom-sw-1790.webp 1790w" sizes="100vw"><img src="/assets/img/koeln-rheinpanorama-dom-sw-1400.jpg" width="1790" height="1068" alt="Kölner Rheinpanorama mit Dom und Groß St. Martin, schwarz-weiß" fetchpriority="high" decoding="async"></picture></div>
+      <div class="hero-light" aria-hidden="true"></div>
+      <div class="hero-roof" aria-hidden="true"><picture><source type="image/webp" srcset="/assets/img/dachziegel-sw-1000.webp 1000w, /assets/img/dachziegel-sw-1600.webp 1600w, /assets/img/dachziegel-sw-2000.webp 2000w" sizes="112vw"><img src="/assets/img/dachziegel-sw-1600.jpg" width="2000" height="1173" alt="" decoding="async"></picture></div>
+      <div class="hero-ridge" aria-hidden="true"></div>
+      <div class="hero-figure hero-cast" aria-hidden="true"><img src="/assets/img/philipp-ritters-freisteller-480.webp" width="788" height="1354" alt="" decoding="async" loading="lazy"></div>
+      <div class="hero-figure">
+        <div class="hero-person"><picture><source type="image/webp" srcset="/assets/img/philipp-ritters-freisteller-480.webp 480w, /assets/img/philipp-ritters-freisteller-720.webp 720w, /assets/img/philipp-ritters-freisteller-960.webp 960w, /assets/img/philipp-ritters-freisteller-1200.webp 1200w" sizes="(max-width: 640px) 62vw, (max-width: 960px) 34vw, 30vw"><img src="/assets/img/philipp-ritters-freisteller-720.png" width="788" height="1354" alt="Philipp Ritters lacht und wirft seinen Zylinder in die Luft" fetchpriority="high" decoding="async"></picture></div>
       </div>
     </div>
-    <figure class="hero-media">
-      <picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-480.avif 480w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-800.avif 800w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1600.avif 1600w" sizes="(max-width: 640px) 100vw, 57vw"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-480.webp 480w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-800.webp 800w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1600.webp 1600w" sizes="(max-width: 640px) 100vw, 57vw"><img src="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-480.jpg 480w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-800.jpg 800w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-philipp-ritters-dach-dom-1600.jpg 1600w" sizes="(max-width: 640px) 100vw, 57vw" width="1600" height="2400" fetchpriority="high" decoding="async" alt="Schornsteinfegermeister Philipp Ritters steht auf einem Kölner Dach und grüßt mit dem Zylinder, im Hintergrund der Kölner Dom"></picture>
-    </figure>
+    <div class="hero-scene hero-scene-hat" aria-hidden="true">
+      <div class="hero-figure">
+        <div class="hero-hat" aria-hidden="true"><picture><source type="image/webp" srcset="/assets/img/zylinder-freisteller-336.webp 336w, /assets/img/zylinder-freisteller-672.webp 672w" sizes="(max-width: 640px) 26vw, 10vw"><img src="/assets/img/zylinder-freisteller-672.png" width="672" height="674" alt="" title="Hut noch einmal werfen" decoding="async"></picture></div>
+      </div>
+    </div>
   </section>
 
   <section class="trustbar" aria-label="Warum Kundinnen und Kunden uns vertrauen">
     <ul class="wrap"><!-- Siegel (SVG/PNG) folgen: Fachbetrieb des Schornsteinfegerhandwerks, Rauchwarnmelder-Fachkraft DIN 14676, ggf. Innung --><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#badge"/></svg><span><b>Meisterbetrieb</b>in zweiter Generation</span></li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#clock"/></svg><span><b>~20&nbsp;Jahre</b>Erfahrung im Handwerk</span></li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#check"/></svg><span><b>Anerkannter Fachbetrieb</b>Schornsteinfegerhandwerk, extern geprüft<em class="seal-slot" data-staging-only hidden>Siegel folgt</em></span></li><li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-alarm"/></svg><span><b>Geprüfte Fachkraft</b>Rauchwarnmelder nach DIN&nbsp;14676<em class="seal-slot" data-staging-only hidden>Siegel folgt</em></span></li></ul>
   </section>
 
-  <section class="section intent-section" aria-labelledby="intent-title"><div class="wrap"><p class="eyebrow">Ihr nächster Schritt</p><h2 id="intent-title">Was steht bei Ihnen an?</h2><p>Sie müssen die Fachbegriffe nicht kennen. Wählen Sie einfach Ihr Anliegen.</p><div class="intent-grid"><a class="intent-card" href="/#anfrage" data-termin="bescheid"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-clip"/></svg><span><b>Ich habe einen Bescheid erhalten</b><small>Anstehende Arbeiten gemeinsam klären.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="/#anfrage" data-termin="ofen"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-flame"/></svg><span><b>Ich plane einen neuen Kaminofen</b><small>Beratung vor Anschluss und Inbetriebnahme.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="/#anfrage" data-termin="brandschutz"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-alarm"/></svg><span><b>Ich brauche Rauchmelder‑Service</b><small>Prüfung, Montage oder Wartung anfragen.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="#energieberatung-kessel-ritters"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-leaf"/></svg><span><b>Ich möchte Energie sparen</b><small>Sanierung, Heizung und Förderung entdecken.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div><a class="link-arrow" href="/#anfrage" data-termin="klaerung">Ich bin unsicher – bitte beraten Sie mich<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div></section>
+  <section class="section intent-section" aria-labelledby="intent-title"><div class="wrap"><p class="eyebrow">Ihr nächster Schritt</p><h2 id="intent-title">Was steht bei Ihnen an?</h2><p>Sie müssen die Fachbegriffe nicht kennen. Wählen Sie einfach Ihr Anliegen.</p><div class="intent-grid"><a class="intent-card" href="/#anfrage" data-termin="bescheid"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-clip"/></svg><span><b>Ich habe einen Bescheid erhalten</b><small>Anstehende Arbeiten gemeinsam klären.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="/#anfrage" data-termin="ofen"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-flame"/></svg><span><b>Ich plane einen neuen Kaminofen</b><small>Beratung vor Anschluss und Inbetriebnahme.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="/#anfrage" data-termin="brandschutz"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-alarm"/></svg><span><b>Ich brauche Rauchmelder‑Service</b><small>Prüfung, Montage oder Wartung anfragen.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card" href="#energieberatung-kessel-ritters"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#s-leaf"/></svg><span><b>Ich möchte Energie sparen</b><small>Sanierung, Heizung und Förderung entdecken.</small></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a><a class="intent-card intent-card-link" href="/#anfrage" data-termin="klaerung"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#msg"/></svg><span><b>Ich bin unsicher – bitte beraten Sie mich</b></span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div></div></section>
 
   <section id="leistungen" class="section" aria-labelledby="leistungen-title">
     <div class="wrap reveal">
@@ -364,92 +375,46 @@
       <h2 id="leistungen-title" class="center">Rund um Sicherheit, Effizienz und Werterhalt.</h2>
       <p class="lead center">Vorbeugender Brandschutz für Ihr Zuhause – vom Kehren über Messungen bis zum Rauchmelder.</p>
 
-      <div class="services">
-        <article class="service" id="schornsteinfegerarbeiten">
-          <svg class="ic icon" aria-hidden="true"><use href="/assets/icons.svg#s-flame"/></svg>
-          <h3><a href="/leistungen/schornstein-kehren-koeln">Schornsteinfegerarbeiten</a></h3>
-          <p>Kehren und Überprüfen von Schornsteinen, Feuerstätten und Abgasleitungen.</p>
-          <button class="link-arrow" type="button" aria-expanded="false" aria-controls="p-arbeiten">Details<span class="sr-only"> zu Schornsteinfegerarbeiten</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></button>
+      <div class="services svc-grid">
+        <article class="service svc" id="schornsteinfegerarbeiten">
+          <figure class="svc-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-kehren-ofenrohr-480.avif 480w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-800.avif 800w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1600.avif 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-kehren-ofenrohr-480.webp 480w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-800.webp 800w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1600.webp 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px"><img src="/assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-kehren-ofenrohr-480.jpg 480w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-800.jpg 800w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1600.jpg 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px" width="1600" height="1066" loading="lazy" decoding="async" alt="Philipp Ritters kehrt mit Kehrleine das Ofenrohr eines Kaminofens in einem Wohnzimmer"></picture></figure>
+          <div class="svc-body">
+            <h3><a href="/leistungen/schornstein-kehren-koeln">Schornsteinfegerarbeiten</a></h3>
+            <p>Wir kehren und überprüfen Schornsteine, Feuerstätten und Abgasleitungen und dokumentieren alles sauber.</p>
+            <ul class="chips"><li>Kehrarbeiten</li><li>Überprüfung</li><li>Dokumente per E-Mail</li></ul>
+            <div class="svc-actions"><a class="btn btn-gold btn-sm" href="/#anfrage" data-termin="kehren"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a><a class="link-arrow" href="/leistungen/schornstein-kehren-koeln">Mehr erfahren<span class="sr-only"> zu Schornsteinfegerarbeiten</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
+          </div>
         </article>
-        <article class="service" id="kaminofen-beratung">
-          <svg class="ic icon" aria-hidden="true"><use href="/assets/icons.svg#s-clip"/></svg>
-          <h3><a href="/leistungen/kaminofen-reinigung-koeln">Beratung zu Kaminöfen</a></h3>
-          <p>Neuer Kaminofen geplant? Wir beraten vorab zu Aufstellung, Anschluss und Schornstein.</p>
-          <button class="link-arrow" type="button" aria-expanded="false" aria-controls="p-ofen-beratung">Details<span class="sr-only"> zur Beratung zu Kaminöfen</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></button>
+        <article class="service svc" id="pruefungen-messungen">
+          <figure class="svc-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-messung-gaszaehler-480.avif 480w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-800.avif 800w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1600.avif 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-messung-gaszaehler-480.webp 480w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-800.webp 800w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1600.webp 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px"><img src="/assets/img/schornsteinfeger-koeln-messung-gaszaehler-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-messung-gaszaehler-480.jpg 480w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-800.jpg 800w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1600.jpg 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px" width="1600" height="1066" loading="lazy" decoding="async" alt="Messgerät am Gaszähler bei der Gashausschau"></picture></figure>
+          <div class="svc-body">
+            <h3><a href="/leistungen/abgasmessung-koeln">Prüfungen&nbsp;&amp; Messungen</a></h3>
+            <p>Für den sicheren Betrieb Ihrer Feuerstätten – inklusive Emissionsmessung nach 1.&nbsp;BImSchV und Gashausschau nach TRGI.</p>
+            <ul class="chips"><li>Abgaswegeprüfung</li><li>CO‑Messung</li><li>Emissionsmessung</li></ul>
+            <div class="svc-actions"><a class="btn btn-gold btn-sm" href="/#anfrage" data-termin="messung"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a><a class="link-arrow" href="/leistungen/abgasmessung-koeln">Mehr erfahren<span class="sr-only"> zu Prüfungen und Messungen</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
+          </div>
         </article>
-        <article class="service" id="pruefungen-messungen">
-          <svg class="ic icon" aria-hidden="true"><use href="/assets/icons.svg#s-gauge"/></svg>
-          <h3><a href="/leistungen/abgasmessung-koeln">Prüfungen&nbsp;&amp; Messungen</a></h3>
-          <p>Abgaswegeprüfung, CO‑Messung, Emissionsmessung und Gashausschau.</p>
-          <button class="link-arrow" type="button" aria-expanded="false" aria-controls="p-messung">Details<span class="sr-only"> zu Prüfungen&nbsp;&amp; Messungen</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></button>
+        <article class="service svc" id="kaminofen">
+          <figure class="svc-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-480.avif 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-800.avif 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1600.avif 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-480.webp 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-800.webp 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1600.webp 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px"><img src="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-480.jpg 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-800.jpg 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1600.jpg 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px" width="1600" height="1066" loading="lazy" decoding="async" alt="Philipp Ritters bei der Reinigung eines Kaminofens"></picture></figure>
+          <div class="svc-body">
+            <h3><a href="/leistungen/kaminofen-reinigung-koeln">Kaminöfen: Beratung&nbsp;&amp; Reinigung</a></h3>
+            <p>Vor dem Kauf beraten wir zu Aufstellung, Anschluss und Schornstein. Danach reinigen wir Ofen und Lüftung.</p>
+            <ul class="chips"><li>Beratung vorab</li><li>Ofenreinigung</li><li>Lüftungsanlagen</li></ul>
+            <div class="svc-actions"><a class="btn btn-gold btn-sm" href="/#anfrage" data-termin=""><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Anfragen</a><a class="link-arrow" href="/leistungen/kaminofen-reinigung-koeln">Mehr erfahren<span class="sr-only"> zu Kaminöfen</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
+          </div>
         </article>
-        <article class="service" id="reinigung">
-          <svg class="ic icon" aria-hidden="true"><use href="/assets/icons.svg#s-brush"/></svg>
-          <h3><a href="/leistungen/kaminofen-reinigung-koeln">Reinigung</a></h3>
-          <p>Reinigung von Kaminöfen, Öfen und Lüftungsanlagen – gründlich und sauber.</p>
-          <button class="link-arrow" type="button" aria-expanded="false" aria-controls="p-reinigung">Details<span class="sr-only"> zu Reinigung</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></button>
-        </article>
-        <article class="service" id="brandschutz-rauchwarnmelder">
-          <svg class="ic icon" aria-hidden="true"><use href="/assets/icons.svg#s-alarm"/></svg>
-          <h3><a href="/leistungen/rauchmelder-wartung-koeln">Brandschutz&nbsp;&amp; Rauchwarnmelder</a></h3>
-          <p>Rauch- und CO‑Melder: Beratung, Montage und Wartung durch geprüfte Fachkraft.</p>
-          <button class="link-arrow" type="button" aria-expanded="false" aria-controls="p-brandschutz">Details<span class="sr-only"> zu Brandschutz&nbsp;&amp; Rauchwarnmelder</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></button>
+        <article class="service svc" id="brandschutz-rauchwarnmelder">
+          <figure class="svc-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-480.avif 480w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-800.avif 800w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1600.avif 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-480.webp 480w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-800.webp 800w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1600.webp 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px"><img src="/assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-480.jpg 480w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-800.jpg 800w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1600.jpg 1600w" sizes="(max-width: 640px) 96px, (max-width: 1100px) 45vw, 280px" width="1600" height="1066" loading="lazy" decoding="async" alt="Philipp Ritters prüft einen Rauchwarnmelder an der Zimmerdecke und dokumentiert auf dem Tablet"></picture></figure>
+          <div class="svc-body">
+            <h3><a href="/leistungen/rauchmelder-wartung-koeln">Brandschutz&nbsp;&amp; Rauchwarnmelder</a></h3>
+            <p>Als geprüfte Fachkraft beraten wir, montieren Rauch- und CO‑Melder und übernehmen die Wartung.</p>
+            <ul class="chips"><li>Rauchwarnmelder</li><li>CO‑Melder</li><li>Ferninspektion</li></ul>
+            <div class="svc-actions"><a class="btn btn-gold btn-sm" href="/#anfrage" data-termin="rauchmelder"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a><a class="link-arrow" href="/leistungen/rauchmelder-wartung-koeln">Mehr erfahren<span class="sr-only"> zu Brandschutz und Rauchwarnmeldern</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
+          </div>
         </article>
       </div>
 
-      <div class="panels">
-        <div class="panel" id="p-arbeiten" hidden>
-          <figure class="panel-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-kehren-ofenrohr-480.avif 480w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-800.avif 800w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1600.avif 1600w" sizes="(max-width: 760px) 100vw, 260px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-kehren-ofenrohr-480.webp 480w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-800.webp 800w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 260px"><img src="/assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-kehren-ofenrohr-480.jpg 480w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-800.jpg 800w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-kehren-ofenrohr-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 260px" width="1600" height="1066" loading="lazy" decoding="async" alt="Philipp Ritters kehrt mit Kehrleine das Ofenrohr eines Kaminofens in einem Wohnzimmer"></picture></figure>
-          <div>
-            <h4>Schornsteinfegerarbeiten in Köln</h4>
-            <p>Wir kehren und überprüfen Ihre Feuerungs- und Abgasanlagen termingerecht und dokumentieren alle Arbeiten sauber. Ihre Unterlagen erhalten Sie auf Wunsch bequem per E-Mail.</p>
-            <ul class="chips"><li>Kehrarbeiten</li><li>Überprüfung von Schornsteinen</li><li>Abgasleitungen</li><li>Dokumente per E-Mail</li></ul>
-          </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#anfrage" data-termin="Schornsteinfegerarbeiten"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a><a class="link-arrow" href="/leistungen/schornstein-kehren-koeln">Alles zum Schornsteinkehren in Köln<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
-        </div>
-        <div class="panel" id="p-ofen-beratung" hidden>
-          <figure class="panel-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-480.avif 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-800.avif 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1600.avif 1600w" sizes="(max-width: 760px) 100vw, 260px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-480.webp 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-800.webp 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 260px"><img src="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-480.jpg 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-800.jpg 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-sauger-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 260px" width="1600" height="1066" loading="lazy" decoding="async" alt="Philipp Ritters bei der Reinigung eines Kaminofens"></picture></figure>
-          <div>
-            <h4>Beratung zu neuen Kaminöfen</h4>
-            <p>Sie planen einen neuen Kaminofen oder eine neue Feuerstätte? Wir beraten Sie vorab zu Aufstellung, Anschluss und Schornstein – so vermeiden Sie böse Überraschungen. Die regelmäßigen Kehrarbeiten übernehmen wir anschließend gern.</p>
-            <ul class="chips"><li>Aufstellung</li><li>Anschluss an den Schornstein</li><li>Verständliche Erläuterung</li></ul>
-          </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#anfrage" data-termin="ofen"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Beratung anfragen</a><a class="link-arrow" href="/leistungen/kaminofen-reinigung-koeln">Mehr zu Kaminöfen<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
-        </div>
-        <div class="panel" id="p-messung" hidden>
-          <figure class="panel-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-messung-gaszaehler-480.avif 480w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-800.avif 800w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1600.avif 1600w" sizes="(max-width: 760px) 100vw, 260px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-messung-gaszaehler-480.webp 480w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-800.webp 800w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 260px"><img src="/assets/img/schornsteinfeger-koeln-messung-gaszaehler-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-messung-gaszaehler-480.jpg 480w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-800.jpg 800w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-messung-gaszaehler-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 260px" width="1600" height="1066" loading="lazy" decoding="async" alt="Messgerät am Gaszähler bei der Gashausschau"></picture></figure>
-          <div>
-            <h4>Prüfungen&nbsp;&amp; Messungen</h4>
-            <p>Bei Abgaswegeüberprüfungen, CO‑Messungen und Emissionsmessungen steht die Sicherheit Ihres Feuerstättenbetriebs im Mittelpunkt. Außerdem führen wir die Gashausschau nach TRGI durch.</p>
-            <ul class="chips"><li>Abgaswegeprüfung</li><li>Kohlenmonoxid-Messung</li><li>Emissionsmessung nach 1.&nbsp;BImSchV</li><li>Gashausschau nach TRGI</li></ul>
-          </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#anfrage" data-termin="Prüfungen & Messungen"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a><a class="link-arrow" href="/leistungen/abgasmessung-koeln">Alles zur Abgasmessung in Köln<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
-        </div>
-        <div class="panel" id="p-reinigung" hidden>
-          <figure class="panel-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-480.avif 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-800.avif 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-1600.avif 1600w" sizes="(max-width: 760px) 100vw, 260px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-480.webp 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-800.webp 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 260px"><img src="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-kaminofen-reinigung-480.jpg 480w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-800.jpg 800w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-kaminofen-reinigung-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 260px" width="1600" height="1066" loading="lazy" decoding="async" alt="Philipp Ritters reinigt den Brennraum eines Kaminofens mit dem Sauger"></picture></figure>
-          <div>
-            <h4>Reinigung von Öfen und Lüftungsanlagen</h4>
-            <p>Eine regelmäßige Reinigung sorgt für einen sicheren und effizienten Betrieb. Wir reinigen Kaminöfen, Öfen und Lüftungsanlagen und montieren bei Bedarf Schornsteinaufsätze wie Dohlengitter und Lüftungshauben.</p>
-            <ul class="chips"><li>Ofenreinigung</li><li>Kaminöfen</li><li>Lüftungsanlagen</li><li>Dohlengitter &amp; Lüftungshauben</li></ul>
-          </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#anfrage" data-termin="Reinigung"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a><a class="link-arrow" href="/leistungen/kaminofen-reinigung-koeln">Alles zur Kaminofen-Reinigung<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
-        </div>
-        <div class="panel" id="p-brandschutz" hidden>
-          <figure class="panel-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-480.avif 480w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-800.avif 800w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1600.avif 1600w" sizes="(max-width: 760px) 100vw, 260px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-480.webp 480w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-800.webp 800w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 260px"><img src="/assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-480.jpg 480w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-800.jpg 800w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-rauchmelder-pruefung-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 260px" width="1600" height="1066" loading="lazy" decoding="async" alt="Philipp Ritters prüft einen Rauchwarnmelder an der Zimmerdecke und dokumentiert auf dem Tablet"></picture></figure>
-          <div>
-            <h4>Brandschutz, Rauch- und CO‑Melder</h4>
-            <p>Als geprüfte Fachkraft für Rauchwarnmelder und Kohlenmonoxidmelder beraten wir Sie, montieren die Geräte fachgerecht und übernehmen die Überprüfung – auch per Ferninspektion.</p>
-            <ul class="chips"><li>Rauchwarnmelder</li><li>CO‑Melder</li><li>Überprüfung &amp; Ferninspektion</li><li>Für Eigentümer &amp; Vermieter</li></ul>
-          </div>
-          <div class="panel-actions"><a class="btn btn-gold" href="#anfrage" data-termin="Brandschutz & Rauchwarnmelder"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a><a class="link-arrow" href="/leistungen/rauchmelder-wartung-koeln">Alles zur Rauchmelder-Wartung<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
-        </div>
-      </div>
-
-      <details class="more-services"><summary><h3>Weitere Leistungen anzeigen</h3><svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
-        <ul class="chips chips-links">
-          <li><a href="/leistungen/schornsteinfeger-frei-waehlen-koeln">Schornsteinfeger frei wählen</a></li><li><a href="/leistungen/kaminofen-reinigung-koeln">Beratung vor Anschluss neuer Kaminöfen</a></li><li><a href="/leistungen/kaminofen-reinigung-koeln">Schornsteinaufsätze &amp; Dohlengitter</a></li><li><a href="/leistungen/abgasmessung-koeln">Gashausschau nach TRGI</a></li><li><a href="/leistungen/rauchmelder-wartung-koeln">Ferninspektion von Rauchmeldern</a></li>
-        </ul>
-      </details>
+      <p class="svc-more"><b>Außerdem:</b> <a href="/leistungen/kaminofen-reinigung-koeln">Schornsteinaufsätze &amp; Dohlengitter</a><a href="/leistungen/schornsteinfeger-frei-waehlen-koeln">Schornsteinfeger frei wählen</a><a href="/ratgeber/feuerstaettenbescheid-koeln">Ratgeber Feuerstättenbescheid</a></p>
     </div>
   </section>
 
@@ -464,7 +429,6 @@
       </ol>
       <div class="proc-cta">
         <a class="btn btn-gold btn-lg" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Wunschtermin anfragen</a>
-        <p>Unverbindliche Anfrage · Kostenklärung vor Beauftragung</p>
       </div>
     </div>
   </section>
@@ -489,23 +453,29 @@
 
   <section id="ueber-uns" class="section dark" aria-labelledby="ueber-title">
     <div class="wrap">
-      <div class="about reveal">
-        <picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-480.avif 480w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-800.avif 800w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1200.avif 1200w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1600.avif 1600w" sizes="(max-width: 960px) 520px, 408px"><source type="image/webp" srcset="/assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-480.webp 480w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-800.webp 800w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1200.webp 1200w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1600.webp 1600w" sizes="(max-width: 960px) 520px, 408px"><img src="/assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1600.jpg" srcset="/assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-480.jpg 480w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-800.jpg 800w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1200.jpg 1200w, /assets/img/schornsteinfegermeister-philipp-ritters-portraet-sw-1600.jpg 1600w" sizes="(max-width: 960px) 520px, 408px" width="1600" height="2417" loading="lazy" decoding="async" alt="Schwarz-Weiß-Porträt: Philipp Ritters sitzt lachend auf einer Mauer und wirft seinen Zylinder in die Luft"></picture>
-        <div>
+      <div class="about about-v2 reveal">
+        <figure class="about-photo"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-koeln-dach-dom-quer-480.avif 480w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-800.avif 800w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-1200.avif 1200w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-1600.avif 1600w" sizes="(max-width: 960px) 92vw, 560px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-koeln-dach-dom-quer-480.webp 480w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-800.webp 800w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-1200.webp 1200w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-1600.webp 1600w" sizes="(max-width: 960px) 92vw, 560px"><img src="/assets/img/schornsteinfeger-koeln-dach-dom-quer-1600.jpg" srcset="/assets/img/schornsteinfeger-koeln-dach-dom-quer-480.jpg 480w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-800.jpg 800w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-1200.jpg 1200w, /assets/img/schornsteinfeger-koeln-dach-dom-quer-1600.jpg 1600w" sizes="(max-width: 960px) 92vw, 560px" width="1600" height="1067" loading="lazy" decoding="async" alt="Philipp Ritters auf einem Dach in Köln, im Hintergrund der Kölner Dom"></picture><figcaption><span>Familienbetrieb in 2. Generation</span></figcaption></figure>
+        <div class="about-text">
           <p class="eyebrow">Über uns</p>
           <h2 id="ueber-title">Philipp Ritters</h2>
+          <p class="about-meta">Schornsteinfegermeister · 2. Generation · Köln-Nippes</p>
           <p>Schornsteinfegermeister in zweiter Generation – aufgewachsen in einer Schornsteinfegerfamilie und seit rund 20&nbsp;Jahren im Beruf.</p>
           <p>Mein Betrieb liegt in Köln-Nippes, im „Sechzigveedel“. Hier lebe und arbeite ich, und hier bin ich persönlich für Sie erreichbar.</p>
-          <a class="btn btn-ghost" href="#familie">Familienbetrieb kennenlernen<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a>
+          <div class="about-actions"><a class="btn btn-gold" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a><a class="link-arrow" href="#familie">Zur Familiengeschichte<svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#arrow"/></svg></a></div>
         </div>
       </div>
       <!-- FAMILIE: Jahreszahlen und Fotos von Philipp – bis dahin Platzhalter. -->
-      <details id="familie" class="family-block family-details reveal"><summary><h3 class="family-title" id="family-title">Unsere Familiengeschichte: seit Generationen in Köln</h3><svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
-      <figure class="fam-crest"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.avif 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.avif 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.avif 1200w" sizes="(max-width: 640px) 160px, 220px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.webp 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.webp 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.webp 1200w" sizes="(max-width: 640px) 160px, 220px"><img src="/assets/img/schornsteinfeger-zunftwappen-ritters-1200.jpg" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.jpg 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.jpg 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.jpg 1200w" sizes="(max-width: 640px) 160px, 220px" width="1200" height="1500" loading="lazy" decoding="async" alt="Bronzenes Zunftwappen der Schornsteinfeger mit dem Spruch „Einer für alle – alle für einen“"></picture><figcaption>Das Zunftwappen: „Einer für alle – alle für einen“</figcaption></figure>
-      <p class="family-lead">Das Schornsteinfegerhandwerk liegt bei uns in der Familie – heute in zweiter Generation.</p>
-      <ol class="fam-timeline"><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Der Familienbetrieb entsteht</h4><p>Die erste Generation der Familie arbeitet als Schornsteinfeger. <span class="ph">[Ort und Details ergänzen]</span></p></li><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Aufgewachsen im Handwerk</h4><p>Philipp lernt den Beruf im Familienbetrieb und ist seit rund 20&nbsp;Jahren Schornsteinfeger.</p></li><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Meisterprüfung</h4><p>Philipp legt die Meisterprüfung im Schornsteinfegerhandwerk ab.</p></li><li><span class="fam-year">Heute</span><h4>Meisterbetrieb in Köln-Nippes</h4><p>Philipp führt den Betrieb in zweiter Generation – mitten im Sechzigveedel.</p></li></ol>
-      <div class="fam-photos" data-staging-only hidden aria-label="Historische Familienfotos"><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure></div>
-      </details>
+      <div id="familie" class="family-block family-v2 reveal">
+        <div class="family-head">
+          <figure class="fam-crest"><picture class="pic"><source type="image/avif" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.avif 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.avif 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.avif 1200w" sizes="(max-width: 640px) 160px, 220px"><source type="image/webp" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.webp 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.webp 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.webp 1200w" sizes="(max-width: 640px) 160px, 220px"><img src="/assets/img/schornsteinfeger-zunftwappen-ritters-1200.jpg" srcset="/assets/img/schornsteinfeger-zunftwappen-ritters-480.jpg 480w, /assets/img/schornsteinfeger-zunftwappen-ritters-800.jpg 800w, /assets/img/schornsteinfeger-zunftwappen-ritters-1200.jpg 1200w" sizes="(max-width: 640px) 160px, 220px" width="1200" height="1500" loading="lazy" decoding="async" alt="Bronzenes Zunftwappen der Schornsteinfeger mit dem Spruch „Einer für alle – alle für einen“"></picture><figcaption>Das Zunftwappen: „Einer für alle – alle für einen“</figcaption></figure>
+          <h3 class="family-title" id="family-title">Unsere Familiengeschichte</h3>
+          <p class="family-lead">Das Schornsteinfegerhandwerk liegt bei uns in der Familie – heute in zweiter Generation.</p>
+        </div>
+        <div class="family-body">
+          <ol class="fam-timeline fam-chronik"><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Der Familienbetrieb entsteht</h4><p>Die erste Generation der Familie arbeitet als Schornsteinfeger. <span class="ph">[Ort und Details ergänzen]</span></p></li><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Aufgewachsen im Handwerk</h4><p>Philipp lernt den Beruf im Familienbetrieb und ist seit rund 20&nbsp;Jahren Schornsteinfeger.</p></li><li><span class="fam-year"><span class="ph">[Jahr]</span></span><h4>Meisterprüfung</h4><p>Philipp legt die Meisterprüfung im Schornsteinfegerhandwerk ab.</p></li><li><span class="fam-year">Heute</span><h4>Meisterbetrieb in Köln-Nippes</h4><p>Philipp führt den Betrieb in zweiter Generation – mitten im Sechzigveedel.</p></li></ol>
+          <div class="fam-photos" data-staging-only hidden aria-label="Historische Familienfotos"><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure><figure class="fam-photo"><div class="photo-slot ratio-4-3"><span>Foto folgt: historisches Familienfoto</span></div><figcaption><span class="ph">[Bildunterschrift, Jahr]</span></figcaption></figure></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -615,8 +585,8 @@
       </div>
 
       <!-- ANFRAGE: Termin & Nachricht -->
-      <div class="request-quick"><p>Am schnellsten geht es über die geführte Terminanfrage:</p><a class="btn btn-gold" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a></div>
-      <details class="request-details"><summary>Formular öffnen: Termin anfragen oder Nachricht senden<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
+      <div class="request-entry"><div class="request-entry-text"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg><div><b>Termin anfragen oder Nachricht senden</b><span>Geführt in drei Schritten oder per Formular – wir bestätigen persönlich.</span></div></div><a class="btn btn-gold" href="#anfrage" data-termin><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#cal"/></svg>Termin anfragen</a></div>
+      <details class="request-details"><summary>Klassisches Formular öffnen<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary>
       <div class="request reveal" id="anfrage">
         <span id="termin-buchen" aria-hidden="true"></span>
         <div class="tabs" role="tablist" aria-label="Art der Anfrage">
@@ -625,13 +595,14 @@
         </div>
 
         <div class="tabpanel" role="tabpanel" id="panel-termin" aria-labelledby="tab-termin" tabindex="0">
-          <p class="intro"><a href="/#termin-buchen" data-termin>Geführte Terminanfrage öffnen</a> oder hier das Formular ausfüllen. Wir klären Kosten und Termin vor einer Beauftragung.</p>
+          <p class="intro"><a href="/#termin-buchen" data-termin>Geführte Terminanfrage öffnen</a> oder hier das Formular ausfüllen.</p>
           <form class="form" id="form-termin" action="/anfrage.php" method="post" novalidate data-kind="termin">
             <input type="hidden" name="art" value="Terminanfrage">
             <input type="hidden" name="ts" value="">
             <div class="hp" aria-hidden="true"><label for="t-website">Website</label><input id="t-website" name="website" tabindex="-1" autocomplete="off"></div>
 
-            <div class="field">
+            <p class="form-section">Ihr Anliegen</p>
+            <div class="field full">
               <label for="t-leistung">Anliegen <span class="req" aria-hidden="true">*</span></label>
               <select id="t-leistung" name="leistung" required>
                 <option value="">Bitte wählen …</option>
@@ -648,6 +619,7 @@
               </select>
               <p class="err" id="t-leistung-err"></p>
             </div>
+            <p class="form-section">Ihre Kontaktdaten und das Objekt</p>
             <div class="field">
               <label for="t-name">Name <span class="req" aria-hidden="true">*</span></label>
               <input id="t-name" name="name" required autocomplete="name">
@@ -663,7 +635,7 @@
               <input id="t-mail" name="email" type="email" autocomplete="email">
               <p class="err" id="t-mail-err"></p>
             </div>
-            <div class="field full">
+            <div class="field">
               <label for="t-adresse">Adresse des Objekts <span class="req" aria-hidden="true">*</span></label>
               <input id="t-adresse" name="adresse" required autocomplete="street-address" placeholder="Straße, Hausnummer, PLZ, Ort">
               <p class="err" id="t-adresse-err"></p>
@@ -673,7 +645,7 @@
               <textarea id="t-msg" name="nachricht" rows="3" placeholder="z. B. Art der Feuerstätte, Zugang zum Dach, Ansprechpartner vor Ort"></textarea>
             </div>
             <!-- anliegen:felder (erzeugt) -->
-            <details class="field full form-details" data-form-details><summary>Weitere Angaben – damit wir Ihr Anliegen schon vor dem Rückruf einschätzen können<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary><div class="form form-details-grid">
+            <details class="field full form-details" data-form-details><summary>Weitere Angaben (optional) – hilft uns bei der Einschätzung<svg class="ic sum-chev" aria-hidden="true"><use href="/assets/icons.svg#chev"/></svg></summary><div class="form form-details-grid">
               <fieldset class="field" data-for="arbeiten_bescheid rauchmelder kaminofen_beratung unsicher kehren messung kaminofen_reinigung energieberatung"><legend>Sind Sie schon Kunde bei uns?</legend><div class="radios"><label><input type="radio" name="kunde" value="neukunde"> Neukunde</label><label><input type="radio" name="kunde" value="bestandskunde"> Bestandskunde</label></div></fieldset>
               <div class="field full" data-for="termin_verschieben"><label for="t-bisheriger_termin">Bisheriger Termin</label><input id="t-bisheriger_termin" name="bisheriger_termin" placeholder="z. B. 12.12.2026, vormittags"></div>
               <fieldset class="field full" data-for="arbeiten_bescheid kehren messung"><legend>Art der Anlage</legend><div class="radios checks"><label><input type="checkbox" name="anlage[]" value="gas"> Gas</label><label><input type="checkbox" name="anlage[]" value="oel"> Öl</label><label><input type="checkbox" name="anlage[]" value="holz"> Holz / Kaminofen</label><label><input type="checkbox" name="anlage[]" value="pellet"> Pellet</label><label><input type="checkbox" name="anlage[]" value="unbekannt"> Weiß ich nicht</label></div></fieldset>
@@ -746,9 +718,10 @@
 
   <!-- ENERGIEBERATUNG: nur Teaser (eigene K&R-Website ist ein separates Projekt) -->
   <section id="energieberatung-kessel-ritters" class="band band-dark" aria-labelledby="energy-title">
-    <div class="wrap band-inner">
+    <div class="wrap"><div class="band-inner">
       <div><h2 id="energy-title">Energieberatung mit Kessel &amp; Ritters</h2><p>Neue Heizung, Sanierung oder Fördermittel? Dafür berät Philipp gemeinsam mit Markus Kessel bei Kessel &amp; Ritters – Die Energieberater.</p></div>
       <a class="btn btn-ghost" href="https://www.kesselundritters.energy/" target="_blank" rel="noopener">Zu Kessel &amp; Ritters – Die Energieberater<span class="sr-only"> (externe Website, neues Fenster)</span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg#ext"/></svg></a>
+    </div>
     </div>
   </section>
 
