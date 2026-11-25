@@ -13,7 +13,7 @@
     if(frame)return;
     frame=document.createElement('iframe');frame.src='/widgets/reviews.html';
     frame.title=EN?'Google reviews via Elfsight':'Google-Bewertungen über Elfsight';
-    frame.className='reviews-frame';
+    frame.className='reviews-frame';frame.setAttribute('scrolling','no');
     /* allow-same-origin ist nötig (Freigabe Kilian, 25.11.): Ohne eigene Herkunft/Storage bricht Elfsights
        platform.js im Iframe still ab (leere weiße Fläche). Die Widget-Seite behält ihre eigene strenge CSP. */
     frame.setAttribute('sandbox','allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox');
@@ -31,8 +31,12 @@
         `<a href="${PROFILE}" target="_blank" rel="noopener">${EN?'View all reviews on Google':'Alle Bewertungen auf Google ansehen'}<span class="sr-only"> ${EN?'(external website, new window)':'(externe Website, neues Fenster)'}</span></a>`;
     }
   });
+  /* Früh laden, damit beim Erreichen der Sektion nichts mehr nachlädt: spätestens wenn die Sektion
+     1500 px vor dem sichtbaren Bereich liegt, sonst kurz nach dem Seitenaufbau im Leerlauf. */
   if('IntersectionObserver' in window){
-    const io=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){io.disconnect();load();}},{rootMargin:'600px'});
+    const io=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){io.disconnect();load();}},{rootMargin:'1500px 0px'});
     io.observe(box);
   }else load();
+  const idle=()=>('requestIdleCallback' in window?requestIdleCallback(load,{timeout:2500}):setTimeout(load,1200));
+  if(document.readyState==='complete')idle();else addEventListener('load',idle,{once:true});
 })();
