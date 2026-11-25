@@ -776,3 +776,19 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   .family-v2 .fam-photos { grid-template-columns: 1fr 1fr; }
 }
 .family-v2 .family-title, .about-meta, .about-text h2 { hyphens: manual; -webkit-hyphens: manual; }
+
+/* =========================================================
+   Scroll-Haptik: kein Gummiband, kein seitliches Wackeln
+   ========================================================= */
+/* overscroll-behavior-y: none entfernt Bounce, Glow und Pull-to-Refresh am Seitenanfang und -ende
+   (Safari ab 16, Chrome, Firefox). Nur y: horizontal bleibt die Wischgeste „Zurück“ erhalten.
+   Nebeneffekt: --sy der Hero-Bühne wird nie durch negatives scrollY gestört. */
+html { overscroll-behavior-y: none; overflow-x: clip; background: var(--darker); }
+body { overscroll-behavior-y: none; }
+/* Ältere Safari-Versionen federn trotzdem: dort zeigt der Rand dann den Header-/Footer-Ton statt Hellgrau (Body behält --surface). */
+/* Trust-Leiste mobil: minmax(0, 1fr), sonst weitet lange Wörter die Spalte und die Seite wird breiter als der Viewport. */
+@media (max-width: 640px) { .trustbar ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Kein 300-ms-Warten und kein Doppeltipp-Zoom auf Bedienelementen, Pinch-Zoom bleibt möglich. */
+a, button, summary, label, select, [role="button"] { touch-action: manipulation; }
+/* Scroll-Ketten stoppen an der Kante von Menü, Buchungsdialog und Cookie-Banner. */
+.menu, .bk-body, .consent { overscroll-behavior: contain; }
