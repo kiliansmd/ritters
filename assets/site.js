@@ -91,7 +91,7 @@
   }));
 
   /* Leistungen: Detailbereiche */
-  const toggles = $$('.service .link-arrow');
+  const toggles = $$('.service button.link-arrow[aria-controls]');
   toggles.forEach(btn => btn.addEventListener('click', () => {
     const panel = document.getElementById(btn.getAttribute('aria-controls'));
     const willOpen = btn.getAttribute('aria-expanded') !== 'true';

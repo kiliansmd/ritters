@@ -9,6 +9,9 @@
   const hat = hero.querySelector('.hero-hat img');
   const person = scene.querySelector('.hero-person img');
 
+  /* Testvariante Feedback 24.11.: kleinerer Zylinder über ?hut=klein */
+  if (new URLSearchParams(location.search).get('hut') === 'klein') hero.classList.add('hut-klein');
+
   /* Wurf starten, sobald die Person geladen ist (sonst würde der Hut ins Leere fliegen) */
   const ready = () => { scene.classList.add('is-ready'); hat && hat.classList.add('throw'); };
   if (person && !person.complete) { person.addEventListener('load', ready, { once: true }); person.addEventListener('error', ready, { once: true }); }
