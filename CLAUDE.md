@@ -88,6 +88,6 @@ grep -rniE "feuerstättenschau|abnahme|bezirksschornsteinfeger|kehrbezirk|buchba
 
 ## Go-live-Checkliste (Domainwechsel auf www.schornsteinfeger.koeln)
 
-- **Social-Preview:** `og:image` und `twitter:image` zeigen vorerst auf `https://ritters.meindigitalerbetrieb.de/assets/og-image-de|en.jpg`, weil auf der Live-Domain noch die alte Website läuft. Beim Go-live in allen HTML-Dateien auf `https://www.schornsteinfeger.koeln` umstellen:
+- **Social-Preview:** `og:image` und `twitter:image` zeigen vorerst auf `https://ritters.meindigitalerbetrieb.de/assets/og-image-de|en-hero.jpg` (gerendert aus dem Hero mit `python3 scripts/og_image.py`), weil auf der Live-Domain noch die alte Website läuft. Beim Go-live in allen HTML-Dateien auf `https://www.schornsteinfeger.koeln` umstellen:
   `grep -rl "ritters.meindigitalerbetrieb.de/assets/og-image" --include='*.html' . | xargs sed -i '' 's#https://ritters.meindigitalerbetrieb.de/assets/og-image#https://www.schornsteinfeger.koeln/assets/og-image#g'`
 - Icons: `favicon.ico` (16/32/48), `assets/favicon.svg`, `assets/apple-touch-icon.png`, `assets/icon-192|512.png`, `assets/icon-maskable-512.png`, `site.webmanifest` mit hochladen.
