@@ -43,7 +43,7 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 - Änderungen immer **DE und EN gemeinsam**.
 - **Kontakt-Schalter:** Mobilnummer und direkte E-Mail nur über `scripts/kontakt/kontakt.json` + `python3 scripts/kontakt.py` ein-/ausblenden (entfernt die markierten Bausteine `<!--kontakt:…-->` aus HTML und JSON-LD). Impressum/Datenschutz zeigen die E-Mail immer. Neue Fundstellen mit `<!--kontakt:mobil-->…<!--/kontakt:mobil-->` markieren.
 - **Anliegen:** `data-termin="<id>"` öffnet den Dialog vorbelegt; alte Werte (`bescheid`, `ofen`, Label-Texte) funktionieren über `aliase`. Formulare senden `anliegen` (ID) und `leistung` (Label) plus Zusatzfelder (`kunde`, `anlage`, `anzahl`, `frist`, `wunschtage`, `zeit`, `bisheriger_termin`, `rueckruf_zeit`, `frage`). **Offen (AP 4.2):** `anfrage.php` wertet diese Felder noch nicht aus und zeigt bei `leistung` aus dem statischen Formular die ID statt des Labels.
-- **Leistungen (V3, Feedback 24.11.):** 4 Bildkarten (`.svc-grid`) ohne Aufklapp-Panels; Kaminofen-Beratung und Reinigung sind zu einer Karte zusammengefasst (`#kaminofen`, Button ohne Vorbelegung → Anliegen-Auswahl). **Über uns:** Familiengeschichte offen als vertikale Chronik (`.family-v2`, `.fam-chronik`), nicht mehr in `<details>`.
+- **Leistungen (V3, Feedback 24.11.):** 4 Bildkarten (`.svc-grid`) ohne Aufklapp-Panels; Kaminofen-Karte „Kaminöfen: Reinigung & Pflege“ (`#kaminofen`, Button vorbelegt mit `kaminofen_reinigung`). **Über uns:** Familiengeschichte offen als vertikale Chronik (`.family-v2`, `.fam-chronik`), nicht mehr in `<details>`.
 - **Startseite:** höchstens 9 Hauptsektionen (Hero, Trust, Anliegen, Leistungen, Bewertungen, Über uns + Familie, Ablauf, FAQ, Kontakt); Energieberatung, Einsatzgebiet und Hersteller nur als schmale Bänder (`.band`). Start-FAQ höchstens 8 Fragen, weitere auf `ratgeber/`.
 
 ## Deployment
@@ -78,6 +78,7 @@ Statisches HTML/CSS/JS, **kein Build-Schritt**, keine externen Bibliotheken, kei
 4. **Keine erfundenen Fakten:** keine Preise, Jahreszahlen, Mitarbeitenden, Siegel oder Zusagen ohne Freigabe von Philipp.
 5. **DE und EN immer gemeinsam ändern**, inklusive JSON-LD, Meta-Descriptions, Formular- und `booking.js`-Texte.
 6. Fachaussagen (KÜO, SchfHwG, 1. BImSchV, BauO NRW, DIN 14676) nur vorsichtig und mit Freigabe durch Philipp.
+7. **Kaminöfen: nur Reinigung und Pflege.** Philipp verkauft und installiert keine Kaminöfen; keine Beratung zu Kauf, Aufstellung oder Anschluss als Leistung bewerben. Bei weitergehenden Fragen: Vermittlung an Fachkollegen (Anliegen `kaminofen_beratung` wurde entfernt, Alias zeigt auf `kaminofen_reinigung`).
 
 Kontrollsuche nach Änderungen:
 
