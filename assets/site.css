@@ -1234,12 +1234,8 @@ html:not(.show-placeholders) .ph { background: none; outline: 0; padding: 0; }
 .panel:has(.panel-photo) { grid-template-columns: 260px 1fr auto; }
 .panel-photo { margin: 0; }
 .panel-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); }
-.fam-crest { float: right; width: 220px; margin: 0 0 20px 32px; }
-.fam-crest img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
-.fam-crest figcaption { font-size: 13px; color: var(--on-dark-muted); margin-top: 8px; }
 .family-details .fam-timeline { clear: both; }
 @media (max-width: 760px) { .panel:has(.panel-photo) { grid-template-columns: 1fr; } }
-@media (max-width: 640px) { .fam-crest { float: none; width: 160px; margin: 0 0 20px; } }
 
 /* Typografie: ausgewogene Umbrüche, keine Einzelwörter in Überschriften, saubere Silbentrennung */
 h1, h2, h3, h4, .eyebrow, .lead, .hero-lead, .subhero-lead, .family-lead, .intent-card b, .intent-card small,
