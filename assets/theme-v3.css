@@ -790,3 +790,26 @@ body { overscroll-behavior-y: none; }
 a, button, summary, label, select, [role="button"] { touch-action: manipulation; }
 /* Scroll-Ketten stoppen an der Kante von Menü, Buchungsdialog und Cookie-Banner. */
 .menu, .bk-body, .consent { overscroll-behavior: contain; }
+
+/* =========================================================
+   Bewertungen: sichtbare Karte statt eingeklapptem Link (Live-Analyse 25.11.)
+   Ohne Einwilligung wirkte die Sektion leer. Solange bewertungen.json keine
+   echten Daten hat, ist diese Karte der Inhalt der Sektion.
+   ========================================================= */
+.testimonials .reviews-gate { display: flex; align-items: center; gap: 18px 22px; margin-top: 26px; padding: 22px 24px; max-width: 920px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .12); border-radius: var(--radius); }
+.reviews-gate-icon { flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: rgba(var(--gold-btn-rgb), .14); color: var(--gold); }
+.reviews-gate-icon .ic { width: 24px; height: 24px; }
+.reviews-gate-text { flex: 1; min-width: 0; }
+.testimonials .reviews-gate h3 { margin: 0 0 6px; font-size: 17.5px; font-weight: 800; color: #fff; }
+.testimonials .reviews-gate p { margin: 0; max-width: 62ch; font-size: 14.5px; line-height: 1.55; color: var(--on-dark-muted); }
+.reviews-gate-text a { color: var(--gold); font-weight: 700; white-space: nowrap; }
+.reviews-gate .btn { flex: none; }
+.testimonials .reviews-gate + .reviews-uwg { margin-top: 14px; }
+/* Sobald echte Bewertungen statisch angezeigt werden, tritt die Karte zurück. */
+.reviews-static:not([hidden]) ~ .reviews-gate { background: transparent; border: 0; padding: 0; }
+.reviews-static:not([hidden]) ~ .reviews-gate .reviews-gate-icon,
+.reviews-static:not([hidden]) ~ .reviews-gate h3 { display: none; }
+@media (max-width: 640px) {
+  .testimonials .reviews-gate { flex-direction: column; align-items: flex-start; padding: 20px 18px; }
+  .reviews-gate .btn { width: 100%; }
+}

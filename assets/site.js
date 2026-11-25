@@ -31,10 +31,13 @@
   const navLinks = $$('#menu > a').filter(a => a.hash && a.pathname === location.pathname);
   const onScroll = () => {
     header && header.classList.toggle('scrolled', scrollY > 8);
+    /* Nur markieren, solange die Sektion selbst die Bezugslinie überdeckt –
+       Zwischensektionen ohne Menüpunkt (Ablauf, Bewertungen, Bänder) markieren nichts. */
+    const line = innerHeight * 0.4;
     let cur = null;
     for (const a of navLinks) {
-      const s = document.getElementById(a.hash.slice(1));
-      if (s && s.getBoundingClientRect().top < innerHeight * 0.4) cur = a;
+      const r = document.getElementById(a.hash.slice(1))?.getBoundingClientRect();
+      if (r && r.top < line && r.bottom > line) cur = a;
     }
     navLinks.forEach(a => a === cur ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current'));
   };
