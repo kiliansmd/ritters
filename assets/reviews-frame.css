@@ -2,5 +2,7 @@
    nur Schrift und Textfarbe von hier; Farben, Titel und Layout werden im Elfsight-Konto eingestellt.
    Hintergrund transparent: Das Widget liegt direkt auf der dunklen Bewertungs-Sektion der Seite. */
 @font-face { font-family: "Nunito Sans"; src: url(/assets/fonts/nunito-sans.woff2) format("woff2"); font-weight: 200 1000; font-style: normal; font-display: swap; }
+/* color-scheme muss zum Iframe-Element (.reviews-frame: dark) passen, sonst malt der Browser einen deckend weißen Hintergrund */
+:root { color-scheme: dark; }
 html, body { margin: 0; padding: 0; background: transparent; }
 body { padding: 0; box-sizing: border-box; font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif; color: #ececec; line-height: 1.5; -webkit-font-smoothing: antialiased; }

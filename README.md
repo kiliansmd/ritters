@@ -38,7 +38,7 @@ Statische Website (HTML, CSS, JavaScript – ohne Build-Schritt) für Schornstei
 
 ### Kundenbewertungen über Elfsight
 
-Das vom Nutzer vorgegebene Google-Reviews-Widget `4a988130-d2b4-4575-be8b-6d2e2f14afcc` sitzt direkt nach der Vertrauensleiste (DE und EN). Es wird erst nach Zustimmung zur eigenen Kategorie „Kundenbewertungen (Elfsight)“ und in der Nähe des sichtbaren Bereichs geladen. Der Button im Bereich aktiviert ausschließlich diese Kategorie, nicht die Google-Karte. Cookie-Einstellungen erlauben den Widerruf; die lokale Consent-Version ist auf 2 erhöht, damit alte Karten-Zustimmungen nicht für Elfsight übernommen werden.
+Das vom Nutzer vorgegebene Google-Reviews-Widget `f59c1c83-330f-40e1-9f7f-b983a5d02611` sitzt direkt nach der Vertrauensleiste (DE und EN). Es wird erst nach Zustimmung zur eigenen Kategorie „Kundenbewertungen (Elfsight)“ und in der Nähe des sichtbaren Bereichs geladen. Der Button im Bereich aktiviert ausschließlich diese Kategorie, nicht die Google-Karte. Cookie-Einstellungen erlauben den Widerruf; die lokale Consent-Version ist auf 2 erhöht, damit alte Karten-Zustimmungen nicht für Elfsight übernommen werden.
 
 Die originale Elfsight-Einbettung mit asynchronem `platform.js` und `data-elfsight-app-lazy` liegt in `widgets/reviews.html`. Ein Sandbox-Iframe isoliert Widget-Skripte und -Stile vom Rest der Seite; der lokale Wrapper meldet seine Höhe für eine Darstellung ohne inneren Scrollbalken. Nur dieser Wrapper erhält eine eigene CSP für die Elfsight-Ressourcen; die Hauptseite behält ihre strengen Skript- und Stilregeln. Quellenhinweise, Bewertungen und Sprachen werden im Elfsight-Konto verwaltet.
 

@@ -39,7 +39,9 @@
     frame=document.createElement('iframe');frame.src='/widgets/reviews.html';
     frame.title=EN?'Google reviews via Elfsight':'Google-Bewertungen über Elfsight';
     frame.className='reviews-frame';frame.loading='lazy';
-    frame.setAttribute('sandbox','allow-scripts allow-popups allow-popups-to-escape-sandbox');
+    /* allow-same-origin ist nötig (Freigabe Kilian, 25.11.): Ohne eigene Herkunft/Storage bricht Elfsights
+       platform.js im Iframe still ab (leere weiße Fläche). Die Widget-Seite behält ihre eigene strenge CSP. */
+    frame.setAttribute('sandbox','allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox');
     frame.referrerPolicy='strict-origin-when-cross-origin';
     placeholder.hidden=true;status.textContent=EN?'Loading customer reviews …':'Kundenbewertungen werden geladen …';
     frame.addEventListener('load',()=>status.textContent='');
