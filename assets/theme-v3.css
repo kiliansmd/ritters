@@ -153,7 +153,7 @@ h3 { font-size: 19px; }
 .about h2 { font-size: clamp(28px, 3.2vw, 40px); }
 .family-details > summary h3.family-title { font-weight: 800; }
 .fam-year { font-weight: 800; }
-.fam-crest img { border-radius: var(--radius-lg); }
+
 
 /* ---------- Energieberatung: dunkle Sektion mit Foto links ---------- */
 .band-dark { background: var(--darker); border-top: 0; padding: 0; }
@@ -739,10 +739,9 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
 .about-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin-top: 28px; }
 .about-actions .btn { margin-top: 0; }
 .about-actions .link-arrow { color: var(--gold); }
-/* Familiengeschichte: offen sichtbar, Kopf links (Wappen, Titel, Lead), Chronik rechts als vertikale Zeitachse */
+/* Familiengeschichte: Familienfoto und Text links, Chronik rechts als vertikale Zeitachse */
 .family-block.family-v2 { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); margin-top: clamp(56px, 7vw, 88px); padding-top: clamp(40px, 5vw, 64px); border-top: 1px solid rgba(255, 255, 255, .14); }
-.family-head .fam-crest { float: none; width: 150px; margin: 0 0 22px; }
-.family-head .fam-crest img { aspect-ratio: 4 / 5; }
+
 .family-v2 .family-title { font-size: clamp(26px, 2.8vw, 34px); font-weight: 900; color: var(--white); margin: 0 0 10px; }
 .family-v2 .family-lead { margin: 0; }
 
@@ -762,16 +761,12 @@ input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="
   .about.about-v2 { grid-template-columns: 1fr; }
   .about.about-v2 .about-photo img { max-width: none; aspect-ratio: 16 / 10; }
   .family-block.family-v2 { grid-template-columns: 1fr; gap: 28px; }
-  .family-head { display: grid; grid-template-columns: 110px 1fr; gap: 0 20px; align-items: center; }
-  .family-head .fam-crest { width: 110px; margin: 0; grid-row: 1 / span 2; }
-  .family-head .fam-crest figcaption { display: none; }
+  .family-head { display: block; }
 }
 @media (max-width: 640px) {
   .about-photo figcaption { left: 12px; bottom: 12px; }
   .about-photo figcaption span { font-size: 12.5px; padding: 6px 12px; }
   .about-actions .btn { width: 100%; }
-  .family-head { grid-template-columns: 84px 1fr; gap: 0 16px; }
-  .family-head .fam-crest { width: 84px; }
   .fam-timeline.fam-chronik::before { left: 7px; }
   .fam-chronik li { grid-template-columns: 1fr; padding: 0 0 24px 34px; }
   .fam-chronik li::before { left: 0; top: 4px; }
